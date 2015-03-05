@@ -27,6 +27,61 @@ class Producto(models.Model):
 			self.slug = slugify(self.full_name)
 		super(Producto, self).save(*args, **kwargs)
 
+	def get_thum(self):
+		img = ProductoImagen.objects.get(producto=self,orden=0)
+		img = get_thumbnail(img.foto, '450x350', quality=80)
+		return img
+
+	def get_en_oferta(self):
+		variaciones = self.get_variaciones()
+		for varia in variaciones:
+			if varia.oferta != 0:
+				return True
+		return False
+
+	def get_variaciones(self):
+		variaciones = ProductoVariacion.objects.filter(producto=self).order_by('-oferta')
+		return variaciones
+
+	def get_precio_lista(self):
+		en_oferta = self.get_en_oferta()
+		if en_oferta:
+			variaciones=self.get_variaciones()
+		else:
+			variaciones = ProductoVariacion.objects.filter(producto=self).order_by('-precio_minorista')
+		if variaciones:
+			precio = variaciones[0].precio_minorista
+		else:
+			precio = 0
+		precio = "%0.2f" %(precio)		
+		return precio
+
+	def get_precio_oferta_lista(self):
+		en_oferta = self.get_en_oferta()
+		if en_oferta:
+			variaciones=self.get_variaciones()
+			precio = variaciones[0].precio_minorista
+			oferta = variaciones[0].oferta
+			descuento= precio*oferta/100
+			precio = precio - descuento
+			precio = "%0.2f" %(precio)
+			return precio
+		else:
+			precio = self.get_precio_lista()
+			return precio
+
+	def get_parientes(self):
+		parientes = self.parientes.all()
+		return parientes
+
+	def get_num_estrellas(self):
+		num_entrellas = Comentario.objects.filter(producto=self)
+		return num_entrellas
+
+	def get_relacionados(self):
+		relacionados = Producto.objects.filter(categoria = self.categoria,estilo = self.estilo)
+		return relacionados
+
 class Color(models.Model):
 	nombre = models.CharField(max_length=100)
 	slug = models.SlugField(max_length=120,unique=True,editable=False,blank=True,null=True)
