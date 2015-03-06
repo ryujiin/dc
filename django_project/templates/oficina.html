@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block extrastyles %}
+
+{% endblock %}
+
+{% block layout %}
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">Oficina Loviz Delcarpio</a>
+			</div>
+		</div>
+	</nav>
+<section id="contenido">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 sidebar" id="sidebar">
+				<ul class="nav nav-sidebar">
+					<li data-seccion="resumen">
+						<a href="/oficina/" class="link">Resumen</a>
+					</li>
+					<li data-seccion="catalogo">
+						<a href="/oficina/catalogo/" class="link">Catalogo</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-9 main" id="main">
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+{% block templatesjs %}
+  {% include 'oficinajs/catalogo_tlp_js.html' %}
+  {% include 'oficinajs/seccion_tlp_js.html' %}
+{%endblock%}
+
+{% block backbonescript %}
+	<script src="{% static "js/init.js/" %}"></script>
+
+	<!--Modelos-->
+	<script src="{% static "js/backbone/models/producto.js/" %}"></script>
+
+	<!--Colecciones-->
+	<script src="{% static "js/backbone/collections/productos.js/" %}"></script>		
+	
+	<script src="{% static "js/backbone/views/pagina.js/" %}"></script>	
+	<script src="{% static "js/backbone/views/catalogo/catalogo.js/" %}"></script>	
+	<script src="{% static "js/backbone/views/catalogo/producto_lista.js/" %}"></script>	
+
+	<script src="{% static "js/backbone/routers/base.js/" %}"></script>
+
+	<script src="{% static "js/main.js/" %}"></script>	
+{% endblock%}
+

@@ -10,7 +10,7 @@ class ProductoListaSerializer(serializers.ModelSerializer):
 	en_oferta = serializers.SerializerMethodField()
 	class Meta:
 		model=Producto
-		fields=('id','nombre','full_name','slug','marca','color','categorias','thum','precio','precio_venta','en_oferta')
+		fields=('id','nombre','full_name','slug','marca','color','categorias','thum','precio','precio_venta','en_oferta','activo')
 
 	def get_thum(self,obj):
 		imagen = obj.get_thum()
