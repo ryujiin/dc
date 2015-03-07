@@ -4,4 +4,5 @@ from views import *
 urlpatterns = patterns('',
 	url(r'^$',OficinaView.as_view() , name='oficina'),
 	url(r'^catalogo/',OficinaView.as_view() , name='catalogo'),
+	url(r'^add_producto/',OficinaView.as_view() , name='catalogo'),
 )

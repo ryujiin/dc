@@ -24,6 +24,6 @@ Oficina.Views.Catalogo = Backbone.View.extend({
 		this.$('#lista_productos').append(producto.render().el);
 	},
 	ir_nuevo_producto:function () {
-		window.routers.base.navigate('/oficina/catalogo/add_producto/', {trigger:true});		
+		window.routers.base.navigate('/oficina/add_producto/', {trigger:true});		
 	}
 });

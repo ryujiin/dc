@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 
 {% block extrastyles %}
+<link rel="stylesheet" href="{% static "css/backbone.upload-manager.css/" %}">	   
 
 {% endblock %}
 
@@ -36,6 +37,7 @@
 
 {% block templatesjs %}
   {% include 'oficinajs/catalogo_tlp_js.html' %}
+  {% include 'oficinajs/formularios_tlp_js.html' %}
   {% include 'oficinajs/seccion_tlp_js.html' %}
 {%endblock%}
 
@@ -50,6 +52,7 @@
 	
 	<script src="{% static "js/backbone/views/pagina.js/" %}"></script>	
 	<script src="{% static "js/backbone/views/catalogo/catalogo.js/" %}"></script>	
+	<script src="{% static "js/backbone/views/catalogo/formulario_producto.js/" %}"></script>	
 	<script src="{% static "js/backbone/views/catalogo/producto_lista.js/" %}"></script>	
 
 	<script src="{% static "js/backbone/routers/base.js/" %}"></script>

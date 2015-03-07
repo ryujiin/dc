@@ -2,10 +2,11 @@ Oficina.Routers.Base = Backbone.Router.extend({
 	routes : {
 		"oficina/" : "root",
 		"oficina/catalogo/" : "catalogo",
-		"oficina/catalogo/add_producto/" : "nuevo_producto",
+		"oficina/add_producto/" : "nuevo_producto",
 		'*notFound': 'notFound',
 	},
 	initialize : function () {
+		window.app.formu = {};
   	},
 	root : function () {
 		window.app.oficina = 'resumen'
@@ -13,7 +14,7 @@ Oficina.Routers.Base = Backbone.Router.extend({
 
 	},
 	catalogo:function () {
-		window.app.oficina = 'catalogo',
+		window.app.oficina = 'catalogo';
 		window.views.pagina.activarlo();
 		if (window.views.catalogo===undefined) {
 			window.views.catalogo = new Oficina.Views.Catalogo({
@@ -22,6 +23,10 @@ Oficina.Routers.Base = Backbone.Router.extend({
 		}
 		window.views.catalogo.render();
 	},
+	nuevo_producto:function () {
+		window.app.oficina='formulario'
+		window.views.formu_producto = new Oficina.Views.Formulario_producto();
+	},	
 	notFound:function () {
 		console.log('no hay pagina')
 	},
