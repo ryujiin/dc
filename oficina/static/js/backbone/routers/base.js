@@ -25,7 +25,9 @@ Oficina.Routers.Base = Backbone.Router.extend({
 	},
 	nuevo_producto:function () {
 		window.app.oficina='formulario'
-		window.views.formu_producto = new Oficina.Views.Formulario_producto();
+		window.views.formu_producto = new Oficina.Views.Formulario_producto({
+			model : new Oficina.Models.Producto_save()
+		});
 	},	
 	notFound:function () {
 		console.log('no hay pagina')

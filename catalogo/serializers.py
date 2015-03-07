@@ -24,3 +24,11 @@ class ProductoListaSerializer(serializers.ModelSerializer):
 
 	def get_en_oferta(self,obj):
 		return obj.get_en_oferta()
+
+class ProductoSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Producto
+
+class ColorSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Color

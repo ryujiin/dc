@@ -8,7 +8,9 @@ from catalogo import views
 from rest_framework.routers import DefaultRouter
 #Creando rutas
 router = DefaultRouter()
-router.register(r'catalogo', views.CatalogoViewsets)
+router.register(r'catalogo', views.CatalogoViewsets,'catalogo')
+router.register(r'producto', views.ProductoViewsets,'producto')
+router.register(r'color', views.ColorViewsets,'Color')
 
 admin.autodiscover()
 
