@@ -7,9 +7,6 @@
       			<h2>Formulario de Producto</h2>      			
       		</div>
       		<div class="col-md-2">
-      			<div class="acciones pull-rigth">
-		      		<button type="button" class="btn btn-primary grabar_producto">Grabar</button>
-		      	</div>
       		</div>
       	</div>
       </div>
@@ -30,11 +27,20 @@
             </div>
       			<div class="form-group col-md-6">
       				<label for="">Marcar:</label>
-      				<select class="form-control">
-      					<option value="">Loviz DelCarpio</option>
+      				<select class="form-control marca_producto">
+                <option>Selecciona una Marca</option>
+                <option value="Loviz DelCarpio">Loviz DelCarpio</option>
+      					<option value="Doonkan DC">Doonkan DC</option>
       				</select>      				
       			</div>
+            <div class="form-group col-md-12">
+              <label for="full_name">Nombre Completo:</label>
+              <div id="full_name"><span class="nombre"></span><span class="color"></span><span class="marca"></span></div>
+            </div>
       		</div>
+          <div class="acciones pull-rigth">
+            <button type="button" class="btn btn-primary verificar_salvar">Verificar y salvar</button>
+          </div>
       		<div id="formulario_imagenes">
       		</div>
       	</form>      	
@@ -43,22 +49,25 @@
     <div class="modal fade" id="add_color_formulario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Crear un nuevo Color</h4>
-          </div>
-          <div class="modal-body">
-            <form action="" id="crear_color">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Nombre del Nuevo Color:</label>
-                <input type="text" class="form-control" id="nuevo_color" placeholder="Nuevo Color">
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary guardar_nuevo_color" >Guardar Cambios</button>
-          </div>
+          <form action="" class="add_color_formulario">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Crear un nuevo Color</h4>
+            </div>
+            <div class="modal-body">
+              <form action="" id="crear_color">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nombre del Nuevo Color:</label>
+                  <input type="text" class="form-control" id="nuevo_color" placeholder="Nuevo Color">
+                </div>
+                <div class="help_text"></div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary guardar_nuevo_color" >Guardar Cambios</button>
+            </div>
+          </form>
         </div>
       </div>
 </div>

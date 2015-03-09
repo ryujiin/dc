@@ -1,6 +1,6 @@
 Oficina.Views.Colores = Backbone.View.extend({
 	tagName: 'select',
-	className : 'form-control',
+	className : 'form-control color_producto',
 	template : swig.compile($("#formu_select_template").html()),
 	events: {
 	},
@@ -15,7 +15,7 @@ Oficina.Views.Colores = Backbone.View.extend({
 		this.collection.forEach(this.add_color,this);
 	},
 	add_color:function (modelo) {
-		var option = "<option value="+modelo.toJSON().id+">"+modelo.toJSON().nombre+"</option>";
+		var option = "<option data-name="+modelo.toJSON().nombre+" value="+modelo.toJSON().id+">"+modelo.toJSON().nombre+"</option>";
 		this.$el.append(option);
 	},
 
