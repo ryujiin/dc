@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^api/', include(router.urls)),
     url(r'^oficina/',include('oficina.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^',include('tienda.urls')),    
 )
 if settings.DEBUG:
     urlpatterns = patterns('',

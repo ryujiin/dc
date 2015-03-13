@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     #mis apps
     'catalogo',
     'oficina',
+    'tienda',
 )
 
 MIDDLEWARE_CLASSES = (

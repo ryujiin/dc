@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{% block extrastyles %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link href='//fonts.googleapis.com/css?family=Playfair+Display|Great+Vibes|Pathway+Gothic+One|Open+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static "css/estilos.css/" %}" />
+{% endblock %}
+
+{% block layout %}
+	<header>
+		<div class="container-fluid head_top">
+			<div class="row">
+				<div class="head_top_left col-md-6">
+					<ul class="menu enlinea">
+						<li><a href="">Ayuda</a></li>
+						<li><a href="">Chat en Vivo</a></li>
+					</ul>
+				</div>
+				<div class="head_top_right col-md-6">
+					<ul class="menu enlinea pull-right">
+						<li><a href="">Buscar</a></li>
+						<li><a href="">Registrarse</a></li>
+						<li><a href="">Iniciar Seccion</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid head_main">
+			<div class="row">
+				<div class="logo col-md-4">
+					<a href="/"><h1>Loviz DelCarpio</h1></a>
+				</div>
+				<div class="main_menu col-md-8">
+					<ul class="menu enlinea navegador">
+						<li><a href="">Mujer</a></li>
+						<li><a href="">Hombre</a></li>
+						<li><a href="">Kids</a></li>
+						<li><a href="">Ofertas</a></li>
+						<li><a href="">Novedades</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="contenido">
+		<section class="main"></section>
+		<section class="main-bottom">
+			<div class="newsletter">
+				<h3>Se el Primero en saber de Loviz Delcarpio</h3>
+				<div class="borde-newsletter">
+					<div class="caja_text">
+						<input type="email" placeholder="Colocar su correo electronico">						
+					</div>
+					<div class="iconos-newsletter">
+						<span class="glyphicon glyphicon-envelope"></span>
+					</div>										
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer class="container-fluid">
+		<div class="footer_menu_bottom row">
+			<div class="block_footer col-md-2">
+				<h3 class="menu_titulo">Necesita Ayuda?</h3>
+				<ul class="menu">
+					<li><a href="">Quienes somos</a></li>
+					<li><a href="">Como Comprar</a></li>
+					<li><a href="">Preguntas Frecuentes</a></li>
+					<li><a href="">Medios de Pago</a></li>
+					<li><a href="">Sobre el envio</a></li>
+					<li><a href="">Seguimiento de envio</a></li>
+					<li><a href="">Chat en Linea</a></li>
+					<li><a href="">Cambio y devoluciones</a></li>
+					<li><a href="">Contacto</a></li>
+				</ul>
+			</div>
+			<div class="block_footer col-md-2">
+				<h3 class="menu_titulo">Comprar en Loviz DelCarpio</h3>
+				<ul class="menu">
+					<li><a href="">Mujer</a></li>
+					<li><a href="">Hombre</a></li>
+					<li><a href="">Kids</a></li>
+					<li><a href="">Lo mas Vendido</a></li>
+					<li><a href="">Mayor puntaje</a></li>
+					<li><a href="">En Oferta</a></li>
+				</ul>
+			</div>
+			<div class="block_footer col-md-2">
+				<h3 class="menu_titulo">Informacion del Producto</h3>
+				<ul class="menu">
+					<li><a href="">Convercion de medidas</a></li>
+					<li><a href="">Modelos</a></li>
+					<li><a href="">Materiales Usados</a></li>
+					<li><a href="">Testimonio de Compradores</a></li>
+				</ul>
+			</div>
+			<div class="block_footer col-md-2">
+				<h3 class="menu_titulo">Informacion del Sitio</h3>
+				<ul class="menu ">
+					<li><a href="">Politicas de Privacidad</a></li>
+					<li><a href="">Site Map</a></li>
+					<li><a href="">Terminos de Uso</a></li>
+					<li><a href="">Libro de reclamaciones</a></li>
+				</ul>
+			</div>
+			<div class="block_footer col-md-2">
+				<h3 class="menu_titulo">Mi Cuenta</h3>
+				<ul class="menu ">
+					<li><a href="">Ingresar</a></li>
+					<li><a href="">Registrarme</a></li>
+					<li><a href="">Mi lista de deseos</a></li>
+					<li><a href="">Carrito (0)</a></li>
+					<li><a href="">Estado de mis Ordenes</a></li>
+				</ul>
+			</div>
+			<div class="block_footer col-md-2">
+				<h3 class="menu_titulo">Medios Sociales</h3>
+				<ul class="menu ">
+					<li><a href="">Facebook</a></li>
+					<li><a href="">Twitter</a></li>
+					<li><a href="">Youtube</a></li>
+					<li><a href="">Pinterest</a></li>
+					<li><a href="">Instragran</a></li>
+					<li><a href="">Google plus</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+{% endblock %}
+
+{% block templatesjs %}
+{%endblock%}
+
+{% block backbonescript %}
+	<script src="{% static "js/tienda/init.js/" %}"></script>
+
+	<script src="{% static "js/tienda/main.js/" %}"></script>	
+{% endblock%}
+
