@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	console.log('entienda');
 
+    window.routers.base =  new Loviz.Routers.Base();
+
    
 	Backbone.history.start({
         pushState:true,

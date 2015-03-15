@@ -102,4 +102,3 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     location('templates'),
 )
-
