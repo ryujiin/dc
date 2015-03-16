@@ -10,6 +10,7 @@ from rest_framework.routers import DefaultRouter
 #Creando rutas
 router = DefaultRouter()
 router.register(r'catalogo', views.CatalogoViewsets,'catalogo')
+router.register(r'categoria', views.CategoriaViewsets,'categorias')
 router.register(r'producto', views.ProductoViewsets,'producto')
 router.register(r'color', views.ColorViewsets,'Color')
 router.register(r'tienda/sliderhome', TiendaViews.SliderHomeViewsets,'sliderhome')

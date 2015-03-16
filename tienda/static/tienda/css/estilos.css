@@ -27,3 +27,5 @@ footer .block_footer .menu li a:hover{color:#fff;text-decoration:underline}
 #slider_home .owl-item{background:#fff;}
 #slider_home .owl-item .slide{opacity:.5}
 #slider_home .center .slide{opacity:1}
+#navegador{transition-property:top,box-shadow;transition-duration:1s;transition-timing-function:linear;}
+#navegador.menu-fijo{box-shadow:0 0 8px 0 rgba(0,0,0,0.4);position:fixed;top:0;width:100%;background:#fff;z-index:2}

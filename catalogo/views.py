@@ -25,3 +25,7 @@ class ColorViewsets(viewsets.ModelViewSet):
 	permission_classes = (IsAuthenticated,)
 	serializer_class = ColorSerializer
 	queryset = Color.objects.all()
+
+class CategoriaViewsets(viewsets.ReadOnlyModelViewSet):
+	serializer_class = CategoriaSerializer
+	queryset = Categoria.objects.all()

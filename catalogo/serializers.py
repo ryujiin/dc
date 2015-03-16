@@ -32,3 +32,9 @@ class ProductoSerializer(serializers.ModelSerializer):
 class ColorSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Color
+
+class CategoriaSerializer(serializers.ModelSerializer):
+	padre = serializers.CharField(read_only=True)
+	class Meta:
+		model = Categoria
+		fields = ('id','nombre','full_name','seccion','slug','descripcion','activo','imagen','padre')

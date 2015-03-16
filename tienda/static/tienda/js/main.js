@@ -2,17 +2,18 @@ $(document).ready(function(){
 	console.log('entienda');
 
     window.routers.base =  new Loviz.Routers.Base();
+    window.views.tienda = new Loviz.Views.Tienda();
+
 
     //Colleciones
     window.collections.sliderHome = new Loviz.Collections.SliderHomes();
 
     window.collections.sliderHome.fetch().done(function () {
+        window.views.navegador = new Loviz.Views.Navegador();
         Backbone.history.start({
             pushState:true,
         });
     })
-	
-
     //Funcion para el CRF
     function getCookie(name){
         var cookieValue = null;
