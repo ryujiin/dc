@@ -3,10 +3,15 @@ $(document).ready(function(){
 
     window.routers.base =  new Loviz.Routers.Base();
 
-   
-	Backbone.history.start({
-        pushState:true,
-    });
+    //Colleciones
+    window.collections.sliderHome = new Loviz.Collections.SliderHomes();
+
+    window.collections.sliderHome.fetch().done(function () {
+        Backbone.history.start({
+            pushState:true,
+        });
+    })
+	
 
     //Funcion para el CRF
     function getCookie(name){

@@ -5,7 +5,8 @@
 {% block extrastyles %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link href='//fonts.googleapis.com/css?family=Playfair+Display|Great+Vibes|Pathway+Gothic+One|Open+Sans' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{% static "tienda/css/estilos.css/" %}" />
+<link rel="stylesheet" href="{% static "tienda/css/owl.carousel.css" %}" />
+<link rel="stylesheet" href="{% static "tienda/css/estilos.css" %}" />
 {% endblock %}
 
 {% block layout %}
@@ -45,7 +46,10 @@
 		</div>
 	</header>
 	<div id="contenido">
-		<section class="main"></section>
+		<section class="main">
+			<div id="slider_home">
+			</div>
+		</section>
 		<section class="main-bottom">
 			<div class="newsletter">
 				<h3>Se el Primero en saber de Loviz Delcarpio</h3>
@@ -131,13 +135,24 @@
 {% endblock %}
 
 {% block templatesjs %}
+  {% include 'tiendajs/tienda_tlp_js.html' %}
+
 {%endblock%}
 
 {% block backbonescript %}
-	<script src="{% static "tienda/js/init.js/" %}"></script>
+	<script src="{% static "tienda/js/vendor/owl.carousel.min.js" %}"></script>	
 
-	<script src="{% static "tienda/js/backbone/routers/base.js/" %}"></script>		
+	<script src="{% static "tienda/js/init.js" %}"></script>
 
-	<script src="{% static "tienda/js/main.js/" %}"></script>	
+	<script src="{% static "tienda/js/backbone/models/sliderhome.js" %}"></script>
+	
+	<script src="{% static "tienda/js/backbone/collections/sliderhomes.js" %}"></script>
+	
+	<script src="{% static "tienda/js/backbone/views/tienda/sliderhomes.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/views/tienda/sliderhome.js" %}"></script>
+
+	<script src="{% static "tienda/js/backbone/routers/base.js" %}"></script>		
+
+	<script src="{% static "tienda/js/main.js" %}"></script>	
 {% endblock%}
 

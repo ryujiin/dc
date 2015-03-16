@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.conf import settings
 
 from catalogo import views
+from tienda import views as TiendaViews
 
 from rest_framework.routers import DefaultRouter
 #Creando rutas
@@ -11,6 +12,7 @@ router = DefaultRouter()
 router.register(r'catalogo', views.CatalogoViewsets,'catalogo')
 router.register(r'producto', views.ProductoViewsets,'producto')
 router.register(r'color', views.ColorViewsets,'Color')
+router.register(r'tienda/sliderhome', TiendaViews.SliderHomeViewsets,'sliderhome')
 
 admin.autodiscover()
 

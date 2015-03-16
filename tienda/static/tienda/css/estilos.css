@@ -24,3 +24,6 @@ footer .block_footer h3.menu_titulo{font-family:'Pathway Gothic One',sans-serif;
 footer .block_footer .menu{text-transform:capitalize;padding:0;}
 footer .block_footer .menu li{margin:5px 0;}
 footer .block_footer .menu li a:hover{color:#fff;text-decoration:underline}
+#slider_home .owl-item{background:#fff;}
+#slider_home .owl-item .slide{opacity:.5}
+#slider_home .center .slide{opacity:1}

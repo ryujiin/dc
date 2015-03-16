@@ -6,7 +6,9 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	initialize : function () {
   	},
 	root : function () {
-		console.log('estamos en el root')
+		window.views.slider_home = new Loviz.Views.Sliders_Home({
+			collection : window.collections.sliderHome
+		});
 	},
 	notFound:function () {
 		console.log('Estamos en una pagina vacia')
