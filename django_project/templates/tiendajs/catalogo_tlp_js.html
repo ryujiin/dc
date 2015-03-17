@@ -1,0 +1,28 @@
+{% verbatim %}	
+	<script id="catalogo_template" type="text/template">
+		<figure id="banner-categoria">
+		</figure>
+		<ol id="breadcrumb" class="breadcrumb">
+		</ol>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-3">
+					<aside>
+						<div id="categorias" class="refinamiento">							
+						</div>
+					</aside>
+				</div>
+				<div class="col-md-9">ponchuito<br>nnfn<br>nnfn<br>nnfn<br>nnfn<br>nnfn<br>nnfn<br>nnfn<br>nnfn<br>nnfn<br>nnfn</div>
+			</div>
+		</div>
+	</script>
+
+	<script id="bloque_refinamiento_template" type="text/template">
+		<h3 class="titulo">{{nombre}}</h3>
+		<ul class="links"></ul>
+	</script>
+
+	<script id="link_refinamiento_template" type="text/template">
+		<a href="/catalogo/{{slug}}/">{{nombre}}</a>
+	</script>
+{% endverbatim %}

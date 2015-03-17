@@ -5,10 +5,15 @@ Loviz.Views.Sliders_Home = Backbone.View.extend({
 	events: {
 	},
 	initialize : function () {
-		this.collection.forEach(this.addslide,this);
-		this.add_carrusel();
+		var self = this;
+		this.render();
+		window.routers.base.on('route',function(e){
+            self.aparecer(e);
+        });
 	},
 	render:function () {
+		this.collection.forEach(this.addslide,this);
+		this.add_carrusel();
 	},
 	addslide:function (slide) {
 		var slide_view = new Loviz.Views.Slider_Home({model:slide});
@@ -22,5 +27,12 @@ Loviz.Views.Sliders_Home = Backbone.View.extend({
 		    items:2,
 		    center:true,	
 		})
+	},
+	aparecer:function (e) {
+		if (e!=='root') {
+            this.$el.slideUp('slow');
+        }else{
+        	this.$el.slideDown('slow');
+        }
 	}
 });

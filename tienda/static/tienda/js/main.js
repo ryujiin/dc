@@ -7,12 +7,15 @@ $(document).ready(function(){
 
     //Colleciones
     window.collections.sliderHome = new Loviz.Collections.SliderHomes();
+    window.collections.categorias = new Loviz.Collections.Categorias();
 
     window.collections.sliderHome.fetch().done(function () {
-        window.views.navegador = new Loviz.Views.Navegador();
-        Backbone.history.start({
-            pushState:true,
-        });
+        window.collections.categorias.fetch().done(function () {            
+            window.views.navegador = new Loviz.Views.Navegador();
+            Backbone.history.start({
+                pushState:true,
+            });
+        })
     })
     //Funcion para el CRF
     function getCookie(name){

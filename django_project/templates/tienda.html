@@ -36,7 +36,7 @@
 				<div class="main_menu col-md-8">
 					<ul class="menu enlinea navegador">
 						<li><a class="link" href="/catalogo/mujer/">Mujer</a></li>
-						<li><a class="link" href="/">Hombre</a></li>
+						<li><a class="link" href="/catalogo/hombre/">Hombre</a></li>
 						<li><a class="link" href="/">Kids</a></li>
 						<li><a class="link" href="/">Ofertas</a></li>
 						<li><a class="link" href="/">Novedades</a></li>
@@ -49,6 +49,7 @@
 		<section class="main">
 			<div id="slider_home">
 			</div>
+			<div id="main-contenido"></div>
 		</section>
 		<section class="main-bottom">
 			<div class="newsletter">
@@ -135,6 +136,7 @@
 {% endblock %}
 
 {% block templatesjs %}
+  {% include 'tiendajs/catalogo_tlp_js.html' %}
   {% include 'tiendajs/tienda_tlp_js.html' %}
 
 {%endblock%}
@@ -143,11 +145,21 @@
 	<script src="{% static "tienda/js/vendor/owl.carousel.min.js" %}"></script>	
 
 	<script src="{% static "tienda/js/init.js" %}"></script>
-
+	
+	<!--Modelos-->		
+	<script src="{% static "tienda/js/backbone/models/categoria.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/models/sliderhome.js" %}"></script>
 	
+	<!--Collectiones-->	
+	<script src="{% static "tienda/js/backbone/collections/categorias.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/collections/sliderhomes.js" %}"></script>
 	
+	<!--Vistas-->
+	<script src="{% static "tienda/js/backbone/views/catalogo/catalogo.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/views/catalogo/categorias.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/views/catalogo/categoria_link.js" %}"></script>
+
+	<script src="{% static "tienda/js/backbone/views/tienda/breadcrumb.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/tienda/navegador.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/tienda/sliderhome.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/tienda/sliderhomes.js" %}"></script>
