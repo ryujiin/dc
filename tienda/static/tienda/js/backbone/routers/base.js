@@ -14,6 +14,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		}
 	},
 	catalogo:function(categoria){
+		window.app.slug='catalogo';
 		if (window.views.catalogo === undefined) {
 			window.views.catalogo = new Loviz.Views.Catalogo();
 		}

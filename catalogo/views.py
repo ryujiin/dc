@@ -14,7 +14,13 @@ from rest_framework.permissions import IsAuthenticated,IsAdminUser
 
 class CatalogoViewsets(viewsets.ReadOnlyModelViewSet):
 	serializer_class = ProductoListaSerializer
-	queryset = Producto.objects.all()
+	
+	def get_queryset(self):
+		queryset = Producto.objects.filter(activo=True).order_by('-pk')
+		categoria = self.request.QUERY_PARAMS.get('categoria', None)
+		if categoria:
+			queryset = Producto.objects.filter(activo=True,categorias__slug=categoria).order_by('-pk')
+		return queryset
 
 class ProductoViewsets(viewsets.ModelViewSet):
 	permission_classes = (IsAuthenticated,)

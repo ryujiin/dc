@@ -18,6 +18,7 @@ Loviz.Views.Catalogo = Backbone.View.extend({
         this.$el.hide();
         this.crear_bread(categoria);
         this.crear_bloque_categoria(categoria);
+        this.mostrar_productos(categoria);
         this.$el.slideDown('slow');
 	},
 	desaparecer:function (e) {
@@ -31,5 +32,18 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 	crear_bloque_categoria:function (categoria) {
 		var modelo = window.collections.categorias.findWhere({slug:categoria});
 		var categoria = new Loviz.Views.Categorias({model:modelo});
-	}
+	},
+	mostrar_productos:function (cate) {
+		var self = this;
+		var productos = new Loviz.Collections.Productos();
+		productos.fetch({
+			data:$.param({categoria:cate})
+		}).done(function () {
+			productos.forEach(self.add_producto,self);
+		})
+	},
+	add_producto:function (modelo) {
+		var producto = new Loviz.Views.Producto({ model: modelo });
+		this.$('.productos').append(producto.render().el);
+	},
 });
