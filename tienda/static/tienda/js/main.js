@@ -4,10 +4,14 @@ $(document).ready(function(){
     window.routers.base =  new Loviz.Routers.Base();
     window.views.tienda = new Loviz.Views.Tienda();
 
+    window.views.producto_single = new Loviz.Views.Producto_single({
+        model:new Loviz.Models.Producto_Single()
+    })
 
     //Colleciones
     window.collections.sliderHome = new Loviz.Collections.SliderHomes();
     window.collections.categorias = new Loviz.Collections.Categorias();
+    window.collections.producto_single = new Loviz.Collections.Productos_Single();
 
     window.collections.sliderHome.fetch().done(function () {
         window.collections.categorias.fetch().done(function () {            

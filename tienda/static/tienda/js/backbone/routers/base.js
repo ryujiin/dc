@@ -2,6 +2,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	routes : {
 		"" : "root",
 		'catalogo/:categoria/':'catalogo',
+		'producto/:producto/':'producto_single',
 		'*notFound': 'notFound',
 	},
 	initialize : function () {
@@ -19,6 +20,18 @@ Loviz.Routers.Base = Backbone.Router.extend({
 			window.views.catalogo = new Loviz.Views.Catalogo();
 		}
 		window.views.catalogo.render(categoria);
+	},
+	producto_single:function (producto) {
+		var modelo = new Loviz.Models.Producto_Single();
+		modelo.buscar(producto);
+		
+		/*
+		window.app.slug = 'producto_single';
+		if (window.views.producto_single === undefined) {
+			window.views.producto_single = new Loviz.Views.Producto_single();
+		}
+		window.views.producto_single.render();
+		*/
 	},
 	notFound:function () {
 		console.log('Estamos en una pagina vacia')

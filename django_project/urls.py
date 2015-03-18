@@ -11,7 +11,7 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register(r'catalogo', views.CatalogoViewsets,'catalogo')
 router.register(r'categoria', views.CategoriaViewsets,'categorias')
-router.register(r'producto', views.ProductoViewsets,'producto')
+router.register(r'producto', views.Producto_singleViewsets,'producto')
 router.register(r'color', views.ColorViewsets,'Color')
 router.register(r'tienda/sliderhome', TiendaViews.SliderHomeViewsets,'sliderhome')
 
@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     url(r'^api/', include(router.urls)),
     url(r'^oficina/',include('oficina.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^api/productoSingle/$',views.Producto_singleView.as_view()),    
     url(r'^',include('tienda.urls')),    
 )
 if settings.DEBUG:

@@ -1,0 +1,110 @@
+{% verbatim %}	
+	<script id="producto_single_template" type="text/template">
+        <div class="container-fluid">
+          <div class="contenedor row">
+            <div id="galerias" class="col-md-7">
+              <ul class="nav nav-tabs">
+                <li role="presentation" class="active" data-tabs="#producto_galeria">                  
+                  <a href="#" ><span class="glyphicon glyphicon-picture"></span>Galeria</a>
+                </li>
+                {%if video%}
+                <li role="presentation" data-tabs="#producto_video">
+                  <a href="#"><span class="glyphicon glyphicon-eye-open"></span>Videos</a>
+                </li>
+                {%endif%}
+              </ul>
+              <div id="producto_galeria" class="tabs-seccion"></div>
+              {%if video%}
+              <div id="producto_video" class="tabs-seccion">
+                <iframe width="640" height="360" src="//www.youtube.com/embed/{{video}}" frameborder="0" allowfullscreen></iframe>
+              </div>
+              {%endif%}
+            </div>
+            <div id="datos" class="col-md-5">
+              <div class="text_imprenta">{{genero}}</div>
+              <h1 class="titulo">{{nombre}} - <i>{{marca}}</i></h1>
+              <div class="seccion_producto">
+                <div class="precios_single enlinea">
+                  {%for varia in variaciones %}
+                  <div class="variacion {%if loop.first%}visible{%endif%} {{varia.id}}">
+                    {%if varia.oferta > 0 %}
+                    <span class="old_precio"><del>S/.{{varia.precio}}</del></span>
+                    {%endif%}
+                    <span class="precio">S/. {{varia.precio_venta}}</span>
+                  </div>
+                  {%endfor%}
+                </div>
+                <div class="categoria enlinea">
+                  <label for="">Categoria:</label>
+                  <span class="text-uppercase">{{cate}}</span>
+                </div>
+                <div class="estilo enlinea">
+                  <label for="">Estilo:</label>
+                  <span class="text-uppercase">
+                    {{estilo}}
+                  </span>                  
+                </div>
+              </div>
+              <div class="reviews seccion_producto">
+                <span class="escribe">Escribe tu comentario</span>
+              </div>
+              <div class="descripcion seccion_producto">
+                <label for="">Descripcion</label>
+                <p>
+                  {{descripcion|striptags}}                  
+                </p>
+              </div>
+              <div class="color_selection seccion_producto">
+                <label for="">Color Seleccionado:</label><span class="color">{{color}}</span>
+                <div class="colores">
+                  <a class="interno" href="#" class="nolink">
+                    {%for img in imagenes_producto%}
+                      {%if loop.first%}
+                        <img src="{{img.imagen_thum}}" alt="">
+                      {%endif%}
+                    {%endfor%}
+                  </a>
+                  {%for pariente in parientes%}
+                    <a class="link" href="/producto/{{pariente.slug}}/">
+                      <img src="{{pariente.thum}}" alt="">
+                    </a>
+                  {%endfor%}
+                  </div>
+                </div>
+                <form class="formulario_producto">
+                  <div class="form_group talla_form">
+                    <div class="texto_ayuda left">
+                      Porfavor seleccione una talla
+                    </div>
+                    <select name="talla" id="" class="talla form-control">
+                      <option value=''>Selecciona una talla</option>
+                      {%for varia in variaciones%}
+                        <option value="{{varia.id}}">{{varia.talla}}</option>
+                      {%endfor%}
+                    </select>
+                  </div>
+                  <div>
+                    <button class="addcart btn btn-default contraste1"><span class="glyphicon glyphicon-shopping-cart"></span> Agregar al Carrito</button>
+                  </div>
+                </form>
+            </div>
+            <div class="col-md-9">
+              <div class="detalles">
+                <h3 class="subtitulo">Informacion del Producto</h3>
+                {{detalles}}  
+              </div>
+              <div class="comentarios">
+                <h3 class="subtitulo">Comentarios de usuarios</h3>
+                <div id="comentarios">
+                  
+                </div>
+              </div>              
+            </div>
+            <div class="relacionados col-md-3">
+              <h4 class="subtitulo">Los clientes que compraron este artículo también compraron</h4>
+              <div class="productos" id="relacionados"></div>
+            </div>
+          </div>
+        </div>          
+      </script>
+{% endverbatim %}

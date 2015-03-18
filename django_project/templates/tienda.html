@@ -50,6 +50,7 @@
 			<div id="slider_home">
 			</div>
 			<div id="catalogo"></div>
+			<div id="producto_single"></div>
 		</section>
 		<section class="main-bottom">
 			<div class="newsletter">
@@ -138,7 +139,7 @@
 {% block templatesjs %}
   {% include 'tiendajs/catalogo_tlp_js.html' %}
   {% include 'tiendajs/tienda_tlp_js.html' %}
-
+  {% include 'tiendajs/productosingle_tlp_js.html' %}
 {%endblock%}
 
 {% block backbonescript %}
@@ -150,17 +151,21 @@
 	<script src="{% static "tienda/js/backbone/models/categoria.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/models/sliderhome.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/models/producto.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/models/producto_single.js" %}"></script>
 	
 	<!--Collectiones-->	
 	<script src="{% static "tienda/js/backbone/collections/categorias.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/collections/sliderhomes.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/collections/productos.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/collections/productos_single.js" %}"></script>
 	
 	<!--Vistas-->
 	<script src="{% static "tienda/js/backbone/views/catalogo/catalogo.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/catalogo/categorias.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/catalogo/categoria_link.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/catalogo/producto.js" %}"></script>
+
+	<script src="{% static "tienda/js/backbone/views/producto_single/producto_single.js" %}"></script>	
 
 	<script src="{% static "tienda/js/backbone/views/tienda/breadcrumb.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/tienda/navegador.js" %}"></script>
