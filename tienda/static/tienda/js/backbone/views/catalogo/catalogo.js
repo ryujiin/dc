@@ -1,6 +1,6 @@
 Loviz.Views.Catalogo = Backbone.View.extend({
 	className: 'cotenedor',
-	el:$('#main-contenido'),
+	el:$('#catalogo'),
 	
     template: swig.compile($("#catalogo_template").html()),
 

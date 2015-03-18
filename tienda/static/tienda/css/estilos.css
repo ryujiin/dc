@@ -18,6 +18,13 @@ a:hover{color:#111}
 .main-bottom .newsletter .borde-newsletter .caja_text{display:inline-block;width:250px;font-size:1.2em}
 .main-bottom .newsletter .borde-newsletter input{border:none;outline:none;width:90%}
 .main-bottom .newsletter .borde-newsletter .iconos-newsletter{display:inline-block;width:40px;padding:5px;border-left:3px solid #333}
+.productos .producto{text-align:center;}
+.productos .producto img{width:100%}
+.productos .producto .nombre_producto{font-family:'Pathway Gothic One',sans-serif;font-size:1.1em;}
+.productos .producto .nombre_producto .estilo{font-weight:bold;text-transform:uppercase}
+.productos .producto .precios{font-family:'Pathway Gothic One',sans-serif;font-size:1.4em;}
+.productos .producto .precios .en_oferta{color:#f7727a}
+.productos .producto .precios .old_precio{font-size:.8em;margin:0 10px}
 footer{background:#111;color:#fff;padding-top:4em;}
 footer a{color:#fff}
 footer .block_footer h3.menu_titulo{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;font-size:1.35em;padding:5px 0;border-bottom:1px solid #333}

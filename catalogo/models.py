@@ -78,9 +78,18 @@ class Producto(models.Model):
 		num_entrellas = Comentario.objects.filter(producto=self)
 		return num_entrellas
 
-	def get_relacionados(self):
-		relacionados = Producto.objects.filter(categoria = self.categoria,estilo = self.estilo)
-		return relacionados
+	def obtener_categorias(self):
+		categoria = self.categorias.get(seccion='categoria')
+		categoria = categoria.nombre
+		return categoria
+
+	def get_genero(self):
+		genero = self.categorias.get(seccion='genero')
+		return genero.nombre
+
+	def get_estilo(self):
+		estilo = self.categorias.get(seccion='estilo')
+		return estilo.nombre
 
 class Color(models.Model):
 	nombre = models.CharField(max_length=100)

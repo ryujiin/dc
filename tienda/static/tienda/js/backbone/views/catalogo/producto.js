@@ -1,6 +1,6 @@
 Loviz.Views.Producto = Backbone.View.extend({
     tagName: 'article',
-    className: 'producto',
+    className: 'producto col-md-4',
     events: {
     },
     template: swig.compile($("#producto_lista_template").html()),
