@@ -14,6 +14,8 @@ Loviz.Views.Producto_single = Backbone.View.extend({
         var album = this.model.toJSON()
         var html = this.template(album);
         this.$el.html(html);
+        this.generar_galeria();
+        debugger;
     },
     aparecer:function (e) {
         if (e!=='producto_single') {
@@ -21,5 +23,11 @@ Loviz.Views.Producto_single = Backbone.View.extend({
         }else{
             this.$el.slideDown('slow')
         }
+    },
+    generar_galeria:function () {
+        debugger;
+        var galeria = new Loviz.Views.Galeria_producto_single({
+            model:this.model
+        });
     }
 });

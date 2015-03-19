@@ -1,5 +1,5 @@
 {% verbatim %}	
-	<script id="producto_single_template" type="text/template">
+	    <script id="producto_single_template" type="text/template">
         <div class="container-fluid">
           <div class="contenedor row">
             <div id="galerias" class="col-md-7">
@@ -106,5 +106,22 @@
             </div>
           </div>
         </div>          
+      </script>
+      
+      <script id="producto_single_galeria_template" type="text/template">
+        <div class="col-md-2 thum">
+          {%for img in imagenes_producto%}
+            <a class="interno" href="" data-bigimga="{{img.imagen}}">
+              <img src="{{img.imagen_thum}}" alt="">
+            </a>
+          {%endfor%}
+        </div>
+        <div class="col-md-10 imagenes">
+          {%for img in imagenes_producto%}
+            {%if loop.first%}
+              <img class="imagen_normal" src="{{img.imagen}}" alt="">
+            {%endif%}
+          {%endfor%}
+        </div>
       </script>
 {% endverbatim %}
