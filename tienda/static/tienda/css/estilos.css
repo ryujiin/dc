@@ -1,25 +1,39 @@
-a{color:#111;text-decoration:none;}
-a:hover{color:#111}
-.contenedor{width:1200px;margin:0 auto}
-.menu{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;}
-.menu.navegador{font-size:1.1em}
-.main_menu .menu.enlinea a{padding:25px 20px 10px}
-.logo{font-family:'Great Vibes',cursive;}
-.logo a:hover{text-decoration:none}
-.head_main{border-bottom:1px solid #f4f4f4;border-top:1px solid #f4f4f4;}
-.head_main .row{width:900px;margin:0 auto}
-.head_top .menu.enlinea li a{padding:5px 10px;border-right:1px solid #f4f4f4}
-.menu li{list-style:none}
-.menu.enlinea{margin:0;padding:0;}
-.menu.enlinea li{display:inline-block;}
-.menu.enlinea li a{display:inline-block;padding:3px 5px}
+body a{color:#111;text-decoration:none;}
+body a:hover{color:#111}
+body .contenedor{max-width:1250px;margin:0 auto}
+body .contraste1{background:#111;color:#fff}
+body .enlinea{display:inline-block}
+body .text_imprenta{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase}
+body .text_cursiva{font-family:'Great Vibes',cursive}
+body .visible{display:block !important}
+body .invisible{display:none}
+body .btn_facebook{background-color:#3a5795;border-bottom:1px solid #133783;box-shadow:0 2px 2px -2px rgba(0,0,0,0.52);color:#fff;font-family:'Helvetica Neue',Helvetica,Arial,'lucida grande',tahoma,verdana,arial,sans-serif;text-transform:initial}
+body .menu{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;padding:0;margin:0;}
+body .menu.navegador{font-size:1.1em}
+body .main_menu .menu.enlinea a{padding:25px 20px 10px}
+body .logo{font-family:'Great Vibes',cursive;}
+body .logo a:hover{text-decoration:none}
+body .head_main{border-bottom:1px solid #f4f4f4;border-top:1px solid #f4f4f4;}
+body .head_main .row{width:900px;margin:0 auto}
+body .head_top .menu.enlinea li a{padding:5px 10px;border-right:1px solid #f4f4f4}
+body .menu li{list-style:none}
+body .menu.enlinea{margin:0;padding:0;}
+body .menu.enlinea li{display:inline-block;}
+body .menu.enlinea li a{display:inline-block;padding:3px 5px}
+.icono_loved{position:relative;font-family:'Pathway Gothic One',sans-serif;top:5px;right:10px;}
+.icono_loved .icono{cursor:pointer;}
+.icono_loved .icono:hover{color:#60ccc4}
+.icono_loved .icono.checkin{color:#60ccc4}
+.icono_loved .favoritos .cartelicono{width:200px;right:5px}
+.cartel_flotante{font-size:1.2em;position:absolute;background-color:#ececec;border-top:3px solid #111;box-shadow:0 2px 4px rgba(0,0,0,0.5);display:none}
 .main-bottom{background:#fafafa;text-align:center;padding:3em 0 4em;}
 .main-bottom .newsletter{text-transform:uppercase;font-family:'Pathway Gothic One',sans-serif;}
 .main-bottom .newsletter .borde-newsletter{width:300px;margin:0 auto;border:3px solid #333;background:#fff;}
 .main-bottom .newsletter .borde-newsletter .caja_text{display:inline-block;width:250px;font-size:1.2em}
 .main-bottom .newsletter .borde-newsletter input{border:none;outline:none;width:90%}
 .main-bottom .newsletter .borde-newsletter .iconos-newsletter{display:inline-block;width:40px;padding:5px;border-left:3px solid #333}
-.productos .producto{text-align:center;}
+.productos .producto{position:relative;text-align:center;border:1px solid #fff;}
+.productos .producto:hover{border:1px solid #f4f4f4;box-shadow:0 0 4px rgba(0,0,0,0.5)}
 .productos .producto img{width:100%}
 .productos .producto .nombre_producto{font-family:'Pathway Gothic One',sans-serif;font-size:1.1em;}
 .productos .producto .nombre_producto .estilo{font-weight:bold;text-transform:uppercase}
@@ -33,6 +47,8 @@ a:hover{color:#111}
 #producto_single .text-uppercase{font-family:'Pathway Gothic One',sans-serif}
 #producto_single .colores a{display:inline-block;width:100px}
 #producto_single .formulario_producto{width:300px;margin:10px auto;text-align:center;}
+#producto_single .formulario_producto .addcart{text-transform:uppercase;}
+#producto_single .formulario_producto .addcart:hover{background-color:#468847;border-color:#3d773e;color:#fff}
 #producto_single .formulario_producto button{width:100%;margin:10px 0}
 #producto_single .titulo{margin:5px 0}
 #producto_single .precios_single{font-family:'Pathway Gothic One',sans-serif;}
@@ -60,3 +76,12 @@ footer .block_footer .menu li a:hover{color:#fff;text-decoration:underline}
 #slider_home .center .slide{opacity:1}
 #navegador{transition-property:top,box-shadow;transition-duration:1s;transition-timing-function:linear;}
 #navegador.menu-fijo{box-shadow:0 0 8px 0 rgba(0,0,0,0.4);position:fixed;top:0;width:100%;background:#fff;z-index:2}
+#usuario_mini{position:relative;width:100px;}
+#usuario_mini:hover .caja_login{display:block;opacity:1}
+#usuario_mini .caja_login{display:none;opacity:0;width:600px;position:absolute;left:-520px;z-index:2;background:#fff;border-top:4px solid #111;box-shadow:0 2px 3px rgba(0,0,0,0.5);padding-bottom:10px;transition:all 1s ease-out;}
+#usuario_mini .caja_login:hover{display:block;opacity:1}
+#usuario_mini .caja_login.miniuser{width:100px;left:0}
+#usuario_mini .caja_login form{margin-bottom:10px}
+#usuario_mini .caja_login label{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:initial}
+#usuario_mini .caja_login input{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+.caja.borde_top{border-top:1px solid}

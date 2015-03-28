@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link href='//fonts.googleapis.com/css?family=Playfair+Display|Great+Vibes|Pathway+Gothic+One|Open+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static "tienda/css/owl.carousel.css" %}" />
+<link rel="stylesheet" href="{% static "tienda/css/icono.css" %}" />
 <link rel="stylesheet" href="{% static "tienda/css/estilos.css" %}" />
 {% endblock %}
 
@@ -22,8 +23,8 @@
 				<div class="head_top_right col-md-6">
 					<ul class="menu enlinea pull-right">
 						<li><a class="link" href="/">Buscar</a></li>
-						<li><a class="link" href="/">Registrarse</a></li>
-						<li><a class="link" href="/">Iniciar Seccion</a></li>
+						<div id="usuario_mini" class="enlinea">
+						</div>						
 					</ul>
 				</div>
 			</div>
@@ -140,6 +141,7 @@
   {% include 'tiendajs/catalogo_tlp_js.html' %}
   {% include 'tiendajs/tienda_tlp_js.html' %}
   {% include 'tiendajs/productosingle_tlp_js.html' %}
+  {% include 'tiendajs/usuario_tlp_js.html' %}
 {%endblock%}
 
 {% block backbonescript %}
@@ -149,16 +151,24 @@
 	<script src="{% static "tienda/js/init.js" %}"></script>
 	
 	<!--Modelos-->		
+	<script src="{% static "tienda/js/backbone/models/cliente/favorito.js" %}"></script>
+
 	<script src="{% static "tienda/js/backbone/models/categoria.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/models/sliderhome.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/models/producto.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/models/producto_single.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/models/linea.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/models/carro.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/models/usuario.js" %}"></script>
 	
 	<!--Collectiones-->	
+	<script src="{% static "tienda/js/backbone/collections/cliente/favoritos.js" %}"></script>
+
 	<script src="{% static "tienda/js/backbone/collections/categorias.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/collections/sliderhomes.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/collections/productos.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/collections/productos_single.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/collections/lineas.js" %}"></script>
 	
 	<!--Vistas-->
 	<script src="{% static "tienda/js/backbone/views/catalogo/catalogo.js" %}"></script>
@@ -167,7 +177,10 @@
 	<script src="{% static "tienda/js/backbone/views/catalogo/producto.js" %}"></script>
 
 	<script src="{% static "tienda/js/backbone/views/producto_single/galeria.js" %}"></script>	
+	<script src="{% static "tienda/js/backbone/views/producto_single/favorito_icono.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/producto_single/producto_single.js" %}"></script>	
+	
+	<script src="{% static "tienda/js/backbone/views/usuario/ingresar.js" %}"></script>	
 
 	<script src="{% static "tienda/js/backbone/views/tienda/breadcrumb.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/tienda/navegador.js" %}"></script>

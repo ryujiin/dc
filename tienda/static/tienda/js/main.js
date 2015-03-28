@@ -7,14 +7,21 @@ $(document).ready(function(){
     window.views.producto_single = new Loviz.Views.Producto_single({
         model:new Loviz.Models.Producto_Single()
     })
+    //Modelos
+    window.models.usuario = new Loviz.Models.Usuario();    
+    //window.models.carro = new Loviz.Models.Carro();    
 
     //Colleciones
     window.collections.sliderHome = new Loviz.Collections.SliderHomes();
     window.collections.categorias = new Loviz.Collections.Categorias();
     window.collections.producto_single = new Loviz.Collections.Productos_Single();
+    window.collections.favoritos = new Loviz.Collections.Favoritos();
+
+    //Views
+    window.views.user_ingresar = new Loviz.Views.Ingresar({model:window.models.usuario});
 
     window.collections.sliderHome.fetch().done(function () {
-        window.collections.categorias.fetch().done(function () {            
+        window.collections.categorias.fetch().done(function () {
             window.views.navegador = new Loviz.Views.Navegador();
             Backbone.history.start({
                 pushState:true,

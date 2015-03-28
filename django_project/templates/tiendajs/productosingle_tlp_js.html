@@ -13,7 +13,7 @@
                 </li>
                 {%endif%}
               </ul>
-              <div id="producto_galeria" class="tabs-seccion"></div>
+              <div id="producto_galeria" class="tabs-seccion no_movil"></div>
               {%if video%}
               <div id="producto_video" class="tabs-seccion">
                 <iframe width="640" height="360" src="//www.youtube.com/embed/{{video}}" frameborder="0" allowfullscreen></iframe>
@@ -46,7 +46,7 @@
                 </div>
               </div>
               <div class="reviews seccion_producto">
-                <span class="escribe">Escribe tu comentario</span>
+                <span class="escribe">Comparte tu Experiencia</span>
               </div>
               <div class="descripcion seccion_producto">
                 <label for="">Descripcion</label>
@@ -122,6 +122,18 @@
               <img class="imagen_normal" src="{{img.imagen}}" alt="">
             {%endif%}
           {%endfor%}
+        </div>
+      </script>
+
+      <script id="favoritos_template" type="text/template">
+        <span class="icono icon-heart3"></span>
+        <div class="cartel_flotante cartelicono add_ok">
+          <p><strong>Usted agrego a sus favoritos</strong></p>
+          <a href="">Ver mis Favoritos</a>
+        </div>
+        <div class="cartel_flotante cartelicono seguro">
+          <p>Usted agrego a sus favoritos</p>
+          <a href="">Ver mis Favoritos</a>
         </div>
       </script>
 {% endverbatim %}

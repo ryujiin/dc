@@ -2,6 +2,8 @@ from django.db import models
 from django.template.defaultfilters import slugify
 
 from sorl.thumbnail import get_thumbnail
+from django.contrib.auth.models import User as User
+
 
 # Create your models here.
 class Producto(models.Model):
@@ -183,3 +185,8 @@ class Marca(models.Model):
 
 	def __unicode__(self):
 		return self.nombre
+
+
+class Loved(models.Model):
+	usuario = models.ForeignKey(User,null=True,blank=True,unique=True)
+	producto = models.ForeignKey('Producto',blank=True,null=True,related_name='favoritos')

@@ -1,6 +1,7 @@
 Loviz.Views.Producto_single = Backbone.View.extend({
     el:$('#producto_single'),
 	events: {
+        'change .talla' : 'talla_seleccionada',
     },
     template: swig.compile($("#producto_single_template").html()),
     initialize: function () {
@@ -15,7 +16,7 @@ Loviz.Views.Producto_single = Backbone.View.extend({
         var html = this.template(album);
         this.$el.html(html);
         this.generar_galeria();
-        debugger;
+
     },
     aparecer:function (e) {
         if (e!=='producto_single') {
@@ -25,9 +26,12 @@ Loviz.Views.Producto_single = Backbone.View.extend({
         }
     },
     generar_galeria:function () {
-        debugger;
         var galeria = new Loviz.Views.Galeria_producto_single({
             model:this.model
         });
+    },
+    talla_seleccionada:function (e) {
+        this.$('.precios_single .variacion').removeClass('visible');
+        this.$('.precios_single .'+e.target.value).addClass('visible');
     }
 });

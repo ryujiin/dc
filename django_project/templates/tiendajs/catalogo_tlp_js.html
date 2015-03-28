@@ -29,28 +29,30 @@
 	</script>
 
 	<script id="producto_lista_template" type="text/template">
-         <span class="icono glyphicon glyphicon-search"></span>
-            <a class="link" href="/producto/{{slug}}/">
-                <figure>
-                    <img src="{{thum}}" alt="{{full_name}} {{marca}}">
-                </figure>
-                <div class="nombre_producto">
-                    <div class="estilo">{{cate}} - {{estilo}}</div>
-                    <div class="nombre">{{nombre}} ({{color}})</div>
-                </div>
-                <div class="precios">
-                    {%if en_oferta %}
-                    <span class="old_precio"><s>S/. {{precio}}</s></span>
-                    {%endif%}
-                    <span class="precio {%if en_oferta%}en_oferta{% endif %}">S/. {{precio_venta}}</span>
-                </div>
-            </a>
-            <div class="estrellas">
-                <span data-valor="1" class="glyphicon glyphicon-star"></span>
-                <span data-valor="2" class="glyphicon glyphicon-star"></span>
-                <span data-valor="3" class="glyphicon glyphicon-star"></span>
-                <span data-valor="4" class="glyphicon glyphicon-star"></span>
-                <span data-valor="5" class="glyphicon glyphicon-star-empty"></span>
-            </div>
+		<div class="producto">
+			<div class="icono_loved pull-right"></div>
+			<a class="link" href="/producto/{{slug}}/">
+				<figure>
+					<img src="{{thum}}" alt="{{full_name}} {{marca}}">
+				</figure>
+				<div class="nombre_producto">
+	                <div class="estilo">{{cate}} - {{estilo}}</div>
+	                <div class="nombre">{{nombre}} ({{color}})</div>
+	            </div>
+	            <div class="precios">
+	                {%if en_oferta %}
+	                <span class="old_precio"><s>S/. {{precio}}</s></span>
+	                {%endif%}
+	                <span class="precio {%if en_oferta%}en_oferta{% endif %}">S/. {{precio_venta}}</span>
+	            </div>
+	        </a>
+	        <div class="estrellas">
+	            <span data-valor="1" class="glyphicon glyphicon-star"></span>
+	            <span data-valor="2" class="glyphicon glyphicon-star"></span>
+	            <span data-valor="3" class="glyphicon glyphicon-star"></span>
+	            <span data-valor="4" class="glyphicon glyphicon-star"></span>
+	            <span data-valor="5" class="glyphicon glyphicon-star-empty"></span>
+	        </div>
+		</div>
       </script>
 {% endverbatim %}

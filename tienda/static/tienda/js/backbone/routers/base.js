@@ -24,14 +24,6 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	producto_single:function (producto) {
 		var modelo = new Loviz.Models.Producto_Single();
 		modelo.buscar(producto);
-		
-		/*
-		window.app.slug = 'producto_single';
-		if (window.views.producto_single === undefined) {
-			window.views.producto_single = new Loviz.Views.Producto_single();
-		}
-		window.views.producto_single.render();
-		*/
 	},
 	notFound:function () {
 		console.log('Estamos en una pagina vacia')

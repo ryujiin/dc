@@ -50,3 +50,10 @@ class Producto_singleView(APIView):
 		producto = self.get_object()
 		serializer = ProductoSingleSereializer(producto)
 		return Response(serializer.data,status=status.HTTP_200_OK)
+
+class LovedViewsets(viewsets.ModelViewSet):
+	permission_classes = (IsAuthenticated,)
+	serializer_class = LovedSerializer
+
+	def get_queryset(self):
+		return Loved.objects.filter(usuario=self.request.user)

@@ -11,6 +11,7 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register(r'catalogo', views.CatalogoViewsets,'catalogo')
 router.register(r'categoria', views.CategoriaViewsets,'categorias')
+router.register(r'favoritos', views.LovedViewsets,'favoritos')
 router.register(r'producto', views.Producto_singleViewsets,'producto')
 router.register(r'color', views.ColorViewsets,'Color')
 router.register(r'tienda/sliderhome', TiendaViews.SliderHomeViewsets,'sliderhome')
@@ -21,6 +22,8 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'django_project.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
+    url(r'^api/cliente/', include('cliente.urls')),    
+    url(r'^api/carro/', include('cesta.urls')),    
     url(r'^api/', include(router.urls)),
     url(r'^oficina/',include('oficina.urls')),
     url(r'^admin/', include(admin.site.urls)),

@@ -43,9 +43,12 @@ INSTALLED_APPS = (
     'rest_framework',
     'sorl.thumbnail',
     #mis apps
+    'cesta',
+    'cliente',
     'catalogo',
     'oficina',
     'tienda',
+    'ubigeo',
 )
 
 MIDDLEWARE_CLASSES = (

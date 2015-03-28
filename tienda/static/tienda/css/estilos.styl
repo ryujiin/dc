@@ -4,52 +4,101 @@ f_cusrsiva = 'Great Vibes', cursive;
 
 color1 = #F7727A
 color2 = #2dbab2
-
-a
-	color #111
-	text-decoration none
-	&:hover
+aguamarina = #60CCC4
+body
+	a
 		color #111
-.contenedor
-	width 1200px
-	margin 0 auto
-.menu
-	font-family f_imprenta
-	text-transform uppercase
-	&.navegador
-		font-size 1.1em
-.main_menu
-	.menu.enlinea
-		a
-			padding 25px 20px 10px
-.logo
-	font-family f_cusrsiva
-	a:hover
 		text-decoration none
-//Estructuras
-.head_main
-	border-bottom 1px solid #f4f4f4
-	border-top 1px solid #f4f4f4
-	.row
-		width 900px
+		&:hover
+			color #111
+	.contenedor
+		max-width 1250px
 		margin 0 auto
-.head_top
-	.menu.enlinea
-		li
-			a
-				padding 5px 10px
-				border-right 1px solid #f4f4f4
-.menu
-	li
-		list-style none
-	&.enlinea
-		margin 0
+	.contraste1
+		background #111
+		color #fff
+	.enlinea
+		display inline-block
+	.text_imprenta
+		font-family f_imprenta
+		text-transform uppercase
+	.text_cursiva
+		font-family f_cusrsiva
+	.visible
+		display block!important
+	.invisible
+		display none
+	.btn_facebook
+		background-color #3a5795
+		border-bottom 1px solid #133783
+		box-shadow 0 2px 2px -2px rgba(0, 0, 0, .52)
+		color #fff
+		font-family 'Helvetica Neue', Helvetica, Arial, 'lucida grande',tahoma,verdana,arial,sans-serif
+		text-transform initial
+	.menu
+		font-family f_imprenta
+		text-transform uppercase
 		padding 0
-		li
-			display inline-block
+		margin 0
+		&.navegador
+			font-size 1.1em
+		
+	.main_menu
+		.menu.enlinea
 			a
+				padding 25px 20px 10px
+	.logo
+		font-family f_cusrsiva
+		a:hover
+			text-decoration none
+	//Estructuras
+	.head_main
+		border-bottom 1px solid #f4f4f4
+		border-top 1px solid #f4f4f4
+		.row
+			width 900px
+			margin 0 auto
+	.head_top
+		.menu.enlinea
+			li
+				a
+					padding 5px 10px
+					border-right 1px solid #f4f4f4
+	.menu
+		li
+			list-style none
+		&.enlinea
+			margin 0
+			padding 0
+			li
 				display inline-block
-				padding 3px 5px
+				a
+					display inline-block
+					padding 3px 5px
+.icono_loved
+	position relative
+	font-family f_imprenta
+	top 5px
+	right 10px
+	.icono
+		cursor pointer
+		&:hover
+			color aguamarina
+		&.checkin
+			color aguamarina
+	.favoritos
+		.cartelicono
+			width 200px
+			right 5px
+		
+.cartel_flotante
+	font-size 1.2em
+	position absolute
+	background-color #ECECEC
+	border-top 3px solid #111
+	box-shadow 0px 2px 4px rgba(0,0,0,0.5)
+	display none
+	
 .main-bottom
 	background #fafafa
 	text-align center
@@ -77,7 +126,12 @@ a
 				border-left 3px solid #333
 .productos
 	.producto
+		position relative
 		text-align center
+		border 1px solid #fff
+		&:hover
+			border 1px solid #f4f4f4
+			box-shadow 0px 0px 4px rgba(0,0,0,0.5)
 		img
 			width 100%
 		.nombre_producto
@@ -114,9 +168,17 @@ a
 		width 300px
 		margin 10px auto
 		text-align center
+		.addcart
+			text-transform uppercase
+			&:hover
+				background-color #468847
+				border-color #3d773e
+				color #fff
+						
 		button
 			width 100%
 			margin 10px 0
+		
 	.titulo
 		margin 5px 0
 	.precios_single
@@ -161,7 +223,7 @@ a
 		font-size 1.8em
 	h4.subtitulo
 		font-size 1.1em
-		text-align center		
+		text-align center
 //footer
 footer
 	background #111
@@ -204,3 +266,39 @@ footer
 		width 100%
 		background #fff
 		z-index 2
+#usuario_mini
+	position relative
+	width 100px
+	&:hover
+		.caja_login
+			display block
+			opacity 1	
+	.caja_login
+		display none
+		opacity 0
+		width 600px
+		position absolute
+		left -520px
+		z-index 2
+		background #fff
+		border-top 4px solid #111
+		box-shadow 0px 2px 3px rgba(0,0,0,0.5)
+		padding-bottom 10px
+		transition all 1s ease-out
+		&:hover
+			display block
+			opacity 1
+		&.miniuser
+			width 100px
+			left 0
+			
+		form
+			margin-bottom 10px
+		label
+			font-family "Helvetica Neue",Helvetica,Arial,sans-serif
+			text-transform initial
+		input
+			font-family "Helvetica Neue",Helvetica,Arial,sans-serif
+.caja
+	&.borde_top
+		border-top 1px solid

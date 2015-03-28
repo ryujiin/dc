@@ -44,6 +44,10 @@ class ProductoSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Producto
 
+class LovedSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Loved
+
 class ColorSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Color
