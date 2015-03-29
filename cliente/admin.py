@@ -2,7 +2,7 @@ from django.contrib import admin
 from models import *
 
 class ComentarioAdmin(admin.ModelAdmin):
-	list_display = ('id','usuario','creado','get_usuario_id')
+	list_display = ('id','usuario','creado','producto','valoracion')
 
 class DireccionAdmin(admin.ModelAdmin):
 	list_display = ('id','usuario','departamento','provincia','distrito','direccion')

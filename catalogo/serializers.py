@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from models import *
+from cliente.models import Comentario
 
 class ProductoListaSerializer(serializers.ModelSerializer):
 	marca = serializers.CharField(read_only=True)
@@ -11,9 +12,11 @@ class ProductoListaSerializer(serializers.ModelSerializer):
 	estilo = serializers.SerializerMethodField()
 	cate = serializers.SerializerMethodField()
 	genero = serializers.SerializerMethodField()
+	valoracion = serializers.SerializerMethodField()
+	num_comentarios=serializers.SerializerMethodField()
 	class Meta:
 		model=Producto
-		fields=('id','nombre','full_name','slug','marca','color','categorias','thum','precio','precio_venta','en_oferta','activo','cate','estilo','genero')
+		fields=('id','nombre','full_name','slug','marca','color','categorias','thum','precio','precio_venta','en_oferta','activo','cate','estilo','genero','valoracion','num_comentarios')
 
 	def get_thum(self,obj):
 		imagen = obj.get_thum()
@@ -39,6 +42,20 @@ class ProductoListaSerializer(serializers.ModelSerializer):
 	def get_genero(self,obj):
 		genero = obj.get_genero()
 		return genero
+
+	def get_valoracion(self,obj):
+		valoraciones = Comentario.objects.filter(producto=obj.id)
+		num = Comentario.objects.filter(producto=obj.id).count()
+		valor = 0.0
+		valoracion = 0
+		for varia in valoraciones:
+			valor = valor+varia.valoracion
+		if num!=0:
+			valoracion = valor/num
+		return valoracion
+
+	def get_num_comentarios(self,obj):
+		return Comentario.objects.filter(producto=obj.id).count()
 
 class ProductoSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -123,11 +140,14 @@ class ProductoSingleSereializer(serializers.ModelSerializer):
 	cate = serializers.SerializerMethodField()
 	genero = serializers.SerializerMethodField()
 
+	valoracion = serializers.SerializerMethodField()
+	num_comentarios=serializers.SerializerMethodField()
+
 	class Meta:
 		model = Producto
 		fields = ('id','nombre','full_name','marca','color','slug','activo','descripcion','thum',
 				'en_oferta','precio','precio_venta',
-				'imagenes_producto','variaciones','parientes','video','detalles','cate','estilo','genero')
+				'imagenes_producto','variaciones','parientes','video','detalles','cate','estilo','genero','valoracion','num_comentarios')
 
 	def get_thum_img(self,obj):
 		thum = obj.get_thum().url
@@ -155,3 +175,17 @@ class ProductoSingleSereializer(serializers.ModelSerializer):
 	def get_genero(self,obj):
 		genero = obj.get_genero()
 		return genero
+
+	def get_valoracion(self,obj):
+		valoraciones = Comentario.objects.filter(producto=obj.id)
+		num = Comentario.objects.filter(producto=obj.id).count()
+		valor = 0.0
+		valoracion = 0
+		for varia in valoraciones:
+			valor = valor+varia.valoracion
+		if num!=0:
+			valoracion = valor/num
+		return valoracion
+
+	def get_num_comentarios(self,obj):
+		return Comentario.objects.filter(producto=obj.id).count()

@@ -16,7 +16,7 @@ Loviz.Views.Producto_single = Backbone.View.extend({
         var html = this.template(album);
         this.$el.html(html);
         this.generar_galeria();
-
+        this.add_estrellas();
     },
     aparecer:function (e) {
         if (e!=='producto_single') {
@@ -33,5 +33,9 @@ Loviz.Views.Producto_single = Backbone.View.extend({
     talla_seleccionada:function (e) {
         this.$('.precios_single .variacion').removeClass('visible');
         this.$('.precios_single .'+e.target.value).addClass('visible');
+    },
+    add_estrellas:function () {
+        var estrellas = new Loviz.Views.Estrellas({model:this.model});
+        this.$('.estrellas').append(estrellas.$el);
     }
 });

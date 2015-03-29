@@ -14,6 +14,7 @@ Loviz.Views.Producto = Backbone.View.extend({
         var html = this.template(album);
         this.$el.html(html);
         this.add_loved_icono();
+        this.add_estrellas();
         return this;
     },
     navegar_producto : function () {
@@ -30,4 +31,8 @@ Loviz.Views.Producto = Backbone.View.extend({
             icono.favorito_check();
         };
     },
+    add_estrellas:function () {
+        var estrellas = new Loviz.Views.Estrellas({model:this.model});
+        this.$('.estrellas').append(estrellas.$el);
+    }
 });

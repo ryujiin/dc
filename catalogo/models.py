@@ -4,7 +4,6 @@ from django.template.defaultfilters import slugify
 from sorl.thumbnail import get_thumbnail
 from django.contrib.auth.models import User as User
 
-
 # Create your models here.
 class Producto(models.Model):
 	nombre = models.CharField(max_length=120,blank=True,null=True)
