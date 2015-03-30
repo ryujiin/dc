@@ -1,4 +1,4 @@
-Loviz.Views.Ingresar = Backbone.View.extend({
+Loviz.Views.Mini_user = Backbone.View.extend({
     el:$('#usuario_mini'),
     template: swig.compile($("#usuario_mini_template").html()),    
     events: {

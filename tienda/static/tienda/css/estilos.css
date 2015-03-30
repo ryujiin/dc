@@ -14,7 +14,7 @@ body .main_menu .menu.enlinea a{padding:25px 20px 10px}
 body .logo{font-family:'Great Vibes',cursive;}
 body .logo a:hover{text-decoration:none}
 body .head_main{border-bottom:1px solid #f4f4f4;border-top:1px solid #f4f4f4;}
-body .head_main .row{width:900px;margin:0 auto}
+body .head_main .row{width:900px;margin:0 auto;position:relative}
 body .head_top .menu.enlinea li a{padding:5px 10px;border-right:1px solid #f4f4f4}
 body .menu li{list-style:none}
 body .menu.enlinea{margin:0;padding:0;}
@@ -32,6 +32,11 @@ body .menu.enlinea li a{display:inline-block;padding:3px 5px}
 .main-bottom .newsletter .borde-newsletter .caja_text{display:inline-block;width:250px;font-size:1.2em}
 .main-bottom .newsletter .borde-newsletter input{border:none;outline:none;width:90%}
 .main-bottom .newsletter .borde-newsletter .iconos-newsletter{display:inline-block;width:40px;padding:5px;border-left:3px solid #333}
+#mini_carro{font-family:'Pathway Gothic One',sans-serif;position:absolute;top:25px;right:0;}
+#mini_carro a{position:relative;}
+#mini_carro a:hover{text-decoration:none;opacity:.8}
+#mini_carro .icono{color:#333;font-size:20px}
+#mini_carro .numero{position:absolute;top:-10px;right:-20px;color:#fff;display:inline-block;width:20px;text-align:center;background-color:#333;border-radius:10px}
 .productos .producto{position:relative;text-align:center;border:1px solid #fff;}
 .productos .producto:hover{border:1px solid #f4f4f4;box-shadow:0 0 4px rgba(0,0,0,0.5)}
 .productos .producto img{width:100%}

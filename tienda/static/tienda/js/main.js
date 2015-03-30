@@ -2,14 +2,13 @@ $(document).ready(function(){
 	console.log('entienda');
 
     window.routers.base =  new Loviz.Routers.Base();
-    window.views.tienda = new Loviz.Views.Tienda();
 
     window.views.producto_single = new Loviz.Views.Producto_single({
         model:new Loviz.Models.Producto_Single()
     })
     //Modelos
     window.models.usuario = new Loviz.Models.Usuario();    
-    //window.models.carro = new Loviz.Models.Carro();    
+    window.models.carro = new Loviz.Models.Carro();    
 
     //Colleciones
     window.collections.sliderHome = new Loviz.Collections.SliderHomes();
@@ -18,16 +17,26 @@ $(document).ready(function(){
     window.collections.favoritos = new Loviz.Collections.Favoritos();
 
     //Views
-    window.views.user_ingresar = new Loviz.Views.Ingresar({model:window.models.usuario});
 
     window.collections.sliderHome.fetch().done(function () {
         window.collections.categorias.fetch().done(function () {
-            window.views.navegador = new Loviz.Views.Navegador();
+            iniciar_vistas();
             Backbone.history.start({
                 pushState:true,
             });
         })
-    })
+    });
+
+    function iniciar_vistas () {
+        window.views.user_ingresar = new Loviz.Views.Mini_user({model:window.models.usuario});
+        window.views.tienda = new Loviz.Views.Tienda();
+        window.views.navegador = new Loviz.Views.Navegador();
+        window.views.mini_carro = new Loviz.Views.Mini_carro({
+            model:window.models.carro
+        });
+    }
+
+
     //Funcion para el CRF
     function getCookie(name){
         var cookieValue = null;

@@ -43,6 +43,8 @@
 						<li><a class="link" href="/">Novedades</a></li>
 					</ul>
 				</div>
+				<div id="mini_carro"></div>
+
 			</div>
 		</div>
 	</header>
@@ -138,6 +140,7 @@
 {% endblock %}
 
 {% block templatesjs %}
+  {% include 'tiendajs/carro_tlp_js.html' %}
   {% include 'tiendajs/catalogo_tlp_js.html' %}
   {% include 'tiendajs/tienda_tlp_js.html' %}
   {% include 'tiendajs/productosingle_tlp_js.html' %}
@@ -147,6 +150,7 @@
 {% block backbonescript %}
 	<script src="{% static "tienda/js/vendor/owl.carousel.min.js" %}"></script>	
 	<script src="{% static "tienda/js/vendor/jquery.zoom.js" %}"></script>	
+	<script src="{% static "tienda/js/vendor/jquery.storageapi.min.js" %}"></script>	
 
 	<script src="{% static "tienda/js/init.js" %}"></script>
 	
@@ -171,6 +175,8 @@
 	<script src="{% static "tienda/js/backbone/collections/lineas.js" %}"></script>
 	
 	<!--Vistas-->
+	<script src="{% static "tienda/js/backbone/views/carro/mini_carro.js" %}"></script>	
+
 	<script src="{% static "tienda/js/backbone/views/catalogo/catalogo.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/catalogo/categorias.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/catalogo/categoria_link.js" %}"></script>
@@ -181,7 +187,7 @@
 	<script src="{% static "tienda/js/backbone/views/producto_single/favorito_icono.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/producto_single/producto_single.js" %}"></script>	
 	
-	<script src="{% static "tienda/js/backbone/views/usuario/ingresar.js" %}"></script>	
+	<script src="{% static "tienda/js/backbone/views/usuario/mini_usuario.js" %}"></script>	
 
 	<script src="{% static "tienda/js/backbone/views/tienda/breadcrumb.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/tienda/navegador.js" %}"></script>
