@@ -35,6 +35,8 @@ body
 	a:hover
 		text-decoration none
 		opacity 0.8
+	.total
+		display none
 	.icono
 		font-size 1.5em
 		color #333
@@ -50,7 +52,9 @@ body
 		border-radius 10px
 #navegador
 	position relative
-	transition all 1s linear
+	transition-property top, box-shadow
+	transition-duration: 1s
+	transition-timing-function : linear
 	&.menu-fijo
 		box-shadow 0px 0px 8px 0px rgba(0,0,0,0.4)
 		position fixed
@@ -81,3 +85,7 @@ body
 	.item
 		img
 			width 100%
+#slider_home
+	margin 10px
+	img
+		width 100%
