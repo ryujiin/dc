@@ -30,6 +30,9 @@ Loviz.Views.Producto_single = Backbone.View.extend({
         var galeria = new Loviz.Views.Galeria_producto_single({
             model:this.model
         });
+        var galeria_movil = new Loviz.Views.Galeria_movil({
+            model:this.model
+        })
     },
     talla_seleccionada:function (e) {
         this.$('.precios_single .variacion').removeClass('visible');

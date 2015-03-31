@@ -13,7 +13,10 @@
                 </li>
                 {%endif%}
               </ul>
-              <div id="producto_galeria" class="tabs-seccion no_movil"></div>
+              <div id="producto_galeria" class="tabs-seccion">
+                <div id="producto_galeria_destok"></div>
+                <div id="producto_galeria_movil"></div>
+              </div>
               {%if video%}
               <div id="producto_video" class="tabs-seccion">
                 <iframe width="640" height="360" src="//www.youtube.com/embed/{{video}}" frameborder="0" allowfullscreen></iframe>
@@ -126,6 +129,14 @@
             {%endif%}
           {%endfor%}
         </div>
+      </script>
+
+      <script id="galeria_movil_template" type="text/template">
+        {%for img in imagenes_producto%}
+          <div class="item">
+            <img class="imagen_normal" src="{{img.imagen}}" alt="{{full_name}}">          
+          </div>
+        {%endfor%}
       </script>
 
       <script id="favoritos_template" type="text/template">

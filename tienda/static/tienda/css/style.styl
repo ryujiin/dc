@@ -1,0 +1,83 @@
+f_imprenta ='Pathway Gothic One', sans-serif;
+f_cusrsiva = 'Great Vibes', cursive;
+
+
+rojito = #F7727A
+aguamarina = #60CCC4
+
+body
+	a
+		color #111
+		text-decoration none
+		&:hover
+			text-decoration underline
+			color #111
+		&:visited,&:link,&:active
+			color #111
+
+.head_top
+	display none
+.menu
+	font-family f_imprenta
+	text-transform uppercase
+	padding 0
+	margin 0	
+	&.enlinea
+		li
+			display inline-block
+	li
+		list-style none
+#mini_carro
+	position absolute
+	top 30px
+	right 30px
+	font-family f_imprenta
+	a:hover
+		text-decoration none
+		opacity 0.8
+	.icono
+		font-size 1.5em
+		color #333
+	.numero
+		position absolute
+		top -10px
+		right -20px
+		color #fff
+		display inline-block
+		width 20px
+		text-align center
+		background-color #333
+		border-radius 10px
+#navegador
+	position relative
+	transition all 1s linear
+	&.menu-fijo
+		box-shadow 0px 0px 8px 0px rgba(0,0,0,0.4)
+		position fixed
+		top 0
+		width 100%
+		background #fff
+		z-index 2
+		.logo
+			h1
+				margin 5px
+				font-size 1.5em
+	.logo
+		font-family f_cusrsiva
+		text-align center
+		a
+			&:hover,&:visited,&:link,&:active
+				text-decoration none
+	.navegador
+		text-align center
+		li
+			a
+				display inline-block
+				padding 2px 25px
+
+#producto_galeria_destok
+	display none
+#producto_galeria_movil
+	.item
+		img
+			width 100%
