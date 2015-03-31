@@ -9,6 +9,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	initialize : function () {
   	},
 	root : function () {
+		window.app.slug='home';
 		if (window.views.slider_home===undefined) {
 			window.views.slider_home = new Loviz.Views.Sliders_Home({
 				collection : window.collections.sliderHome
