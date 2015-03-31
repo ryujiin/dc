@@ -76,6 +76,8 @@ body
 				a
 					display inline-block
 					padding 3px 5px
+#carro
+	display none
 .icono_loved
 	position relative
 	font-family f_imprenta
@@ -200,7 +202,16 @@ body
 				background-color #468847
 				border-color #3d773e
 				color #fff
-						
+		.talla_form
+			position relative
+			.texto_ayuda
+				display none
+				position: absolute;
+				left: -110px;
+				width: 100px;
+				border: 3px solid #ddd;
+				font-family: f_imprenta
+				box-shadow: 0px 0px 8px rgba(0,0,0,0.5);						
 		button
 			width 100%
 			margin 10px 0
@@ -333,3 +344,21 @@ footer
 .caja
 	&.borde_top
 		border-top 1px solid
+#linea_addcart
+	font-family f_imprenta
+	.imagen
+		img
+			width 100%
+	.botones
+		border-top 1px solid #f4f4f4
+		margin 10px 0px
+		padding 10px 0px
+		.btn
+			width 100%
+	.otros
+		h4
+			padding 25px 0
+		.subtitulo
+			font-size 0.8em
+		.titulo
+			font-size 1.1em

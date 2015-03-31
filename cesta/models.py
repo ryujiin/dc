@@ -56,16 +56,16 @@ class Carro(models.Model):
 
 	def envio_carro(self):
 		envio = 0
-		if self.propietario:
-			direcciones = Direccion.objects.filter(usuario=self.propietario)[:1]
-			for direccion in direcciones:
-				#este precio es para lima
-				if direccion.provincia.id==28692:
-					envio = 6
-				else:
-					envio = 13
-		if self.subtotal_carro()>60:
-			envio = 'Envio Gratis!'
+		#if self.propietario:
+			#direcciones = Direccion.objects.filter(usuario=self.propietario)[:1]
+			#for direccion in direcciones:
+				##este precio es para lima
+				#if direccion.provincia.id==28692:
+					#envio = 6
+				#else:
+					#envio = 13
+		#if self.subtotal_carro()>60:
+			#envio = 'Envio Gratis!'
 		return envio
 
 	def save(self, *args, **kwargs):

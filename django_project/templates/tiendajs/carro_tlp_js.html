@@ -8,4 +8,76 @@
 		<span class="numero">{{lineas}}</span>
 	</a>
 </script>
+
+<script id="carro_template" type="text/template">
+	<div class="contenedor">
+		<div class="container-fluid">
+			<div class="row">
+				<h2 class="titulo">Su Carrito de Compras</h2>
+				<div class="lineas">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Producto</th>
+								<th>Detalles</th>
+								<th></th>
+								<th>Precio</th>
+								<th>Cantidad</th>
+								<th>Total</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody id="lineas_carro">							
+						</tbody>
+					</table>
+					
+				</div>
+				<table id="carro_detalle" class="table">
+					<tbody>
+						<tr>
+							<td>SubTotal:</td>
+							<td>S/.{{total}}</td>
+						</tr>
+						<tr>
+							<td>Gasto de Envio:</td>
+							<td>S/. 0.00</td>
+						</tr>
+						<tr>
+							<td>Total:</td>
+							<td>S/.{{total}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script id="carro_vacio_template" type="text/template">
+	<div class="contenedor text-center">
+		<h2 class="titulo">Su carrito de compras esta Vacio</h2>
+		<p>0 Articulos en su carro <span class="icon-cart3"></span></p>	
+	</div>	
+</script>
+
+<script id="lineas_carro_template" type="text/template">
+	<td>
+		<img src="{{thum}}" alt="{{full_name}}">
+	</td>
+	<td>
+		{{full_name}}
+	</td>
+	<td>
+		In Stock
+	</td>
+	<td>
+		S/.{{precio}}
+	</td>
+	<td>
+		{{cantidad}}
+	</td>
+	<td>
+		S/.{{subtotal}}
+	</td>
+</script>
 {% endverbatim %}

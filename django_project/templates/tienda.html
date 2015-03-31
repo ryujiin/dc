@@ -44,7 +44,6 @@
 					</ul>
 				</div>
 				<div id="mini_carro"></div>
-
 			</div>
 		</div>
 	</header>
@@ -54,6 +53,7 @@
 			</div>
 			<div id="catalogo"></div>
 			<div id="producto_single"></div>
+			<div id="carro"></div>
 		</section>
 		<section class="main-bottom">
 			<div class="newsletter">
@@ -137,6 +137,7 @@
 			</div>
 		</div>
 	</footer>
+	<div id="linea_addcart" class="modal face" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
 {% endblock %}
 
 {% block templatesjs %}
@@ -175,7 +176,10 @@
 	<script src="{% static "tienda/js/backbone/collections/lineas.js" %}"></script>
 	
 	<!--Vistas-->
+	<script src="{% static "tienda/js/backbone/views/carro/carro.js" %}"></script>	
+	<script src="{% static "tienda/js/backbone/views/carro/lineas_carro.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/carro/mini_carro.js" %}"></script>	
+	<script src="{% static "tienda/js/backbone/views/carro/linea_add_cart.js" %}"></script>	
 
 	<script src="{% static "tienda/js/backbone/views/catalogo/catalogo.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/catalogo/categorias.js" %}"></script>

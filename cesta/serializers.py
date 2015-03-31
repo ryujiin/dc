@@ -7,10 +7,10 @@ class CarroSerializer(serializers.ModelSerializer):
 	lineas = serializers.SerializerMethodField()
 	total = serializers.SerializerMethodField()
 	subtotal = serializers.SerializerMethodField()
-	envio = serializers.SerializerMethodField()
+	#envio = serializers.SerializerMethodField()
 	class Meta:
 		model = Carro
-		fields = ('id','propietario','estado','sesion_carro','lineas','total','subtotal','envio')
+		fields = ('id','propietario','estado','sesion_carro','lineas','total','subtotal')
 
 	def get_lineas(self,obj):
 		lineas = obj.num_lineas()

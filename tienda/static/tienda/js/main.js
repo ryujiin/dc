@@ -34,6 +34,9 @@ $(document).ready(function(){
         window.views.mini_carro = new Loviz.Views.Mini_carro({
             model:window.models.carro
         });
+        window.views.carro = new Loviz.Views.Carro({
+            model:window.models.carro
+        });
     }
 
 

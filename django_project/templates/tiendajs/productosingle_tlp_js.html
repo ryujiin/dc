@@ -139,4 +139,50 @@
           <a href="">Ver mis Favoritos</a>
         </div>
       </script>
+
+      <script id="linea_addcart_template" type="text/template">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="container-fluid">
+                <div class="row">
+                  <h4 class="text-center text-uppercase">Agregado al carrito</h4>
+                  <div class="col-md-4 imagen">
+                    <img src="{{thum}}" alt="{{full_name}}">
+                  </div>
+                  <div class="col-md-8">
+                      <h4>{{full_name}}</h4>
+                      <div class="atributo atributo-color">
+                        <label for="">Color:</label>
+                        <span>{{color}}</span>
+                      </div>
+                      <div class="atributo atributo-talla">
+                        <label for="">Talla:</label>
+                        <span>{{talla}}</span>
+                      </div>
+                      <div class="atributo atributo-precio">
+                        <label for="">Precio</label>
+                        <span>{{precio}}</span>
+                      </div>              
+                  </div>
+                  </div>
+                  <div class="botones text-uppercase">
+                    <div class="col-md-6">
+                      <a class="btn btn-default contraste1" href="#" role="button">Ver el Carro y pagar</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a class="btn btn-default blanco-btn" href="#" role="button">Continuar Compras</a>
+                    </div> 
+                    <div class="col-md-12 otros">
+                      <h4 class="text-uppercase text-center">
+                        <span class="subtitulo">Otros Productos</span></br>
+                        <span class="titulo">Que te Gustarian!</span>
+                      </h4>
+                    </div>
+                  </div>            
+                </div>
+              </div>
+            </div>
+          </div>
+      </script>
+        
 {% endverbatim %}
