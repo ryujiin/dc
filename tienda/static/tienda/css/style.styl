@@ -21,12 +21,19 @@ body
 	font-family f_imprenta
 	text-transform uppercase
 	padding 0
-	margin 0	
-	&.enlinea
-		li
-			display inline-block
+	margin 0
 	li
 		list-style none
+.menu_movil
+	font-family f_imprenta
+	text-transform uppercase
+	position absolute
+	top 20px
+	left 10px
+	.btn
+		padding 4px 8px
+		&:hover
+			background-color #fff
 #mini_carro
 	position absolute
 	top 30px
@@ -55,6 +62,7 @@ body
 	transition-property top, box-shadow
 	transition-duration: 1s
 	transition-timing-function : linear
+	border-bottom 1px solid #f4f4f4
 	&.menu-fijo
 		box-shadow 0px 0px 8px 0px rgba(0,0,0,0.4)
 		position fixed
@@ -62,22 +70,22 @@ body
 		width 100%
 		background #fff
 		z-index 2
-		.logo
-			h1
-				margin 5px
-				font-size 1.5em
 	.logo
 		font-family f_cusrsiva
 		text-align center
 		a
 			&:hover,&:visited,&:link,&:active
 				text-decoration none
-	.navegador
-		text-align center
-		li
-			a
-				display inline-block
-				padding 2px 25px
+	.main_menu
+		display none
+		.navegador
+			text-align center
+			li
+				border-bottom 1px dotted #ddd
+				a
+					display inline-block
+					width 100%
+					padding 5px 25px
 
 #producto_galeria_destok
 	display none

@@ -3,20 +3,23 @@ body a:hover{text-decoration:underline;color:#111}
 body a:visited,body a:link,body a:active{color:#111}
 .head_top{display:none}
 .menu{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;padding:0;margin:0;}
-.menu.enlinea li{display:inline-block}
 .menu li{list-style:none}
+.menu_movil{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;position:absolute;top:20px;left:10px;}
+.menu_movil .btn{padding:4px 8px;}
+.menu_movil .btn:hover{background-color:#fff}
 #mini_carro{position:absolute;top:30px;right:30px;font-family:'Pathway Gothic One',sans-serif;}
 #mini_carro a:hover{text-decoration:none;opacity:.8}
 #mini_carro .total{display:none}
 #mini_carro .icono{font-size:1.5em;color:#333}
 #mini_carro .numero{position:absolute;top:-10px;right:-20px;color:#fff;display:inline-block;width:20px;text-align:center;background-color:#333;border-radius:10px}
-#navegador{position:relative;transition-property:top,box-shadow;transition-duration:1s;transition-timing-function:linear;}
-#navegador.menu-fijo{box-shadow:0 0 8px 0 rgba(0,0,0,0.4);position:fixed;top:0;width:100%;background:#fff;z-index:2;}
-#navegador.menu-fijo .logo h1{margin:5px;font-size:1.5em}
+#navegador{position:relative;transition-property:top,box-shadow;transition-duration:1s;transition-timing-function:linear;border-bottom:1px solid #f4f4f4;}
+#navegador.menu-fijo{box-shadow:0 0 8px 0 rgba(0,0,0,0.4);position:fixed;top:0;width:100%;background:#fff;z-index:2}
 #navegador .logo{font-family:'Great Vibes',cursive;text-align:center;}
 #navegador .logo a:hover,#navegador .logo a:visited,#navegador .logo a:link,#navegador .logo a:active{text-decoration:none}
-#navegador .navegador{text-align:center;}
-#navegador .navegador li a{display:inline-block;padding:2px 25px}
+#navegador .main_menu{display:none;}
+#navegador .main_menu .navegador{text-align:center;}
+#navegador .main_menu .navegador li{border-bottom:1px dotted #ddd;}
+#navegador .main_menu .navegador li a{display:inline-block;width:100%;padding:5px 25px}
 #producto_galeria_destok{display:none}
 #producto_galeria_movil .item img{width:100%}
 #slider_home{margin:10px;}
