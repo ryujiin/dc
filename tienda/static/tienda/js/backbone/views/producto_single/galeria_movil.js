@@ -19,7 +19,6 @@ Loviz.Views.Galeria_movil = Backbone.View.extend({
 	},
 	crear_galeria:function () {
 		this.$el.owlCarousel({
-			navigation : true, // Show next and prev buttons
 		    slideSpeed : 300,
 		    paginationSpeed : 400,
 		    singleItem:true
