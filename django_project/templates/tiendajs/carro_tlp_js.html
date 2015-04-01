@@ -14,23 +14,12 @@
 		<div class="container-fluid">
 			<div class="row">
 				<h2 class="titulo">Su Carrito de Compras</h2>
-				<div class="lineas">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Producto</th>
-								<th>Detalles</th>
-								<th></th>
-								<th>Precio</th>
-								<th>Cantidad</th>
-								<th>Total</th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody id="lineas_carro">							
-						</tbody>
-					</table>
-					
+				<div class="carro_action">
+					<button class="btn contraste1 btn-default">
+						Pagar
+					</button>
+				</div>
+				<div id="lineas_carro">					
 				</div>
 				<table id="carro_detalle" class="table">
 					<tbody>
@@ -60,7 +49,7 @@
 	</div>	
 </script>
 
-<script id="lineas_carro_template" type="text/template">
+<script id="lineas_carro_template1" type="text/template">
 	<td>
 		<img src="{{thum}}" alt="{{full_name}}">
 	</td>
@@ -79,5 +68,34 @@
 	<td>
 		S/.{{subtotal}}
 	</td>
+</script>
+
+<script id="lineas_carro_template" type="text/template">
+	<div class="linea_imagen">
+		<img src="{{thum}}" alt="{{full_name}}">
+	</div>
+	<div class="linea_detalles">
+		<div class="nombre">{{full_name}}</div>
+		<div class="color">Color: {{color}}</div>
+		<div class="talla">Talla: {{talla}}</div>
+	</div>
+	<div class="linea_precio">
+		<label for="">Precio:</label>
+		S/.{{precio}}
+	</div>
+	<div class="linea_cantidad">
+		<label for="">Cantidad:</label>
+		<span class="mas_produ cant">
+			<span class="icon-arrow-up2 icono"></span>
+		</span>
+		<span class="cantidad">{{cantidad}}</span>
+		<span class="menos_produ cant">
+			<span class="icon-arrow-down2 icono"></span>			
+		</span>
+	</div>
+	<div class="linea_subtotal">
+		<label for="">Total:</label>
+		S/.{{subtotal}}
+	</div>
 </script>
 {% endverbatim %}

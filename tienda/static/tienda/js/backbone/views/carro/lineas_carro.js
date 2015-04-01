@@ -1,5 +1,4 @@
 Loviz.Views.Linea_carro = Backbone.View.extend({
-    tagName: 'tr',
     className: 'linea',
     events: {
     },

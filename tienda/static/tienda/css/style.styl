@@ -14,10 +14,18 @@ body
 			color #111
 		&:visited,&:link,&:active
 			color #111
+	.contenedor
+		margin 0 auto		
+		max-width 420px
 	.enlinea
 		display inline-block
 	.invisible
 		display none
+	.titulo
+		font-family f_imprenta
+		text-transform uppercase
+		text-align center
+		font-size 36px
 	.text_imprenta
 		font-family f_imprenta
 		text-transform uppercase
@@ -28,9 +36,23 @@ body
 	background-color #fff
 	text-transform uppercase
 .btn
-	&.btn_cuadrado
-		border-radius 0
-		
+	border-radius 0
+	transition all 0.2s ease-out
+	outline none
+	&.contraste1
+		background-color #111
+		color #fff
+		text-transform uppercase
+		padding 10px 10px
+		font-family f_imprenta
+		font-size 1.2em
+		&:hover
+			background-color #468847
+			border-color #3d773e
+			color #fff
+	&.contraste2
+		text-transform uppercase
+		color #111
 .cartel_flotante
 	font-size 1.2em
 	position absolute
@@ -44,6 +66,13 @@ body
 		margin 20px 0
 		.btn
 			width 100%
+#carro
+	.carro_action
+		.btn
+			margin 10px 0
+			width 100%
+	.row
+		margin 0
 footer
 	background #111
 	color #fff
@@ -72,6 +101,8 @@ footer
 					&:hover
 						color #fff
 						text-decoration underline
+.form-control
+	border-radius 0
 .head_top
 	display none
 .icono_loved
@@ -89,6 +120,32 @@ footer
 		.cartelicono
 			width 200px
 			right 5px
+#lineas_carro
+	border-bottom 2px solid #f4f4f4
+	.linea
+		border-bottom 1px solid #E4E4E4
+		margin 10px 0
+		padding-bottom 10px
+		font-family f_imprenta		
+		label
+			font-weight normal
+			margin-right 10px
+		.linea_cantidad
+			background-color #f4f4f4
+			padding 8px 20px
+			.cantidad
+				background-color #fff
+				border 1px solid #ddd
+				padding 4px 15px
+			.cant
+				cursor pointer
+		.linea_detalles
+			.nombre
+				text-transform uppercase
+		.linea_imagen
+			img
+				width 100%
+			
 .menu
 	font-family f_imprenta
 	text-transform uppercase
@@ -238,12 +295,7 @@ footer
 		width 300px
 		margin 10px auto
 		text-align center
-		.addcart
-			text-transform uppercase
-			&:hover
-				background-color #468847
-				border-color #3d773e
-				color #fff
+
 		.talla_form
 			position relative
 			.texto_ayuda
