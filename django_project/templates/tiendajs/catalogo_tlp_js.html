@@ -7,12 +7,18 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3">
-					<aside>
-						<div id="categorias" class="refinamiento">							
+					<aside class="refinamiento">
+						<div id="categorias" class="">							
 						</div>
 					</aside>
 				</div>
 				<div class="col-md-9">
+					<div class="refinamiento-nav">
+						<button class="btn btn-default contraste1">
+							Refinar por
+							<span class="icono icon-uniE615"></span>
+						</button>
+					</div>
 					<div class="productos"></div>
 				</div>
 			</div>
@@ -29,7 +35,6 @@
 	</script>
 
 	<script id="producto_lista_template" type="text/template">
-		<div class="producto">
 			<div class="icono_loved pull-right"></div>
 			<a class="link" href="/producto/{{slug}}/">
 				<figure>
@@ -48,7 +53,6 @@
 	        </a>
 	        <div class="estrellas">
 	        </div>
-		</div>
       </script>
 
       <script id="estrellas_template" type="text/template">

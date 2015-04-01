@@ -1,6 +1,10 @@
 body a{color:#111;text-decoration:none;}
 body a:hover{text-decoration:underline;color:#111}
 body a:visited,body a:link,body a:active{color:#111}
+#breadcrumb{background-color:#fff;text-transform:uppercase}
+.cartel_flotante{font-size:1.2em;position:absolute;background-color:#ececec;border-top:3px solid #111;box-shadow:0 2px 4px rgba(0,0,0,0.5);display:none}
+#catalogo .refinamiento-nav{margin:20px 0;}
+#catalogo .refinamiento-nav .btn{width:100%}
 footer{background:#111;color:#fff;padding-top:4em;}
 footer .block_footer h3.menu_titulo{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;font-size:1.35em;padding:5px 0;border-bottom:1px solid #333;cursor:pointer;position:relative;}
 footer .block_footer h3.menu_titulo .icono-menu{position:absolute;top:8px;right:20px}
@@ -9,6 +13,11 @@ footer .block_footer .menu li{margin:5px 0;}
 footer .block_footer .menu li a{color:#fff;}
 footer .block_footer .menu li a:hover{color:#fff;text-decoration:underline}
 .head_top{display:none}
+.icono_loved{position:relative;font-family:'Pathway Gothic One',sans-serif;top:5px;right:10px;}
+.icono_loved .icono{cursor:pointer;}
+.icono_loved .icono:hover{color:#60ccc4}
+.icono_loved .icono.checkin{color:#60ccc4}
+.icono_loved .favoritos .cartelicono{width:200px;right:5px}
 .menu{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;padding:0;margin:0;}
 .menu li{list-style:none}
 .menu_movil{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;position:absolute;top:20px;left:10px;}
@@ -36,5 +45,17 @@ footer .block_footer .menu li a:hover{color:#fff;text-decoration:underline}
 #navegador .main_menu .navegador li a{display:inline-block;width:100%;padding:5px 25px}
 #producto_galeria_destok{display:none}
 #producto_galeria_movil .item img{width:100%}
+.productos .producto{position:relative;text-align:center;border:1px solid #fff;}
+.productos .producto:hover{border:1px solid #f4f4f4;}
+.productos .producto:hover .estrellas{opacity:1}
+.productos .producto a:hover{text-decoration:none}
+.productos .producto img{width:100%}
+.productos .producto .nombre_producto{font-family:'Pathway Gothic One',sans-serif;font-size:1.1em;}
+.productos .producto .nombre_producto .estilo{font-weight:bold;text-transform:uppercase}
+.productos .producto .precios{font-family:'Pathway Gothic One',sans-serif;font-size:1.4em;}
+.productos .producto .precios .en_oferta{color:#f7727a}
+.productos .producto .precios .old_precio{font-size:.8em;margin:0 10px}
+.productos .producto .estrellas{opacity:0;margin:10px 0}
+.refinamiento{display:none}
 #slider_home{margin:10px;}
 #slider_home img{width:100%}

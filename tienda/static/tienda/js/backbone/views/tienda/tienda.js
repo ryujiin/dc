@@ -4,13 +4,14 @@ Loviz.Views.Tienda = Backbone.View.extend({
 		'click .link': 'link_intero',
 		'click header .menu_movil': 'desplegar_menu',
 		'click header .desplegado': 'ocultar_menu',
+
 	},
 	initialize : function () {
 	},
 	link_intero:function (e) {
 		e.preventDefault();
 		var link = e.currentTarget.pathname;
-		
+		this.ocultar_menu();
 		window.routers.base.navigate(link, {trigger:true});
 	},
 	desplegar_menu:function () {

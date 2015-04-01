@@ -21,7 +21,6 @@ Loviz.Views.Sliders_Home = Backbone.View.extend({
 	},
 	add_carrusel:function () {
 		this.$el.owlCarousel({
-		    navigation : true, // Show next and prev buttons
 		    slideSpeed : 300,
 		    paginationSpeed : 400,
 		    singleItem:true

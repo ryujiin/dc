@@ -14,6 +14,21 @@ body
 			color #111
 		&:visited,&:link,&:active
 			color #111
+#breadcrumb
+	background-color #fff
+	text-transform uppercase
+.cartel_flotante
+	font-size 1.2em
+	position absolute
+	background-color #ECECEC
+	border-top 3px solid #111
+	box-shadow 0px 2px 4px rgba(0,0,0,0.5)
+	display none
+#catalogo
+	.refinamiento-nav
+		margin 20px 0
+		.btn
+			width 100%
 footer
 	background #111
 	color #fff
@@ -44,6 +59,21 @@ footer
 						text-decoration underline
 .head_top
 	display none
+.icono_loved
+	position relative
+	font-family f_imprenta
+	top 5px
+	right 10px
+	.icono
+		cursor pointer
+		&:hover
+			color aguamarina
+		&.checkin
+			color aguamarina
+	.favoritos
+		.cartelicono
+			width 200px
+			right 5px
 .menu
 	font-family f_imprenta
 	text-transform uppercase
@@ -148,6 +178,38 @@ footer
 	.item
 		img
 			width 100%
+.productos
+	.producto
+		position relative
+		text-align center
+		border 1px solid #fff
+		&:hover
+			border 1px solid #f4f4f4
+			.estrellas
+				opacity 1
+		a:hover
+			text-decoration none
+		img
+			width 100%
+		.nombre_producto
+			font-family f_imprenta
+			font-size 1.1em
+			.estilo
+				font-weight bold
+				text-transform uppercase
+		.precios
+			font-family f_imprenta
+			font-size 1.4em
+			.en_oferta
+				color #F7727A
+			.old_precio
+				font-size 0.8em
+				margin 0 10px
+		.estrellas
+			opacity 0
+			margin 10px 0
+.refinamiento
+	display none
 #slider_home
 	margin 10px
 	img
