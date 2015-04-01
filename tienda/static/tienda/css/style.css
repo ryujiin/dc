@@ -1,20 +1,34 @@
 body a{color:#111;text-decoration:none;}
 body a:hover{text-decoration:underline;color:#111}
 body a:visited,body a:link,body a:active{color:#111}
+footer{background:#111;color:#fff;padding-top:4em;}
+footer .block_footer h3.menu_titulo{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;font-size:1.35em;padding:5px 0;border-bottom:1px solid #333;cursor:pointer;position:relative;}
+footer .block_footer h3.menu_titulo .icono-menu{position:absolute;top:8px;right:20px}
+footer .block_footer .menu{display:none;text-transform:capitalize;padding:0;}
+footer .block_footer .menu li{margin:5px 0;}
+footer .block_footer .menu li a{color:#fff;}
+footer .block_footer .menu li a:hover{color:#fff;text-decoration:underline}
 .head_top{display:none}
 .menu{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;padding:0;margin:0;}
 .menu li{list-style:none}
 .menu_movil{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;position:absolute;top:20px;left:10px;}
 .menu_movil .btn{padding:4px 8px;}
-.menu_movil .btn:hover{background-color:#fff}
+.menu_movil .btn:hover,.menu_movil .btn:active{background-color:#fff}
 #mini_carro{position:absolute;top:30px;right:30px;font-family:'Pathway Gothic One',sans-serif;}
 #mini_carro a:hover{text-decoration:none;opacity:.8}
 #mini_carro .total{display:none}
 #mini_carro .icono{font-size:1.5em;color:#333}
 #mini_carro .numero{position:absolute;top:-10px;right:-20px;color:#fff;display:inline-block;width:20px;text-align:center;background-color:#333;border-radius:10px}
+.main-bottom{background:#fafafa;text-align:center;padding:3em 0 4em;}
+.main-bottom .newsletter{text-transform:uppercase;font-family:'Pathway Gothic One',sans-serif;}
+.main-bottom .newsletter .borde-newsletter{width:300px;margin:0 auto;border:3px solid #333;background:#fff;}
+.main-bottom .newsletter .borde-newsletter .caja_text{display:inline-block;width:250px;font-size:1.2em}
+.main-bottom .newsletter .borde-newsletter input{border:none;outline:none;width:90%}
+.main-bottom .newsletter .borde-newsletter .iconos-newsletter{display:inline-block;width:40px;padding:5px;border-left:3px solid #333}
 #navegador{position:relative;transition-property:top,box-shadow;transition-duration:1s;transition-timing-function:linear;border-bottom:1px solid #f4f4f4;}
 #navegador.menu-fijo{box-shadow:0 0 8px 0 rgba(0,0,0,0.4);position:fixed;top:0;width:100%;background:#fff;z-index:2}
 #navegador .logo{font-family:'Great Vibes',cursive;text-align:center;}
+#navegador .logo h1{font-size:30px}
 #navegador .logo a:hover,#navegador .logo a:visited,#navegador .logo a:link,#navegador .logo a:active{text-decoration:none}
 #navegador .main_menu{display:none;}
 #navegador .main_menu .navegador{text-align:center;}
