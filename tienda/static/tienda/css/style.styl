@@ -39,17 +39,26 @@ body
 	border-radius 0
 	transition all 0.2s ease-out
 	outline none
+	padding 10px 10px
+	font-family f_imprenta
 	&.contraste1
+		text-transform uppercase		
 		background-color #111
 		color #fff
-		text-transform uppercase
-		padding 10px 10px
-		font-family f_imprenta
 		font-size 1.2em
+		position relative
+		.icon-angle-right
+			position absolute
+			top 13px
+			right 40px
+			display none
 		&:hover
 			background-color #468847
 			border-color #3d773e
 			color #fff
+			.icon-angle-right
+				display block
+				right 45px
 	&.contraste2
 		text-transform uppercase
 		color #111
@@ -120,6 +129,15 @@ footer
 		.cartelicono
 			width 200px
 			right 5px
+#linea_addcart
+	font-family f_imprenta
+	.imagen
+		img
+			width 100%
+	.botones
+		overflow hidden
+		.btn
+			width 100%
 #lineas_carro
 	border-bottom 2px solid #f4f4f4
 	.linea
@@ -292,10 +310,9 @@ footer
 	.estilo
 		padding 0 15px
 	.formulario_producto
-		width 300px
+		width 80%
 		margin 10px auto
 		text-align center
-
 		.talla_form
 			position relative
 			.texto_ayuda
@@ -317,6 +334,8 @@ footer
 					margin 0 10px
 	h1.titulo
 		font-family f_imprenta
+		font-size 30px
+		text-align left
 	h3.subtitulo
 		font-family f_imprenta
 		text-decoration underline
