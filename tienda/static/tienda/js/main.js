@@ -3,9 +3,6 @@ $(document).ready(function(){
 
     window.routers.base =  new Loviz.Routers.Base();
 
-    window.views.producto_single = new Loviz.Views.Producto_single({
-        model:new Loviz.Models.Producto_Single()
-    })
     //Modelos
     window.models.usuario = new Loviz.Models.Usuario();    
     window.models.carro = new Loviz.Models.Carro();    
@@ -31,12 +28,18 @@ $(document).ready(function(){
         window.views.user_ingresar = new Loviz.Views.Mini_user({model:window.models.usuario});
         window.views.tienda = new Loviz.Views.Tienda();
         window.views.navegador = new Loviz.Views.Navegador();
+        window.views.pagar = new Loviz.Views.Pagar({
+            model:window.models.carro
+        });
         window.views.mini_carro = new Loviz.Views.Mini_carro({
             model:window.models.carro
         });
         window.views.carro = new Loviz.Views.Carro({
             model:window.models.carro
         });
+        window.views.producto_single = new Loviz.Views.Producto_single({
+            model:new Loviz.Models.Producto_Single()
+        })
     }
 
 

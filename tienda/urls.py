@@ -6,4 +6,5 @@ urlpatterns = patterns('',
 	url(r'^catalogo/',TiendaView.as_view() , name='catalogo'),
 	url(r'^producto/',TiendaView.as_view() , name='producto_single'),
 	url(r'^carro/',TiendaView.as_view() , name='carro'),
+	url(r'^pagar/',TiendaView.as_view() , name='pagar'),
 )

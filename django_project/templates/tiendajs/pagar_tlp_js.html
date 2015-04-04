@@ -1,0 +1,208 @@
+{% verbatim %}	
+	<script id="pagar_template" type="text/template">
+		<div id="pagar" class="container-fluid">
+			<div class="row">
+				<h2 class="titulo">Pasarela de Pagos</h2>
+				<div class="col-md-8">
+					<div class="linea_progrecion">
+						<div class="paso enlinea identificar" data-estado="id">
+							<span class="paso_number">1</span>
+							<span class="paso_text">Identificacion</span>
+						</div>
+						<div class="paso enlinea envio" data-estado="envio">
+							<span class="paso_number">2</span>
+							<span class="paso_text">Envio</span>
+						</div>
+						<div class="paso enlinea pagar" data-estado="pagar">
+							<span class="paso_number">3</span>
+							<span class="paso_text">Pagar</span>
+						</div>
+					</div>
+					<div id="identificar_user_pagar" class="caja_pagar">
+						<fieldset>
+							<legend>
+								Identificarse
+								<span>"*"<em>requerido</em></span>
+							</legend>
+							<div id="formulario_ingreso">
+								<div class="login-box login-cuenta">
+									<h3 class="subtitulo">Clientes Registrados</h3>
+									<div class="login-content">
+										<p>Si usted tiene una cuenta con nosotros, por favor acceda.</p>
+										<form>
+											<div class="form-group">
+												<label for="form_email">*Correo Electronico:</label>
+												<input type="email" class="form-control" id="form_email" placeholder="Enter email">
+											</div>
+											<div class="form-group">
+												<label for="form_pass">*Contraseña:</label>
+												<input type="password" class="form-control" id="form_pass" placeholder="Contraseña">
+											</div>						
+											<div class="checkbox">
+												<label>
+													<input type="checkbox"> Recordarme
+												</label>
+												<a href="#" class="link">¿Olvide mi Contraseña?</a>
+											</div>
+											<button type="submit" class="btn btn-default">Ingresar</button>
+
+										</form>	
+									</div>									
+								</div>
+								
+							</div>
+							<div id="nuevo_cliente">
+								<div class="login-box login-nueva-cuenta">
+									<h3 class="subtitulo">Nuevo Cliente</h3>
+									<div class="login-content">
+										<p>Al crear una cuenta en <a href="/" class="link">LovizDelCarpio.com</a> tu proceso de compra es más rápido porque tus datos ya están registrados en nuestra tienda, además podrás hacer un seguimiento de tus pedidos y estar informado de las últimas novedades.</p>
+										<button class="btn btn-default">Crear Cuenta</button>
+										<div class="formulario">
+											<form role="form">
+												<div class="form-group">
+													<label for="exampleInputEmail1">Correo Electronico</label>
+													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+												</div>
+												<div class="form-group">
+													<label for="exampleInputPassword1">Contraseña</label>
+													<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+												</div>
+												<div class="form-group">
+													<label for="exampleInputPassword1">Repetir Contraseña</label>
+													<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+												</div>
+												<button type="submit" class="btn btn-default crear contraste1">Crear Cuenta</button>
+											</form>
+										</div>
+									</div>
+								</div>	
+							</div>
+						</fieldset>	
+					</div>
+					<div id="envio_pagar" class="caja_pagar">
+						<fieldset>
+							<legend>Direccion de Envio
+								<span>"*"<em>requerido</em></span>
+							</legend>
+							<div class="direccion_envio">
+								<div class="nueva_direccion">
+									<form>
+										<div class="form-group">
+											<label for="exampleInputEmail1">*Departamento</label>
+											<select name="departamento" id="departamento_envio" class="form-control">
+												<option value="">Por favor Seleccione</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPassword1">*Provincia</label>
+											<select name="provincia" id="provincia_envio" class="form-control">										
+											</select>
+										</div>		
+										<div class="form-group">
+											<label for="exampleInputPassword1">*Distrito</label>
+											<select name="distrito" id="distrito_envio" class="form-control">										
+											</select>
+										</div>		
+										<div class="form-group">
+											<label for="exampleInputPassword1">*Distrito</label>
+											<input type="text" class="form-control" id="distrito_envio" placeholder="Calle, Mzn , # ">
+										</div>
+										<button type="submit" class="btn btn-default">Guardar Direccion</button>
+									</form>
+								</div>
+							</div>
+							<div class="metodo_envio"></div>
+						</fieldset>
+						<fieldset>
+							<legend>Metodo de Envio
+								<span>"*"<em>requerido</em></span>
+							</legend>
+							<form action="">
+								<div class="radio">
+									<label>
+										<input type="radio" name="metodo_envio"> 3 - 4 dias Utiles - <span>Gratis!</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="metodo_envio"> 2 dias Utiles - <span>S/.8.00</span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="metodo_envio"> 1 dia Util - <span>S/.12.00</span>
+									</label>
+								</div>
+							</form>
+						</fieldset>	
+					</div>
+					<div id="metodo_pago_pagar" class="caja_pagar">
+						<fieldset>
+							<legend>¿Como desea Pagar?</legend>
+							<div id="metodo_pago_select">
+								<div class="radio">
+									<label>
+										<input type="radio" name="metodo_pago"> Tarjeta de Credito <span></span>
+									</label>
+								</div>	
+								<div class="radio">
+									<label>
+										<input type="radio" name="metodo_pago"> Paypal <span></span>
+									</label>
+								</div>	
+								<div class="radio">
+									<label>
+										<input type="radio" name="metodo_pago"> PagoEfectivo <span></span>
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="metodo_pago"> Deposito Bancario <span></span>
+									</label>
+								</div>	
+							</div>						
+						</fieldset>	
+					</div>				
+				</div>
+				<div class="col-md-4">
+					<div id="resumen_orden">
+						<div class="row">
+							<h3>Resumen de Orden <span>Editar Carrito</span></h3>
+							<div class="linea_resumen">
+								<div class="col-xs-5">
+									<img src="http://localhost:8000/media/cache/6b/79/6b79f32af1c36b8ea686e091288b3685.jpg" alt="">
+								</div>
+								<div class="col-xs-7 detalles">
+									<div class="nombre">CABALLITO NUBE (ROSADO), LOVIZ DELCARPIO</div>
+									<div class="color"><label for="">Color:</label>Rosado</div>
+									<div class="talla"><label for="">Talla:</label>35-36</div>
+									<div class="cantidad"><label for="">Cantidad:</label>1</div>
+									<div class="precio"><label for="">Precio:</label>S./22.00</div>
+								</div>	
+							</div>
+							<div class="linea_resumen">
+								<table id="carro_detalle" class="table">
+									<tbody>
+										<tr>
+											<td>SubTotal:</td>
+											<td>S/.{{subtotal}}</td>
+										</tr>
+										<tr>
+											<td>Gasto de Envio:</td>
+											<td>S/. 0.00</td>
+										</tr>
+										<tr>
+											<td>Total:</td>
+											<td>S/.{{total}}</td>
+										</tr>
+									</tbody>
+								</table>	
+							</div>														
+						</div>
+					</div>
+				</div>			
+			</div>
+		</div>
+		
+	</script>
+{% endverbatim %}

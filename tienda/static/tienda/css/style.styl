@@ -6,6 +6,8 @@ rojito = #F7727A
 aguamarina = #60CCC4
 
 body
+	font-family: 'Josefin Sans', sans-serif;
+	font-size 16px
 	a
 		color #111
 		text-decoration none
@@ -114,6 +116,9 @@ footer
 	border-radius 0
 .head_top
 	display none
+h1,h2,h3,h4,h5,h6
+	font-family f_imprenta
+	text-transform uppercase
 .icono_loved
 	position relative
 	font-family f_imprenta
@@ -163,7 +168,20 @@ footer
 		.linea_imagen
 			img
 				width 100%
-			
+.login-box
+	background-color #fff
+	margin 0 0 2em
+	border 1px solid #f4f4f4
+	.subtitulo
+		border-bottom 1px solid #f4f4f4
+		font-size 1em
+		margin 0
+		padding 0.9em
+	.login-content
+		padding 1em
+		label
+			font-weight normal
+		
 .menu
 	font-family f_imprenta
 	text-transform uppercase
@@ -261,7 +279,37 @@ footer
 					display inline-block
 					width 100%
 					padding 5px 25px
-
+#pagar
+	margin 0 15px
+	.linea_progrecion
+		margin-bottom 10px
+		.paso
+			opacity 0.2
+			.paso_number
+				background-color #111
+				border-radius 20px
+				color #fff
+				display inline-block
+				text-align center
+				width 40px
+				height 40px
+				border 8px double #fff
+				line-height 25px
+			.paso_text
+				font-family f_imprenta
+			&.actual
+				opacity 1
+	.caja_pagar
+		fieldset
+			legend
+				font-size 1.8em
+				position relative
+				span
+					position absolute
+					bottom 0
+					right 0
+					font-size 0.6em
+					text-transform capitalize
 #producto_galeria_destok
 	display none
 #producto_galeria_movil
@@ -400,7 +448,33 @@ footer
 			background-color #fff
 			opacity 0.7
 			border-color #ddd
+#resumen_orden
+	h3
+		margin 0
+		padding 0.7em
+		background-color #111
+		color #fff
+		font-size 1.1em
+		position relative
+		letter-spacing 1px
+		span
+			position absolute
+			right 1em
+			top 1em
+			font-size 0.8em
+	img
+		width 100%
+	label
+		font-weight normal
+	.detalles
+		font-size 0.9em
+		padding-top 1em
+	.linea_resumen
+		border-bottom 1px solid #f4f4f4
+		border-left 1px solid #f4f4f4
+		border-right 1px solid #f4f4f4
+		overflow hidden
+		
 #slider_home
-	margin 10px
 	img
 		width 100%

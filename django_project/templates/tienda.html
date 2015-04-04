@@ -4,7 +4,7 @@
 
 {% block extrastyles %}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link href='//fonts.googleapis.com/css?family=Playfair+Display|Great+Vibes|Pathway+Gothic+One|Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Sans|Great+Vibes|Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static "tienda/css/owl.carousel.css" %}" />
 <link rel="stylesheet" href="{% static "tienda/css/icono.css" %}" />
 <!--<link rel="stylesheet" href="{% static "tienda/css/estilos.css" %}" />-->
@@ -58,6 +58,7 @@
 		<section class="main">
 			<div id="slider_home">
 			</div>
+			<div id="main-contenido"></div>
 			<div id="catalogo"></div>
 			<div id="producto_single"></div>
 			<div id="carro"></div>
@@ -170,6 +171,7 @@
   {% include 'tiendajs/catalogo_tlp_js.html' %}
   {% include 'tiendajs/tienda_tlp_js.html' %}
   {% include 'tiendajs/productosingle_tlp_js.html' %}
+  {% include 'tiendajs/pagar_tlp_js.html' %}
   {% include 'tiendajs/usuario_tlp_js.html' %}
 {%endblock%}
 
@@ -210,6 +212,8 @@
 	<script src="{% static "tienda/js/backbone/views/catalogo/categorias.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/catalogo/categoria_link.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/catalogo/producto.js" %}"></script>
+	
+	<script src="{% static "tienda/js/backbone/views/pagar/pagar.js" %}"></script>
 
 	<script src="{% static "tienda/js/backbone/views/producto_single/estrellas.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/producto_single/galeria.js" %}"></script>	
