@@ -23,5 +23,25 @@ Loviz.Views.Tienda = Backbone.View.extend({
 		$('.main_menu').slideUp('slow');
 		$('.menu_movil').removeClass('desplegado');
 		$('.menu_movil .icono').removeClass('icon-cross').addClass('icon-menu');
-	}
+	},
+	obt_galleta : function(){
+		var galleta = $.cookie('carrito');
+		if (galleta==null) {
+			console.log('veamos');
+			var session = getRandomChar();
+			$.cookie('carrito',session,{ expires: 1, path: '/'});
+			galleta = session;
+		};
+		function getRandomChar() {
+			numCara = 50
+			chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+			pass ='';
+			for (i=0;i<numCara;i++) {
+				x = Math.floor(Math.random()*62);
+				pass+=chars.charAt(x);
+			};
+			return pass
+		};
+		return galleta
+	},
 });

@@ -17,13 +17,15 @@ Loviz.Views.Pagar = Backbone.View.extend({
 		var html = this.template(datos);
         this.$el.html(html);
         this.$el.hide();
-        this.$el.slideDown('slow');
-	    this.ver_status();        
+        this.desaparecer();
+	    this.ver_status();    
 	},
 	desaparecer:function (e) {
 		if (e!=='pagar') {
             this.$el.slideUp('slow');
-        };
+        }else{
+        	this.$el.slideDown('slow');
+        }
 	},
 	ver_status:function () {
 		this.estado = 'id'

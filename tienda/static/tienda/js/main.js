@@ -2,6 +2,9 @@ $(document).ready(function(){
 	console.log('entienda');
 
     window.routers.base =  new Loviz.Routers.Base();
+    
+    window.views.tienda = new Loviz.Views.Tienda();
+    galleta = window.views.tienda.obt_galleta();
 
     //Modelos
     window.models.usuario = new Loviz.Models.Usuario();    
@@ -39,7 +42,7 @@ $(document).ready(function(){
         });
         window.views.producto_single = new Loviz.Views.Producto_single({
             model:new Loviz.Models.Producto_Single()
-        })
+        });
     }
 
 

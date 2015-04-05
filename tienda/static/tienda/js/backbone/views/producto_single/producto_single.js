@@ -57,7 +57,7 @@ Loviz.Views.Producto_single = Backbone.View.extend({
                         var miniline = new Loviz.Views.Linea_addcart({model:linea})
                         window.models.carro.fetch().done(function (data) {
                         })
-                    })  
+                    })
                 })
             }else{
                 linea.set({carro:carro,producto:produ,variacion:varia,cantidad:1});
