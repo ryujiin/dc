@@ -3,7 +3,8 @@
 {% load staticfiles %}
 
 {% block extrastyles %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static "tienda/css/bootstrap.min.css" %}" />
+
 <link href='http://fonts.googleapis.com/css?family=Josefin+Sans|Great+Vibes|Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static "tienda/css/owl.carousel.css" %}" />
 <link rel="stylesheet" href="{% static "tienda/css/icono.css" %}" />
@@ -187,6 +188,7 @@
 	<script src="{% static "tienda/js/backbone/models/cliente/favorito.js" %}"></script>
 
 	<script src="{% static "tienda/js/backbone/models/categoria.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/models/pagar.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/models/sliderhome.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/models/producto.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/models/producto_single.js" %}"></script>
@@ -215,6 +217,10 @@
 	<script src="{% static "tienda/js/backbone/views/catalogo/producto.js" %}"></script>
 	
 	<script src="{% static "tienda/js/backbone/views/pagar/pagar.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/views/pagar/paso_login.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/views/pagar/paso_envio.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/views/pagar/paso_pagar.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/views/pagar/pagar_resumen.js" %}"></script>
 
 	<script src="{% static "tienda/js/backbone/views/producto_single/estrellas.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/producto_single/galeria.js" %}"></script>	

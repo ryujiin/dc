@@ -7,9 +7,9 @@ Loviz.Models.Carro = Backbone.Model.extend({
         return base + (base.charAt(base.length - 1) == '/' ? '' : '/') + this.id+'/';
     },
 	initialize : function () {
-        this.buscar_carro();
+        //this.buscar_carro();
         //En el modelo usuario hay un condicional cuando falla la busqueda
-        this.listenTo(window.models.usuario, "change", this.buscar_carro, this);
+        this.listenTo(window.models.usuario, "change", this.buscar_carro_user, this);
 	},
     defaults:{
         "propietario": null, 
@@ -20,11 +20,33 @@ Loviz.Models.Carro = Backbone.Model.extend({
         "subtotal": "0.00", 
         "envio": 0
     },
+    buscar_sesion:function () {
+        //Esta funcion se usa en usuario.js cuando falla el login
+        var self = this;
+        this.fetch({
+            data:$.param({session:galleta})
+        }).fail(function () {
+            self.set('sesion_carro',galleta)
+        }).done(function (data) {
+        });
+    },
+    buscar_carro_user:function () {
+        if (window.models.usuario.id!==undefined) {
+            this.fetch()
+            .done(function (data) {
+                debugger;
+            }).fail(function (data) {
+                debugger;
+            })
+        };
+    },
 	buscar_carro:function () {
         var self = this;
         var carrito = $.localStorage.get('carro')
         var usuario = window.models.usuario.toJSON().id
+        debugger;
         if (usuario>0) {
+            debugger;
             this.fetch()
             .fail(function () {
                 self.set('propietario',usuario);
@@ -41,11 +63,15 @@ Loviz.Models.Carro = Backbone.Model.extend({
             this.fetch({
                 data:$.param({session:galleta})
             }).fail(function () {
+            debugger;
+
                 self.set('sesion_carro',galleta)
                 if (carrito!=null) {
                     self.carro_local(carrito);
                 };
             }).done(function () {
+            debugger;
+
                 if (carrito !=null) {
                     self.fucionar_carro(carrito);
                 };

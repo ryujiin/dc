@@ -15,6 +15,7 @@ body .visible{display:block !important}
 .btn.contraste1:hover{background-color:#468847;border-color:#3d773e;color:#fff;}
 .btn.contraste1:hover .icon-angle-right{display:block;right:45px}
 .btn.contraste2{text-transform:uppercase;color:#111}
+.btn.justi{width:100%}
 .cartel_flotante{font-size:1.2em;position:absolute;background-color:#ececec;border-top:3px solid #111;box-shadow:0 2px 4px rgba(0,0,0,0.5);display:none}
 #catalogo{margin-bottom:20px;}
 #catalogo .refinamiento-nav{margin:20px 0;}
@@ -83,6 +84,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Pathway Gothic One',sans-serif;text-transform:upp
 #pagar .linea_progrecion .paso .paso_number{background-color:#111;border-radius:20px;color:#fff;display:inline-block;text-align:center;width:40px;height:40px;border:8px double #fff;line-height:25px}
 #pagar .linea_progrecion .paso .paso_text{font-family:'Pathway Gothic One',sans-serif}
 #pagar .linea_progrecion .paso.actual{opacity:1}
+#pagar .caja_pagar fieldset{padding:20px 0;}
 #pagar .caja_pagar fieldset legend{font-size:1.8em;position:relative;}
 #pagar .caja_pagar fieldset legend span{position:absolute;bottom:0;right:0;font-size:.6em;text-transform:capitalize}
 #producto_galeria_destok{display:none}
@@ -131,6 +133,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Pathway Gothic One',sans-serif;text-transform:upp
 .refinamiento{display:none}
 .refinamiento-nav .btn{border-color:#111;font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;}
 .refinamiento-nav .btn:hover{background-color:#fff;opacity:.7;border-color:#ddd}
+#resumen_orden{margin-top:50px;}
 #resumen_orden h3{margin:0;padding:.7em;background-color:#111;color:#fff;font-size:1.1em;position:relative;letter-spacing:1px;}
 #resumen_orden h3 span{position:absolute;right:1em;top:1em;font-size:.8em}
 #resumen_orden img{width:100%}

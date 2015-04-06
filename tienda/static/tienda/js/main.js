@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	console.log('entienda');
+    
+    storage=$.localStorage;
 
     window.routers.base =  new Loviz.Routers.Base();
     
@@ -32,7 +34,7 @@ $(document).ready(function(){
         window.views.tienda = new Loviz.Views.Tienda();
         window.views.navegador = new Loviz.Views.Navegador();
         window.views.pagar = new Loviz.Views.Pagar({
-            model:window.models.carro
+            model:new Loviz.Models.Pagar()
         });
         window.views.mini_carro = new Loviz.Views.Mini_carro({
             model:window.models.carro
