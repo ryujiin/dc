@@ -71,8 +71,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Pathway Gothic One',sans-serif;text-transform:upp
 .main-bottom .newsletter .borde-newsletter .iconos-newsletter{display:inline-block;width:40px;padding:5px;border-left:3px solid #333}
 #navegador{position:relative;transition-property:top,box-shadow;transition-duration:1s;transition-timing-function:linear;border-bottom:1px solid #f4f4f4;}
 #navegador.menu-fijo{box-shadow:0 0 8px 0 rgba(0,0,0,0.4);position:fixed;top:0;width:100%;background:#fff;z-index:2}
-#navegador .logo{font-family:'Great Vibes',cursive;text-align:center;}
-#navegador .logo h1{font-size:30px}
+#navegador .logo{text-align:center;}
+#navegador .logo h1{font-size:30px;font-family:'Great Vibes',cursive;text-transform:capitalize}
 #navegador .logo a:hover,#navegador .logo a:visited,#navegador .logo a:link,#navegador .logo a:active{text-decoration:none}
 #navegador .main_menu{display:none;}
 #navegador .main_menu .navegador{text-align:center;}

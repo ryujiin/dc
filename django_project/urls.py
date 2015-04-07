@@ -29,6 +29,8 @@ urlpatterns = patterns('',
     url(r'^api/', include(router.urls)),
     url(r'^oficina/',include('oficina.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^ajax/login/', 'cliente.views.ingresar', name='ingresar_ajax'),
+    url(r'^ajax/salir/', 'cliente.views.salir', name='salir'),
     url(r'^api/productoSingle/$',views.Producto_singleView.as_view()),    
     url(r'^',include('tienda.urls')),    
 )
