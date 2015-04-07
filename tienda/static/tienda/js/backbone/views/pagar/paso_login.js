@@ -10,6 +10,7 @@ Loviz.Views.Paso_login = Backbone.View.extend({
         this.model = window.models.usuario;
 		var html = this.template(this.model.toJSON());
         this.$el.html(html);
+        this.addlogin();
     },
     aparecer:function () {
         if (window.views.pagar.model.toJSON().estado ==='identificar') {
@@ -17,5 +18,9 @@ Loviz.Views.Paso_login = Backbone.View.extend({
         }else{
             this.$el.hide();
         }
+    },
+    addlogin:function () {
+        var formulario = new Loviz.Views.Form_login();
+        this.$('.formulario_login').append(formulario.$el);
     }
 });

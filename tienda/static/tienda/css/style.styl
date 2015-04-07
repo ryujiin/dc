@@ -116,8 +116,40 @@ footer
 						text-decoration underline
 .form-control
 	border-radius 0
+.form-group
+	.text-danger
+		display none
+	&.has-error
+		.text-danger
+			display block
 .head_top
-	display none
+	.head_top_left,.head_top_right
+		display none
+	.head_movil
+		border-bottom 2px solid #111
+		overflow hidden
+		background-color #f4f4f4
+		.busqueda_min
+			width 30px
+			height 30px
+			text-align center
+			background-color aguamarina
+			cursor pointer
+			span
+				margin-top 7px
+		.mini_user
+			.foto_user
+				width 30px
+				height 30px
+				display inline-block
+				img
+					width 100%
+			span
+				font-weight bold
+		.text-top
+			font-weight bold
+			display inline-block
+			margin-top 5px
 h1,h2,h3,h4,h5,h6
 	font-family f_imprenta
 	text-transform uppercase

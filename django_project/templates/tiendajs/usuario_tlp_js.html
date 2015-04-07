@@ -54,4 +54,24 @@
 			</ul>
 		</div>
 	</script>
+
+	<script id="form_login_template" type="text/template">
+		<div class="form-group form_login">
+			<label for="form_email">*Correo Electronico:</label>
+			<input type="email" class="form-control" id="form_email" placeholder="Ingresar correo electronico">
+			<p class="text-danger">Porfavor ingrese su correo electronico</p>
+		</div>
+		<div class="form-group form_pass">
+			<label for="form_pass">*Contraseña:</label>
+			<input type="password" class="form-control" id="form_pass" placeholder="Contraseña">
+			<p class="text-danger">Porfavor ingrese su contraseña</p>
+		</div>						
+		<div class="checkbox">
+			<label>
+				<input type="checkbox"> Recordarme
+			</label>
+			<a href="#" class="link">¿Olvide mi Contraseña?</a>
+		</div>
+		<button type="submit" class="btn btn-default justi">Ingresar</button>
+	</script>
 {% endverbatim %}
