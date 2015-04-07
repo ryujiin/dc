@@ -12,7 +12,7 @@ Loviz.Views.Paso_login = Backbone.View.extend({
         this.$el.html(html);
     },
     aparecer:function () {
-        if (window.views.pagar.model.toJSON().estado ==='login') {
+        if (window.views.pagar.model.toJSON().estado ==='identificar') {
             this.$el.show();
         }else{
             this.$el.hide();

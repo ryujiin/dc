@@ -6,7 +6,7 @@ Loviz.Models.Usuario = Backbone.Model.extend({
 	},
 	buscar_usuario:function () {
 		this.fetch().fail(function () {
-			window.models.carro.buscar_sesion();
+			window.models.carro.buscar_carro();
 		})
 	}
 });

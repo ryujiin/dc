@@ -9,7 +9,7 @@ Loviz.Models.Carro = Backbone.Model.extend({
 	initialize : function () {
         //this.buscar_carro();
         //En el modelo usuario hay un condicional cuando falla la busqueda
-        this.listenTo(window.models.usuario, "change", this.buscar_carro_user, this);
+        this.listenTo(window.models.usuario, "change", this.buscar_carrologin, this);
 	},
     defaults:{
         "propietario": null, 
@@ -20,33 +20,37 @@ Loviz.Models.Carro = Backbone.Model.extend({
         "subtotal": "0.00", 
         "envio": 0
     },
-    buscar_sesion:function () {
-        //Esta funcion se usa en usuario.js cuando falla el login
+    buscar_carrologin:function () {
         var self = this;
-        this.fetch({
-            data:$.param({session:galleta})
-        }).fail(function () {
-            self.set('sesion_carro',galleta)
-        }).done(function (data) {
+        var carrito =storage.get('carro');
+        this.fetch()
+        .fail(function () {
+            self.set('propietario',window.models.usuario.id)
+            if (carrito!==null) {
+                self.carrolocal();
+            };
+        }).done(function () {
+            if (carrito!==null) {
+                self.carrolocal();
+            };
         });
     },
-    buscar_carro_user:function () {
-        if (window.models.usuario.id!==undefined) {
-            this.fetch()
-            .done(function (data) {
-                debugger;
-            }).fail(function (data) {
-                debugger;
-            })
-        };
-    },
 	buscar_carro:function () {
+        var self = this;
+        var carrito = storage.get('carro');
+        this.fetch({
+            data:$.param({session:galleta})
+        }).done(function (data) {
+            debugger;
+        }).fail(function () {
+            self.set('sesion_carro',galleta);
+        })
+        /*
         var self = this;
         var carrito = $.localStorage.get('carro')
         var usuario = window.models.usuario.toJSON().id
         debugger;
         if (usuario>0) {
-            debugger;
             this.fetch()
             .fail(function () {
                 self.set('propietario',usuario);
@@ -63,22 +67,21 @@ Loviz.Models.Carro = Backbone.Model.extend({
             this.fetch({
                 data:$.param({session:galleta})
             }).fail(function () {
-            debugger;
-
                 self.set('sesion_carro',galleta)
                 if (carrito!=null) {
                     self.carro_local(carrito);
                 };
             }).done(function () {
-            debugger;
 
                 if (carrito !=null) {
                     self.fucionar_carro(carrito);
                 };
             })
         }
+        */
     },
     fucionar_carro:function(carro_id){
+        debugger;
         var self = this;
         $.localStorage.remove('carro');
         var user = $.sessionStorage.get('usuario');
@@ -104,27 +107,29 @@ Loviz.Models.Carro = Backbone.Model.extend({
             });
         });
     },
-    carro_local:function (carrito) {
-        $.localStorage.remove('carro');
+    carrolocal:function () {
         var self = this;
-        carro_id=carrito
-        var user = $.sessionStorage.get('usuario');
-        this.save().done(function () {
-            var nueva_collecion = new Loviz.Collections.Lineas();
+        var idcarro = storage.get('carro');
+        var nueva_collecion = new Loviz.Collections.Lineas();
+        this.save()
+        .done(function (data) {
             nueva_collecion.fetch({
-                data:$.param({carro:carro_id})
+                data:$.param({carro:idcarro})
             }).done(function () {
-                nueva_collecion.forEach(function (linea) {                
+                nueva_collecion.forEach(function (linea) {
                     linea.set('carro',self.id);
                     linea.save();
                 });
-                 var carro_fucion = new Loviz.Models.Carro({id:carro_id});
+                var carro_fucion = new Loviz.Models.Carro({id:idcarro});
             
-                carro_fucion.set({'estado':'Fusionada','propietario':user});
+                carro_fucion.set({'estado':'Fusionada','propietario':window.models.usuario.id});
                 
                 carro_fucion.save().done(function () {
                     window.models.carro.fetch();
                 });
+                storage.remove('carro');
+            }).fail(function () {
+                debugger;
             })
         })
     }
