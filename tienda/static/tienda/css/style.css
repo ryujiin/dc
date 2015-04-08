@@ -20,6 +20,8 @@ body .visible{display:block !important}
 #catalogo{margin-bottom:20px;}
 #catalogo .refinamiento-nav{margin:20px 0;}
 #catalogo .refinamiento-nav .btn{width:100%}
+#catalogo .caja_cargando{background-color:#fff;width:100%;height:200px;position:relative;display:none;}
+#catalogo .caja_cargando img{position:absolute;top:40%;left:40%}
 #caja_ajax{position:fixed;z-index:1000;background-color:#fff;width:100%;height:100%;opacity:.8;display:none;}
 #caja_ajax img{position:absolute;top:40%;left:40%}
 #carro .carro_action .btn{margin:10px 0;width:100%}
@@ -101,6 +103,7 @@ p.bg-warning{border-color:#faebcc;color:#8a6d3b;padding:10px 20px}
 #pagar .caja_pagar fieldset legend span{position:absolute;bottom:0;right:0;font-size:.6em;text-transform:capitalize}
 #producto_galeria_destok{display:none}
 #producto_galeria_movil .item img{width:100%}
+.productos{overflow:hidden;}
 .productos .producto{position:relative;text-align:center;border:1px solid #fff;}
 .productos .producto:hover{border:1px solid #f4f4f4;}
 .productos .producto:hover .estrellas{opacity:1}

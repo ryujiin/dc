@@ -12,11 +12,11 @@ Loviz.Views.Form_login = Backbone.View.extend({
         this.$el.html(html);
     },
     login:function (e) {
-        $('#caja_ajax').show();
         var self=this;
         e.preventDefault();
         var verificar = this.verificar();
         if (verificar === true) {
+            $('#caja_ajax').show();
             $.post('/ajax/login/',{username:this.email,password:this.pass})
             .done(function (data) {
                 $('#caja_ajax').hide();
