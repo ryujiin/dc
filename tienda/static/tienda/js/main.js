@@ -19,10 +19,11 @@ $(document).ready(function(){
     window.collections.favoritos = new Loviz.Collections.Favoritos();
 
     //Views
-
+    $('#caja_ajax').show();
     window.collections.sliderHome.fetch().done(function () {
         window.collections.categorias.fetch().done(function () {
             iniciar_vistas();
+            $('#caja_ajax').hide();
             Backbone.history.start({
                 pushState:true,
             });

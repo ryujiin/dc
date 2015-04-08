@@ -44,7 +44,7 @@ class CarritoViewsApi(APIView):
 class CarritoDetailViews(APIView):
 	def get_object(self,pk):
 		try:
-			return Carro.objects.get(pk=pk)
+			return Carro.objects.get(pk=pk,estado='Abierto')
 		except Carro.DoesNotExist:
 			raise Http404
 
