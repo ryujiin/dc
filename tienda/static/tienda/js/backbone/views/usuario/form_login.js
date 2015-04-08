@@ -14,8 +14,11 @@ Loviz.Views.Form_login = Backbone.View.extend({
     login:function (e) {
         e.preventDefault();
         var verificar = this.verificar();
-        console.log(verificar)
-        debugger;
+        if (verificar === true) {
+            $.post('/ajax/login/',function (data) {
+                debugger;
+            })
+        }
     },
     verificar:function () {
         var email = this.$('#form_email').val()

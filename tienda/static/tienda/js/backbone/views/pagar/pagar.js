@@ -29,9 +29,10 @@ Loviz.Views.Pagar = Backbone.View.extend({
         }
 	},
 	ver_status:function () {
+		this.model.set('estado' , 'ninguno');		
 		this.model.set('estado' , 'identificar');
 		if (window.models.usuario.id !== undefined) {
-		this.model.set('estado' , 'envio');
+			this.model.set('estado' , 'envio');		
 		}
 	},
 	poner_pasos:function () {
@@ -44,8 +45,7 @@ Loviz.Views.Pagar = Backbone.View.extend({
 		var resumen_orden = new Loviz.Views.Resumen_pagar({
 			model:window.models.carro
 		});
-		this.$('#resumen_orden').append(resumen_orden.$el)
-		
+		this.$('#resumen_orden').append(resumen_orden.$el);		
 	},
 	cambiar_estado:function () {
 		var estado = this.model.toJSON().estado;

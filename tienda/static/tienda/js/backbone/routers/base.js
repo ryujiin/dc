@@ -5,6 +5,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		'producto/:producto/':'producto_single',
 		'carro/':'carro',
 		'pagar/':'pagar',
+		'cliente/cuenta/':'cliente_cuente',
 		'*notFound': 'notFound',
 	},
 	initialize : function () {
@@ -34,8 +35,10 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	},
 	pagar:function () {
 		window.app.slug='pagar';
-
 		window.views.pagar.render();
+	},
+	cliente_cuente:function () {
+		window.views.usuario.render();
 	},
 	notFound:function () {
 		console.log('Estamos en una pagina vacia')

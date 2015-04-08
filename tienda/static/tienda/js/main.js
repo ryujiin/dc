@@ -45,6 +45,9 @@ $(document).ready(function(){
         window.views.producto_single = new Loviz.Views.Producto_single({
             model:new Loviz.Models.Producto_Single()
         });
+        window.views.usuario = new Loviz.Views.Usuario({
+            model: window.models.usuario
+        })
     }
 
 

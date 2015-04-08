@@ -3,8 +3,8 @@
 {% load staticfiles %}
 
 {% block extrastyles %}
-<!--<link rel="stylesheet" href="{% static "tienda/css/bootstrap.min.css" %}" />-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static "tienda/css/bootstrap.min.css" %}" />
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
 <link href='http://fonts.googleapis.com/css?family=Josefin+Sans|Great+Vibes|Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static "tienda/css/owl.carousel.css" %}" />
 <link rel="stylesheet" href="{% static "tienda/css/icono.css" %}" />
@@ -35,9 +35,9 @@
 					</div>
 					<div class="col-xs-4 text-center">
 						<a href="/cliente/cuenta/" class="mini_user link">
-							<div class="foto_user">
+							<span class="foto_user">
 								<img src="/media/tienda/avatar.jpg/" alt="">
-							</div>
+							</span>
 							<span class="">Ingresar</span>
 						</a>
 					</div>
@@ -78,6 +78,7 @@
 			<div id="slider_home">
 			</div>
 			<div id="main-contenido"></div>
+			<div id="usuario"></div>
 			<div id="catalogo"></div>
 			<div id="producto_single"></div>
 			<div id="carro"></div>
@@ -248,6 +249,7 @@
 	
 	<script src="{% static "tienda/js/backbone/views/usuario/mini_usuario.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/usuario/form_login.js" %}"></script>	
+	<script src="{% static "tienda/js/backbone/views/usuario/usuario.js" %}"></script>	
 
 	<script src="{% static "tienda/js/backbone/views/tienda/breadcrumb.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/tienda/navegador.js" %}"></script>

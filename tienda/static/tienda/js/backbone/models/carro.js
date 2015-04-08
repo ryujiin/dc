@@ -41,7 +41,6 @@ Loviz.Models.Carro = Backbone.Model.extend({
         this.fetch({
             data:$.param({session:galleta})
         }).done(function (data) {
-            debugger;
         }).fail(function () {
             self.set('sesion_carro',galleta);
         })
