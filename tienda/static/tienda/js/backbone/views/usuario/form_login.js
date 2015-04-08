@@ -12,31 +12,46 @@ Loviz.Views.Form_login = Backbone.View.extend({
         this.$el.html(html);
     },
     login:function (e) {
+        $('#caja_ajax').show();
+        var self=this;
         e.preventDefault();
         var verificar = this.verificar();
         if (verificar === true) {
-            $.post('/ajax/login/',function (data) {
+            $.post('/ajax/login/',{username:this.email,password:this.pass})
+            .done(function (data) {
+                $('#caja_ajax').hide();
+                if (data.error_message!=='') {
+                    self.$('.bg-warning').hide();
+                    var error = '<p class="bg-warning">'+data.error_message+'</p>';
+                    self.$el.prepend(error);
+                    self.$('#form_email').val('')
+                    self.$('#form_pass').val('')
+                    self.verificar();
+                }else{
+                    debugger;
+                }
+            }).fail(function (data) {
                 debugger;
             })
         }
     },
     verificar:function () {
-        var email = this.$('#form_email').val()
-        var pass = this.$('#form_pass').val()
-        if (email === '') {
+        this.email = this.$('#form_email').val()
+        this.pass = this.$('#form_pass').val()
+        if (this.email === '') {
             this.$('.form_login').addClass('has-error').removeClass('has-success');
         }else{
             this.$('.form_login').removeClass('has-error').addClass('has-success');
         }
-        if (pass==='') {
+        if (this.pass==='') {
             this.$('.form_pass').addClass('has-error').removeClass('has-success');
         }else{
             this.$('.form_pass').removeClass('has-error').addClass('has-success');            
         }
-        if (email==='') {
+        if (this.email==='') {
             return false
         }
-        if (pass==='') {
+        if (this.pass==='') {
             return false
         }
         return true

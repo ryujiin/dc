@@ -3,8 +3,8 @@
 {% load staticfiles %}
 
 {% block extrastyles %}
-<link rel="stylesheet" href="{% static "tienda/css/bootstrap.min.css" %}" />
-<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+<!--<link rel="stylesheet" href="{% static "tienda/css/bootstrap.min.css" %}" />-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link href='http://fonts.googleapis.com/css?family=Josefin+Sans|Great+Vibes|Pathway+Gothic+One' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static "tienda/css/owl.carousel.css" %}" />
 <link rel="stylesheet" href="{% static "tienda/css/icono.css" %}" />
@@ -75,6 +75,9 @@
 	</header>
 	<div id="contenido">
 		<section class="main">
+			<div id="caja_ajax">
+				<img src="/media/tienda/ajax-loader.gif" alt="">
+			</div>
 			<div id="slider_home">
 			</div>
 			<div id="main-contenido"></div>

@@ -78,9 +78,10 @@ import json
 def ingresar(request):
 	if request.method=='POST':
 		formulario = AuthenticationForm(request.POST)
-		if formulario.is_valid:
+		if formulario.is_valid:			
 			username = request.POST['username']
 			clave = request.POST['password']
+			print username
 			acceso = authenticate(username=username,password=clave)
 			if acceso is not None:
 				if acceso.is_active:
@@ -91,7 +92,7 @@ def ingresar(request):
 					return  HttpResponse(json.dumps({'id':0,'nombre':request.user.username,'email':request.user.email,'error_message':'El usurio esta inactivo'}),
 							content_type='application/json;charset=utf8')
 			else:
-				return HttpResponse(json.dumps({'id':0,'nombre':'anonimo','email':'','error_message':'Ha especificado un email o password incorrecto.'}),
+				return HttpResponse(json.dumps({'id':0,'nombre':'anonimo','email':'','error_message':'Lo sentimos, no coincide con nuestros registros. Revise su datos y vuelva a intentarlo.'}),
 				content_type='application/json;charset=utf8')
 		else:
 			raise Http404
