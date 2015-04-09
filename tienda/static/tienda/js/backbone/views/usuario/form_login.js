@@ -20,7 +20,7 @@ Loviz.Views.Form_login = Backbone.View.extend({
             $.post('/ajax/login/',{username:this.email,password:this.pass})
             .done(function (data) {
                 $('#caja_ajax').hide();
-                if (data.error_message!=='') {
+                if (data.error_message!==undefined) {
                     self.$('.bg-warning').hide();
                     var error = '<p class="bg-warning">'+data.error_message+'</p>';
                     self.$el.prepend(error);
@@ -28,10 +28,11 @@ Loviz.Views.Form_login = Backbone.View.extend({
                     self.$('#form_pass').val('')
                     self.verificar();
                 }else{
-                    debugger;
+                    window.models.usuario.fetch().done(function () {
+                    })
                 }
             }).fail(function (data) {
-                debugger;
+                $('#caja_ajax').hide();
             })
         }
     },

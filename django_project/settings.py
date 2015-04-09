@@ -105,3 +105,8 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     location('templates'),
 )
+
+AUTHENTICATION_BACKENDS = (
+    'cliente.backends.EmailOrUsernameModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)

@@ -44,40 +44,6 @@ Loviz.Models.Carro = Backbone.Model.extend({
         }).fail(function () {
             self.set('sesion_carro',galleta);
         })
-        /*
-        var self = this;
-        var carrito = $.localStorage.get('carro')
-        var usuario = window.models.usuario.toJSON().id
-        debugger;
-        if (usuario>0) {
-            this.fetch()
-            .fail(function () {
-                self.set('propietario',usuario);
-                if (carrito!=null) {
-                    self.carro_local(carrito);
-                };
-            })
-            .done(function () {
-                if (carrito !=null) {
-                    self.fucionar_carro(carrito);
-                };
-            })
-        }else{
-            this.fetch({
-                data:$.param({session:galleta})
-            }).fail(function () {
-                self.set('sesion_carro',galleta)
-                if (carrito!=null) {
-                    self.carro_local(carrito);
-                };
-            }).done(function () {
-
-                if (carrito !=null) {
-                    self.fucionar_carro(carrito);
-                };
-            })
-        }
-        */
     },
     fucionar_carro:function(carro_id){
         debugger;
@@ -128,7 +94,6 @@ Loviz.Models.Carro = Backbone.Model.extend({
                 });
                 storage.remove('carro');
             }).fail(function () {
-                debugger;
             })
         })
     }

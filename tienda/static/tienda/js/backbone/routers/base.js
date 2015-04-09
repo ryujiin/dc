@@ -38,6 +38,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		window.views.pagar.render();
 	},
 	cliente_cuente:function () {
+		window.app.slug='cliente';
 		window.views.usuario.render();
 	},
 	notFound:function () {

@@ -8,6 +8,7 @@ Loviz.Views.Pagar = Backbone.View.extend({
 	initialize : function () {
 		var self = this;
         this.listenTo(this.model, "change", this.cambiar_estado, this);
+        this.listenTo(window.models.usuario, "change", this.ver_status, this);
 
 		window.routers.base.on('route',function(e){
 			self.desaparecer(e);

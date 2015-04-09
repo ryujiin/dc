@@ -58,7 +58,7 @@
 	<script id="form_login_template" type="text/template">
 		<div class="form-group form_login">
 			<label for="form_email">*Correo Electronico:</label>
-			<input type="text" class="form-control" id="form_email" placeholder="Ingresar correo electronico">
+			<input type="email" class="form-control" id="form_email" placeholder="Ingresar correo electronico">
 			<p class="text-danger">Porfavor ingrese su correo electronico</p>
 		</div>
 		<div class="form-group form_pass">
@@ -77,25 +77,39 @@
 
 	<script id="form_nuevo_user_template" type="text/template">
 		<div class="form-group">
-			<label for="exampleInputEmail1">Correo Electronico</label>
-			<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+			<label for="nuevo_user_email">*Correo Electronico</label>
+			<input type="email" class="form-control" id="nuevo_user_email" placeholder="Enter email">
+			<p class="text-danger">Este campo es obligatorio</p>
+			<p class="text-warning">El Correo electronico no coincide</p>
 		</div>
 		<div class="form-group">
-			<label for="exampleInputPassword1">Contraseña</label>
-			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			<label for="nuevo_user_email2">*Repite Correo Electronico</label>
+			<input type="email" class="form-control" id="nuevo_user_email2" placeholder="Enter email">
+			<p class="text-danger">Este campo es obligatorio</p>
+			<p class="text-warning">El Correo electronico no coincide</p>			
 		</div>
 		<div class="form-group">
-			<label for="exampleInputPassword1">Repetir Contraseña</label>
-			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			<label for="pass_nuevo">*Contraseña</label>
+			<input type="password" class="form-control" id="pass_nuevo" placeholder="Password">
+			<p class="text-danger">Este campo es obligatorio</p>
+			<p class="text-warning">La contraseña no coincide</p>			
+
+		</div>
+		<div class="form-group">
+			<label for="pass_nuevo2">*Repetir Contraseña</label>
+			<input type="password" class="form-control" id="pass_nuevo2" placeholder="Password">
+			<p class="text-danger">Este campo es obligatorio</p>
+			<p class="text-warning">La contraseña no coincide</p>			
+
 		</div>
 		<button type="submit" class="btn btn-default crear contraste1">Crear Cuenta</button>
 	</script>
 
-	<script id="usuario_template" type="text/template">
-		<div class="contenedor">
+	<script id="usuario_nologin_template" type="text/template">
+		<div id="usuario_nologin" class="contenedor">
 			<div class="container-fluid">
 				<div class="row">
-					<h2 class="titulo">Bienvenido {{username}}</h2>
+					<h2 class="titulo">Bienvenido {{email}}</h2>
 					<div class="no-login">
 						<div class="col-md-6 user_existente">
 							<div class="login-box login-cuenta">
@@ -106,10 +120,48 @@
 								</div>									
 							</div>
 						</div>
-						<div class="col-md-6 user_crear"></div>	
+						<div class="col-md-6 user_crear">
+							<div class="login-box login-nueva-cuenta">
+								<h3 class="subtitulo">Nuevo Cliente</h3>
+								<div class="login-content">
+									<p>Al crear una cuenta en <a href="/" class="link">LovizDelCarpio.com</a> tu proceso de compra es más rápido porque tus datos ya están registrados en nuestra tienda, además podrás hacer un seguimiento de tus pedidos y estar informado de las últimas novedades.</p>
+									<button class="btn btn-default justi mostrar_registro">Crear Cuenta</button>
+									<div class="formulario_nuevo_user">
+									</div>
+								</div>
+							</div>	
+						</div>	
 					</div>					
 				</div>
 			</div>
 		</div>
+	</script>
+
+	<script id="usuario_login_template" type="text/template">
+		<div id="usuario_login" class="contenedor">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8">
+						<h2 class="titulo-login">
+							<span class="sub-titulo">Bienvenido</span>
+							<span class="email_login">{{email}}</span>
+							<span class="cuenta_salir">
+								(<a href="/cliente/salir/">Salir</a>)
+							</span>
+						</h2>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script id="mini_usuario_movil_template" type="text/template">
+		<a href="/cliente/cuenta/" class="mini_user link">
+			<span class="foto_user">
+				<img src="/media/tienda/avatar.jpg" alt="">
+			</span>
+			<span class="">Ingresar</span>
+		</a>
 	</script>
 {% endverbatim %}

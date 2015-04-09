@@ -41,12 +41,13 @@ from rest_framework.permissions import AllowAny
 from .permissions import IsStaffOrTargetUser
 
 class UsuarioViewSet(viewsets.ModelViewSet):
-	serializer_class = UserSerializer
+	serializer_class = UsuarioSerializer
 	queryset = User.objects.all()
 
 	def get_permissions(self):
 		return (AllowAny() if self.request.method == 'POST'
 			else IsStaffOrTargetUser()),
+
 
 class ComentarioViewSet(viewsets.ModelViewSet):
 	serializer_class = ComentairoSerializer
@@ -101,3 +102,15 @@ def ingresar(request):
 def salir(request):
 	logout(request)
 	return HttpResponseRedirect('/')
+
+def nuevo_usuario(request):
+	if request.method=='POST':
+		user = User.objects.create_user(username=request.POST['username'],email=request.POST['username'],password=request.POST['password'])
+		if user:			
+			return HttpResponse(json.dumps({'creado':True}),
+					content_type='application/json;charset=utf8')			
+		else:
+			return HttpResponse(json.dumps({'creado':False}),
+					content_type='application/json;charset=utf8')
+	else:
+		raise Http404

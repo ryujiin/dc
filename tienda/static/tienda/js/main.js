@@ -31,7 +31,14 @@ $(document).ready(function(){
     });
 
     function iniciar_vistas () {
-        window.views.user_ingresar = new Loviz.Views.Mini_user({model:window.models.usuario});
+        window.views.user_mini = new Loviz.Views.Mini_user({
+            model:window.models.usuario,
+            el:$('#usuario_mini'),
+        });
+        window.views.user_mini_movil = new Loviz.Views.Mini_user({
+            model:window.models.usuario,
+            el:$('#mini_user_movil'),
+        });
         window.views.tienda = new Loviz.Views.Tienda();
         window.views.navegador = new Loviz.Views.Navegador();
         window.views.pagar = new Loviz.Views.Pagar({

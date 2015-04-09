@@ -141,8 +141,13 @@ footer
 .form-group
 	.text-danger
 		display none
+	.text-warning
+		display none
 	&.has-error
 		.text-danger
+			display block
+	&.has-warning
+		.text-warning
 			display block
 .head_top
 	.head_top_left,.head_top_right
@@ -341,6 +346,7 @@ p
 		border-color #faebcc
 		color #8a6d3b
 		padding 10px 20px
+	
 #pagar
 	margin 0 15px
 	.linea_progrecion
@@ -543,3 +549,13 @@ p
 #slider_home
 	img
 		width 100%
+#usuario_login
+	h2
+		.sub-titulo
+			line-height 1
+			font-size .6em
+			display block
+		.cuenta_salir
+			font-size 0.6em
+			a
+				text-decoration underline
