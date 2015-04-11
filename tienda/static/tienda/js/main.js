@@ -17,6 +17,7 @@ $(document).ready(function(){
     window.collections.categorias = new Loviz.Collections.Categorias();
     window.collections.producto_single = new Loviz.Collections.Productos_Single();
     window.collections.favoritos = new Loviz.Collections.Favoritos();
+    window.collections.direcciones = new Loviz.Collections.Direcciones();
 
     //Views
     $('#caja_ajax').show();

@@ -70,29 +70,27 @@
 			</legend>
 			<div class="direccion_envio">
 				<div class="nueva_direccion">
-					<form>
-						<div class="form-group">
-							<label for="exampleInputEmail1">*Departamento</label>
-							<select name="departamento" id="departamento_envio" class="form-control">
-								<option value="">Por favor Seleccione</option>
-							</select>
+					<div class="direciones_gravadas">
+						<div class="form-group direcciones">
+							<div class="col-md-6">
+								<div class="radio">
+								  <label>
+								    <input type="radio" name="direccion_elegida" id="direccion_elegida">
+								    <address>
+									  <strong>
+									  	Twitter, Inc.
+									  </strong><br>
+									  795 Folsom Ave, Suite 600<br>
+									  San Francisco, CA 94107<br>
+									  <abbr title="Phone">P:</abbr> (123) 456-7890
+									</address>
+								  </label>
+								</div>
+							</div>
+							<button class="btn btn-default justi add_direccion">Agregar una direccion <span class="glyphicon glyphicon-plus"></span></button>
 						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword1">*Provincia</label>
-							<select name="provincia" id="provincia_envio" class="form-control">										
-							</select>
-						</div>		
-						<div class="form-group">
-							<label for="exampleInputPassword1">*Distrito</label>
-							<select name="distrito" id="distrito_envio" class="form-control">										
-							</select>
-						</div>		
-						<div class="form-group">
-							<label for="exampleInputPassword1">*Direccion</label>
-							<input type="text" class="form-control" id="distrito_envio" placeholder="Calle, Mzn , # ">
-						</div>
-						<button type="submit" class="btn btn-default">Guardar Direccion</button>
-					</form>
+					</div>
+					<div class="nueva_direccion_form"></div>
 				</div>
 			</div>
 			<div class="metodo_envio"></div>

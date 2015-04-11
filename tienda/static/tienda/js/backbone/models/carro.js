@@ -23,17 +23,23 @@ Loviz.Models.Carro = Backbone.Model.extend({
     buscar_carrologin:function () {
         var self = this;
         var carrito =storage.get('carro');
-        this.fetch()
-        .fail(function () {
-            self.set('propietario',window.models.usuario.id)
-            if (carrito!==null) {
-                self.carrolocal();
-            };
-        }).done(function () {
-            if (carrito!==null) {
-                self.carrolocal();
-            };
-        });
+        //Si tengo el carrito lleno antes de logarme
+        if (window.models.carro.id!==undefined) {
+            var nuevo_carro = new Loviz.Models.Carro();
+            nuevo_carro.fetch().done(function () {
+                self.carro_fucionar(nuevo_carro);
+            }).fail(function () {
+                self.set('propietario',window.models.usuario.id)
+            })
+        }else{
+            //Cuando estoy logueado solo busco mi carrito
+            this.fetch().fail(function () {
+                //Esto cuando no hay un carrito en el servidor
+                 self.set('propietario',window.models.usuario.id)
+            }).done(function () {
+                //Esto es cuando hay un carrito en mi server
+            })
+        }
     },
 	buscar_carro:function () {
         var self = this;
@@ -45,55 +51,29 @@ Loviz.Models.Carro = Backbone.Model.extend({
             self.set('sesion_carro',galleta);
         })
     },
-    fucionar_carro:function(carro_id){
-        debugger;
-        var self = this;
-        $.localStorage.remove('carro');
-        var user = $.sessionStorage.get('usuario');
-        //Fucionar carro Local con el servidor
-        //verifico si el carro local fue salvado
-        var nueva_collecion = new Loviz.Collections.Lineas();
-        nueva_collecion.fetch({
-            data:$.param({carro:carro_id})
-        })
-        .done(function () {
-            nueva_collecion.forEach(function (linea) {
+    carro_fucionar:function (carro_server) {
+        var self =this;
+        var id_server = carro_server.id;
+        var id_local = window.models.carro.id;
+        var lineas_carro_server = new Loviz.Collections.Lineas();
+        //Busco lineas del carro_server
+        lineas_carro_server.fetch({
+            data:$.param({carro:id_server})
+        }).done(function () {
+            //cambio las lineas del carro_server al local
+            lineas_carro_server.forEach(function (linea) {
                 linea.set('carro',self.id);
                 linea.save();
             });
-            //me quedo con el carro del servidor
-            
-            var carro_fucion = new Loviz.Models.Carro({id:carro_id});
-            
-            carro_fucion.set({'estado':'Fusionada','propietario':user});
-            carro_fucion.save().done(function () {
-                window.models.carro.fetch().done(function () {
-                });
-            });
-        });
-    },
-    carrolocal:function () {
-        var self = this;
-        var idcarro = storage.get('carro');
-        var nueva_collecion = new Loviz.Collections.Lineas();
-        this.save()
-        .done(function (data) {
-            nueva_collecion.fetch({
-                data:$.param({carro:idcarro})
-            }).done(function () {
-                nueva_collecion.forEach(function (linea) {
-                    linea.set('carro',self.id);
-                    linea.save();
-                });
-                var carro_fucion = new Loviz.Models.Carro({id:idcarro});
-            
-                carro_fucion.set({'estado':'Fusionada','propietario':window.models.usuario.id});
-                
-                carro_fucion.save().done(function () {
-                    window.models.carro.fetch();
-                });
-                storage.remove('carro');
-            }).fail(function () {
+            //Mato el carro en el server
+            carro_server.set('estado','Fusionada')
+            carro_server.save().done(function () {
+                self.set('propietario',window.models.usuario.id);
+                self.save().done(function () {
+                    debugger;
+                }).fail(function () {
+                    debugger;
+                })
             })
         })
     }

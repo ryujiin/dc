@@ -19,12 +19,7 @@ Loviz.Views.Form_nuevo_user = Backbone.View.extend({
             $.post('/ajax/crear/',{username:this.email,password:this.pass})
             .done(function (data) {
                 if (data.creado===true) {
-                    $.post('/ajax/login/',{username:self.email,password:self.pass})
-                    .done(function (data) {
-                        window.models.usuario.fetch();
-                    }).fail(function (data) {
-                        self.error_crear()
-                    })
+                    window.models.usuario.ingresar(self.email,self.pass);
                 };
             }).fail(function (data) {
                 self.error_crear()
@@ -87,6 +82,7 @@ Loviz.Views.Form_nuevo_user = Backbone.View.extend({
         })
     },
     error_crear:function () {
+        this.$('.bg-warning').empty()
         var error = '<p class="bg-warning">Lo sentimos parece que ya existe un usuario usando ese correo electronico</p>';
         this.$el.prepend(error);
         this.$('input').each(function () {

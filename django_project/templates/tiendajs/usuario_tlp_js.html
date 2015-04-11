@@ -149,8 +149,77 @@
 								(<a href="/cliente/salir/">Salir</a>)
 							</span>
 						</h2>
+						<div class="cuenta_login">
+							<h3>Informacion de Cuenta</h3>
+							<a href="">Administre su correo electrónico y la información de inicio de sesión. </a><br>
+							<h3>Direcciones</h3>
+							<a href="">Gestiona tus direcciones de facturación y envío. </a>
+							<h3>Ordenes</h3>
+							<a href="">Compruebe el estado de sus pedidos.</a>
+							<h3>Lista de Deseos</h3>
+							<a href="">Mira o Modifica tus favoritos</a>
+						</div>
 					</div>
-					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<ul class="cuenta-nav-top navega">
+							<li>
+								<ul class="cuenta-logout">
+									<li class="navlink">
+										<a href="/ajax/salir/" class="btn btn-default text-uppercase">Salir</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<ul class="cuenta-settings">
+									<li>
+										<h3>Configuracion de Cuenta</h3>
+									</li>
+									<li class="navlink ">
+										<a href="">Informacion Personal</a>
+									</li>
+									<li class="navlink">
+										<a href="">Direcciones de Envio y Facturacion</a>
+									</li>
+								</ul>							
+							</li>
+							<li>
+								<ul class="orden-historia">
+									<li>
+										<h3>Historia de Ordenes</h3>
+									</li>
+									<li class="navlink">
+										<a href="">Ver historial de pedidos</a>
+									</li>
+									<li class="navlink">
+										<a href="">Ver ordenes Recientes</a>
+									</li>									
+								</ul>
+							</li>
+							<li>
+								<ul class="lista-deseos">
+									<li>
+										<h3>Lista de Deseos</h3>
+									</li>
+									<li class="navlink">
+										<a href="">Modificar e Invitar Amigos</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<ul class="letra-peque">
+									<li>
+										<h3>La letra Pequeña</h3>
+									</li>
+									<li class="navlink">
+										<a href="">Politica de Privacidad</a>
+									</li>
+									<li class="navlink">
+										<a href="">Terminos y Condiciones</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -161,7 +230,46 @@
 			<span class="foto_user">
 				<img src="/media/tienda/avatar.jpg" alt="">
 			</span>
-			<span class="">Ingresar</span>
+			{%if id===undefined %}
+				<span class="">Ingresar</span>
+			{%else%}
+				<span class="">{{username}}</span>
+			{%endif%}
 		</a>
+	</script>
+
+	<script id="nueva_direccion_template" type="text/template">
+		<div class="form-group">
+			<label for="exampleInputEmail1">*Departamento</label>
+			<select name="departamento" id="departamento_envio" class="form-control">
+				<option value="">Por favor Seleccione</option>
+			</select>
+			<p class="text-danger">Este Campo es necesario</p>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">*Provincia</label>
+			<select name="provincia" id="provincia_envio" class="form-control">										
+			</select>
+			<p class="text-danger">Este Campo es necesario</p>
+
+		</div>		
+		<div class="form-group">
+			<label for="exampleInputPassword1">*Distrito</label>
+			<select name="distrito" id="distrito_envio" class="form-control">										
+			</select>
+			<p class="text-danger">Este Campo es necesario</p>
+
+		</div>		
+		<div class="form-group">
+			<label for="exampleInputPassword1">*Direccion</label>
+			<input type="text" class="form-control" id="direccion_envio" placeholder="Calle, Mzn , # ">
+			<p class="text-danger">Este Campo es necesario</p>
+		</div>
+		<div class="form-group">
+			<label>*Telefono</label>
+			<input type="text" class="form-control" id="telefono_envio" placeholder="555-5555">
+			<p class="text-danger">Este Campo es necesario</p>
+		</div>
+		<button type="submit" class="btn btn-default">Guardar Direccion</button>
 	</script>
 {% endverbatim %}

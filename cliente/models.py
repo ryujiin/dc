@@ -13,6 +13,7 @@ class Cliente(models.Model):
     
 class Direccion(models.Model):
 	TIPO = (('envio','Direccion de envio'),('facturacion','Direccion de Facturacion'))
+	nombre = models.CharField(max_length=100,blank=True,null=True)
 	usuario = models.ForeignKey(User,related_name='direcciones', null=True,blank=True)
 	tipo = models.CharField(max_length=100,blank=True,null=True,choices=TIPO)
 	departamento = models.CharField(max_length=100,blank=True,null=True)

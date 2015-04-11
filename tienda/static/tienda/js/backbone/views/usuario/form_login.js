@@ -16,24 +16,7 @@ Loviz.Views.Form_login = Backbone.View.extend({
         e.preventDefault();
         var verificar = this.verificar();
         if (verificar === true) {
-            $('#caja_ajax').show();
-            $.post('/ajax/login/',{username:this.email,password:this.pass})
-            .done(function (data) {
-                $('#caja_ajax').hide();
-                if (data.error_message!==undefined) {
-                    self.$('.bg-warning').hide();
-                    var error = '<p class="bg-warning">'+data.error_message+'</p>';
-                    self.$el.prepend(error);
-                    self.$('#form_email').val('')
-                    self.$('#form_pass').val('')
-                    self.verificar();
-                }else{
-                    window.models.usuario.fetch().done(function () {
-                    })
-                }
-            }).fail(function (data) {
-                $('#caja_ajax').hide();
-            })
+            window.models.usuario.ingresar(this.email,this.pass,self);
         }
     },
     verificar:function () {
@@ -56,5 +39,14 @@ Loviz.Views.Form_login = Backbone.View.extend({
             return false
         }
         return true
+    },
+    mensaje_error:function  (data) {
+        var self = this;
+        self.$('.bg-warning').hide();
+        var error = '<p class="bg-warning">'+data.error_message+'</p>';
+        self.$el.prepend(error);
+        self.$('#form_email').val('')
+        self.$('#form_pass').val('')
+        self.verificar();
     }
 });

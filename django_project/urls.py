@@ -6,6 +6,8 @@ from django.conf import settings
 from catalogo import views
 from tienda import views as TiendaViews
 from cesta.views import LineasViewsets
+from ubigeo.views import RegionViewset
+from cliente import views as ClienteViewsets
 
 from rest_framework.routers import DefaultRouter
 #Creando rutas
@@ -17,6 +19,8 @@ router.register(r'lineas',LineasViewsets,'lineas')
 router.register(r'producto', views.Producto_singleViewsets,'producto')
 router.register(r'color', views.ColorViewsets,'Color')
 router.register(r'tienda/sliderhome', TiendaViews.SliderHomeViewsets,'sliderhome')
+router.register(r'cliente/direcciones', ClienteViewsets.DireccionViewsets,'Direcciones')
+router.register(r'ubigeo', RegionViewset,'ubigeo')
 
 admin.autodiscover()
 

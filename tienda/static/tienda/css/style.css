@@ -161,3 +161,6 @@ p.bg-warning{border-color:#faebcc;color:#8a6d3b;padding:10px 20px}
 #usuario_login h2 .sub-titulo{line-height:1;font-size:.6em;display:block}
 #usuario_login h2 .cuenta_salir{font-size:.6em;}
 #usuario_login h2 .cuenta_salir a{text-decoration:underline}
+#usuario_login .cuenta-nav-top{margin-top:20px;}
+#usuario_login .cuenta-nav-top li{list-style:none}
+#usuario_login .cuenta-nav-top .cuenta-logout a{letter-spacing:1px;font-size:1.04em}
