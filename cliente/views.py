@@ -98,7 +98,7 @@ def ingresar(request):
 		else:
 			raise Http404
 
-@login_required(login_url='/ingresar/')
+@login_required(login_url='/cliente/cuenta/')
 def salir(request):
 	logout(request)
 	return HttpResponseRedirect('/')

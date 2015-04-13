@@ -6,6 +6,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		'carro/':'carro',
 		'pagar/':'pagar',
 		'cliente/cuenta/':'cliente_cuente',
+		'cliente/salir/':'salir',
 		'*notFound': 'notFound',
 	},
 	initialize : function () {
@@ -40,6 +41,11 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	cliente_cuente:function () {
 		window.app.slug='cliente';
 		window.views.usuario.render();
+	},
+	salir:function () {
+		console.log('salir');
+		$.removeCookie('carrito', { path: '/' });
+		window.location.href='/ajax/salir/';
 	},
 	notFound:function () {
 		console.log('Estamos en una pagina vacia')
