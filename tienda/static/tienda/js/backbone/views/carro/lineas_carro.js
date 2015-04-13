@@ -18,9 +18,7 @@ Loviz.Views.Linea_carro = Backbone.View.extend({
     },
     borrar_linea:function () {
         this.$el.fadeOut('slow');
-        this.model.destroy().done(function () {
-            window.models.carro.fetch();
-        });
+        this.model.destroy();
     },
     reducir_cantidad:function () {
         this.$('.down').hide();        
@@ -41,10 +39,14 @@ Loviz.Views.Linea_carro = Backbone.View.extend({
         })
     },
     menos_productos:function () {
+        var self=this;
         var cantidad = this.model.toJSON().cantidad;
         this.model.set('cantidad',cantidad-1)
         this.model.save().done(function () {
             window.models.carro.fetch()
-        })
-    }
+            if (self.model.toJSON().cantidad===0) {
+                self.borrar_linea();
+            };            
+        });
+    },
 });

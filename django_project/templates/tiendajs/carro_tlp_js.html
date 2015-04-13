@@ -22,22 +22,7 @@
 				</div>
 				<div id="lineas_carro">					
 				</div>
-				<table id="carro_detalle" class="table">
-					<tbody>
-						<tr>
-							<td>SubTotal:</td>
-							<td>S/.{{total}}</td>
-						</tr>
-						<tr>
-							<td>Gasto de Envio:</td>
-							<td>S/. 0.00</td>
-						</tr>
-						<tr>
-							<td>Total:</td>
-							<td>S/.{{total}}</td>
-						</tr>
-					</tbody>
-				</table>
+				<div id="carro_total"></div>
 				<div class="carro_action">
 					<a class="btn contraste1 btn-default link" href="/pagar/">
 						<span class="icono icon-angle-right"></span>
@@ -47,6 +32,23 @@
 			</div>
 		</div>
 	</div>
+</script>
+
+<script id="carro_total_template" type="text/template">
+	<tbody>
+		<tr>
+			<td>SubTotal:</td>
+			<td>S/.{{total}}</td>
+		</tr>
+		<tr>
+			<td>Gasto de Envio:</td>
+			<td>S/. 0.00</td>
+		</tr>
+		<tr>
+			<td>Total:</td>
+			<td>S/.{{total}}</td>
+		</tr>
+	</tbody>
 </script>
 
 <script id="carro_vacio_template" type="text/template">
