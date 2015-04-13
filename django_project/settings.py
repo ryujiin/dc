@@ -48,6 +48,7 @@ INSTALLED_APPS = (
     'cliente',
     'catalogo',
     'oficina',
+    'pedido',
     'tienda',
     'ubigeo',
 )

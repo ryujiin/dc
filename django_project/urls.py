@@ -8,6 +8,7 @@ from tienda import views as TiendaViews
 from cesta.views import LineasViewsets
 from ubigeo.views import RegionViewset
 from cliente import views as ClienteViewsets
+from pedido.views import PedidoViewSet
 
 from rest_framework.routers import DefaultRouter
 #Creando rutas
@@ -20,6 +21,7 @@ router.register(r'producto', views.Producto_singleViewsets,'producto')
 router.register(r'color', views.ColorViewsets,'Color')
 router.register(r'tienda/sliderhome', TiendaViews.SliderHomeViewsets,'sliderhome')
 router.register(r'cliente/direcciones', ClienteViewsets.DireccionViewsets,'Direcciones')
+router.register(r'pedidos', PedidoViewSet,'Pedido')
 router.register(r'ubigeo', RegionViewset,'ubigeo')
 
 admin.autodiscover()
@@ -29,7 +31,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'django_project.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^api/cliente/', include('cliente.urls')),    
-    url(r'^api/carro/', include('cesta.urls')),    
+    url(r'^api/carro/', include('cesta.urls')),
     url(r'^api/', include(router.urls)),
     url(r'^oficina/',include('oficina.urls')),
     url(r'^admin/', include(admin.site.urls)),

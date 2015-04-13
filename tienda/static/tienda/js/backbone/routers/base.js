@@ -32,7 +32,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	},
 	carro:function () {
 		window.app.slug='carro';
-		window.views.carro.render();
+		window.views.carro.varificar_numero();
 	},
 	pagar:function () {
 		window.app.slug='pagar';

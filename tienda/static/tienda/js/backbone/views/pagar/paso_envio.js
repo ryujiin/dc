@@ -42,7 +42,7 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
         var metodo = $('input[name=metodo_envio]:checked').val();
         if (direccion!==undefined) {
             if (metodo!==undefined) {
-                debugger;
+                
             }else{
                 $('.metodo_envio').addClass('has-error');
             }

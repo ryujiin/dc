@@ -54,7 +54,9 @@ Loviz.Views.Carro = Backbone.View.extend({
 	varificar_numero:function () {
 		if (this.model.toJSON().lineas===0) {
 			this.render_vacio();
-		};
+		}else{
+			this.render();
+		}
 	},
 	addTotal:function () {
 		var viewTotal = new Loviz.Views.Carro_tatal({

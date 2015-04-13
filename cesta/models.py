@@ -26,7 +26,7 @@ class Carro(models.Model):
 	date_submitted = models.DateTimeField(blank=True,null=True)
 	
 	def __unicode__(self):
-		return "Carro de %s" %(self.propietario)
+		return "Carro de %s - %s" %(self.propietario,self.estado)
 
 	def all_lineas(self):
 		return LineaCarro.objects.filter(carro=self)
