@@ -36,7 +36,8 @@ urlpatterns = patterns('',
     url(r'^ajax/login/', 'cliente.views.ingresar', name='ingresar_ajax'),
     url(r'^ajax/crear/', 'cliente.views.nuevo_usuario', name='nuevo_usuario'),    
     url(r'^cliente/salir/', 'cliente.views.salir', name='salir'),
-    url(r'^api/productoSingle/$',views.Producto_singleView.as_view()),    
+    url(r'^api/productoSingle/$',views.Producto_singleView.as_view()),
+     url('', include('social.apps.django_app.urls',namespace="social")),
     url(r'^',include('tienda.urls')),    
 )
 if settings.DEBUG:

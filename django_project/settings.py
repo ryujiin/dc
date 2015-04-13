@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     #apps de terceros
     'rest_framework',
     'sorl.thumbnail',
+    'social.apps.django_app.default',
     #mis apps
     'cesta',
     'cliente',
@@ -106,7 +107,36 @@ TEMPLATE_DIRS = (
     location('templates'),
 )
 
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
+)
+
 AUTHENTICATION_BACKENDS = (
     'cliente.backends.EmailOrUsernameModelBackend',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.facebook.FacebookAppOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.social_auth.associate_by_email',
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details'
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = config.FACE_KEY
+SOCIAL_AUTH_FACEBOOK_SECRET = config.FACE_SECRET
+SOCIAL_AUTH_FACEBOOK_SCOPE = config.SOCIAL_SCOPE
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/cliente/cuenta/'
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/cliente/cuenta/'
