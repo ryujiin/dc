@@ -65,32 +65,44 @@ Loviz.Views.Form_direccion = Backbone.View.extend({
         if (verificar===true) {
             var departamento = $('#departamento_envio').val();
             var provincia = $('#provincia_envio').val();
+            var distrito = $('#distrito_envio').val();
             departamento = this.depas.get(departamento);
-            provincia = this.provincias.get(provincia);
+            provincia = this.regiones.get(provincia);
+            distrito = this.provincias.get(distrito);
+
+            departamento = departamento.toJSON().name;
+            provincia = provincia.toJSON().name;
+            distrito = distrito.toJSON().name;
 
             var modelo = new Loviz.Models.Direccion();
             modelo.set({
+                nombre : $('#nombre_envio').val(),
                 usuario:window.models.usuario.id,
                 tipo : 'envio',
                 departamento:departamento,
                 provincia:provincia,
-                distrito:$('#distrito_envio').val(),
+                distrito:distrito,
                 direccion : $('#direccion_envio').val(),
-                telefono : $('#telefono_envio')
+                ubigeo:$('#distrito_envio').val(),
+                telefono : $('#telefono_envio').val(),
             });
-            debugger;
+            modelo.save();
+            window.collections.direcciones.add(modelo);
+            this.$el.hide();
         }
     },
     verificar:function () {
+        var veri=false;
         this.$('.form-control').each(function () {
             var valor = $(this).val();
             if (valor==='') {
                 $(this.parentNode).addClass('has-error').removeClass('has-success');
-                return false;
+                veri = false;
             }else{
                 $(this.parentNode).addClass('has-success').removeClass('has-error');
+                veri = true
             }
         });
-        return true;
+        return veri;
     }
 });

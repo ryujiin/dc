@@ -16,20 +16,22 @@
 	<header>
 		<div class="container-fluid head_top">
 			<div class="row">
-				<div class="head_top_left col-md-6">
-					<ul class="menu enlinea">
-						<li><a class="link" href="/">Ayuda</a></li>
-						<li><a class="link" href="/">Chat en Vivo</a></li>
-					</ul>
-				</div>
-				<div class="head_top_right col-md-6">
-					<ul class="menu enlinea pull-right">
-						<li><a class="link" href="/">Buscar</a></li>
-						<div id="usuario_mini" class="enlinea">
-						</div>						
-					</ul>
-				</div>
-				<div class="head_movil col-md-12">
+				<div class="head_top">
+					<div class="head_top_left col-sm-6 no-movil">
+						<ul class="menu enlinea">
+							<li><a class="link" href="/">Ayuda</a></li>
+							<li><a class="link" href="/">Chat en Vivo</a></li>
+						</ul>
+					</div>
+					<div class="head_top_right col-sm-6 no-movil">
+						<ul class="menu enlinea pull-right">
+							<li><a class="link" href="/">Buscar</a></li>
+							<div id="usuario_mini" class="enlinea">
+							</div>						
+						</ul>
+					</div>	
+				</div>				
+				<div class="head_movil col-md-12 movil">
 					<div class="col-xs-5">
 						<a href="tel:015563367" class="text-top">(01)556-3367</a>
 					</div>
@@ -46,10 +48,10 @@
 		</div>
 		<div id="navegador" class="container-fluid head_main">
 			<div class="row">
-				<div class="logo col-md-4">
+				<div class="logo col-md-4 col-sm-4">
 					<a class="link" href="/"><h1>Loviz DelCarpio</h1></a>
 				</div>
-				<div class="main_menu col-md-8">
+				<div class="main_menu col-md-8 col-sm-7 main_menu_movil">
 					<ul class="menu menu_enlinea navegador">
 						<li><a class="link" href="/catalogo/mujer/">Mujer</a></li>
 						<li><a class="link" href="/catalogo/hombre/">Hombre</a></li>
@@ -59,7 +61,7 @@
 					</ul>
 				</div>
 				<div id="mini_carro"></div>
-				<div class="menu_movil">
+				<div class="menu_movil movil">
 					<button class="btn btn-default">
 						<span class="icono icono-menu icon-menu"></span>
 						Menu
@@ -250,6 +252,7 @@
 	<script src="{% static "tienda/js/backbone/views/producto_single/favorito_icono.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/producto_single/producto_single.js" %}"></script>	
 	
+	<script src="{% static "tienda/js/backbone/views/usuario/direccion.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/usuario/mini_usuario.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/usuario/form_login.js" %}"></script>	
 	<script src="{% static "tienda/js/backbone/views/usuario/form_nuevo_user.js" %}"></script>	

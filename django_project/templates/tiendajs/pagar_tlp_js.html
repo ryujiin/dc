@@ -26,7 +26,15 @@
 					</div>				
 				</div>
 				<div class="col-md-4">
-					<div id="resumen_orden">
+					<div id="resumen_orden_pagar">
+						<div class="row">
+							<h3>Resumen de Orden <span>Editar Carrito</span></h3>
+							<div id="linas_resumen">
+							</div>
+							<div class="linea_resumen">
+								
+							</div>														
+						</div>
 					</div>
 				</div>			
 			</div>
@@ -80,36 +88,21 @@
 			</legend>
 			<div class="direccion_envio">
 				<div class="nueva_direccion">
-					<div class="direciones_gravadas">
-						<div class="form-group direcciones">
-							<div class="col-md-6">
-								<div class="radio">
-								  <label>
-								    <input type="radio" name="direccion_elegida" id="direccion_elegida">
-								    <address>
-									  <strong>
-									  	Twitter, Inc.
-									  </strong><br>
-									  795 Folsom Ave, Suite 600<br>
-									  San Francisco, CA 94107<br>
-									  <abbr title="Phone">P:</abbr> (123) 456-7890
-									</address>
-								  </label>
-								</div>
-							</div>
-							<button class="btn btn-default justi add_direccion">Agregar una direccion <span class="glyphicon glyphicon-plus"></span></button>
-						</div>
+					<div class="direciones_gravadas form-group">
+						<p class="text-danger">Porfavor selecciona una direccion de envio o agrega una</p>
 					</div>
+					<button class="btn btn-default justi add_direccion">Agregar una direccion <span class="glyphicon glyphicon-plus"></span>
+					</button>				
 					<div class="nueva_direccion_form"></div>
 				</div>
 			</div>
-			<div class="metodo_envio"></div>
 		</fieldset>
 		<fieldset>
 			<legend>Metodo de Envio
 				<span>"*"<em>requerido</em></span>
 			</legend>
-			<form action="">
+			<div class="metodo_envio form-group">
+				<p class="text-danger">Porfavor selecciona una un metodo de envio</p>
 				<div class="radio">
 					<label>
 						<input type="radio" name="metodo_envio"> 3 - 4 dias Utiles - <span>Gratis!</span>
@@ -125,7 +118,7 @@
 						<input type="radio" name="metodo_envio"> 1 dia Util - <span>S/.12.00</span>
 					</label>
 				</div>
-			</form>
+			</div>
 		</fieldset>
 		<div class="caja_next">
 			<h4>¿Que sigue?</h4>
@@ -165,39 +158,18 @@
 		</fieldset>
 	</script>
 
-	<script id="resumen_orden_template" type="text/template">
-		<div class="row">
-			<h3>Resumen de Orden <span>Editar Carrito</span></h3>
-			<div class="linea_resumen">
-				<div class="col-xs-5">
-					<img src="http://localhost:8000/media/cache/6b/79/6b79f32af1c36b8ea686e091288b3685.jpg" alt="">
-				</div>
-				<div class="col-xs-7 detalles">
-					<div class="nombre">CABALLITO NUBE (ROSADO), LOVIZ DELCARPIO</div>
-					<div class="color"><label for="">Color:</label>Rosado</div>
-					<div class="talla"><label for="">Talla:</label>35-36</div>
-					<div class="cantidad"><label for="">Cantidad:</label>1</div>
-					<div class="precio"><label for="">Precio:</label>S./22.00</div>
-				</div>	
+	<script id="linea_resumen_template" type="text/template">
+		<div class="linea_resumen">
+			<div class="col-xs-5">
+				<img src="{{thum}}" alt="">
 			</div>
-			<div class="linea_resumen">
-				<table id="carro_detalle" class="table">
-					<tbody>
-						<tr>
-							<td>SubTotal:</td>
-							<td>S/.{{subtotal}}</td>
-						</tr>
-						<tr>
-							<td>Gasto de Envio:</td>
-							<td>S/. 0.00</td>
-						</tr>
-						<tr>
-							<td>Total:</td>
-							<td>S/.{{total}}</td>
-						</tr>
-					</tbody>
-				</table>	
-			</div>														
+			<div class="col-xs-7 detalles">
+				<div class="nombre"><strong>{{nombre}}</strong></div>
+				<div class="color"><label for="">Color:</label>{{color}}</div>
+				<div class="talla"><label for="">Talla:</label>{{talla}}</div>
+				<div class="cantidad"><label for="">Cantidad:</label>{{cantidad}}</div>
+				<div class="precio"><label for="">Precio:</label>S./{{subtotal}}</div>
+			</div>	
 		</div>
 	</script>
 {% endverbatim %}

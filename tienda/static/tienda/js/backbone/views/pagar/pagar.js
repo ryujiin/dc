@@ -20,6 +20,8 @@ Loviz.Views.Pagar = Backbone.View.extend({
         this.$el.hide();
         this.desaparecer();
 	    this.poner_pasos();
+	    this.add_lineas_resumen();
+	    this.add_total_resumen();
 	    this.ver_status();	    
 	},
 	desaparecer:function (e) {
@@ -42,15 +44,30 @@ Loviz.Views.Pagar = Backbone.View.extend({
 		var paso_envio = new Loviz.Views.Paso_envio();
 		this.$('#envio_pagar').append(paso_envio.$el)
 		var paso_metodo = new Loviz.Views.Paso_pagar();
-		this.$('#metodo_pago_pagar').append(paso_metodo.$el)
-		var resumen_orden = new Loviz.Views.Resumen_pagar({
-			model:window.models.carro
-		});
-		this.$('#resumen_orden').append(resumen_orden.$el);		
+		this.$('#metodo_pago_pagar').append(paso_metodo.$el);
 	},
 	cambiar_estado:function () {
 		var estado = this.model.toJSON().estado;
 		this.$('.linea_progrecion .paso').removeClass('actual');
 		this.$('.linea_progrecion .'+estado).addClass('actual');
+	},
+	add_lineas_resumen:function  () {
+		var self = this;
+		var lineas = new Loviz.Collections.Lineas()
+		lineas.fetch({
+			data:$.param({carro:window.models.carro.id})
+		}).done(function () {
+			lineas.forEach(self.add_linea,self)
+		})
+	},
+	add_linea:function (linea) {
+		var vista = new Loviz.Views.Linea_carro({model:linea});
+		this.$('#linas_resumen').append(vista.$el);
+	},
+	add_total_resumen:function(){
+		var viewTotal = new Loviz.Views.Carro_tatal({
+			model:window.models.carro
+		});
+		this.$('.linea_resumen').append(viewTotal.$el);
 	}
 });

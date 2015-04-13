@@ -40,7 +40,6 @@ $(document).ready(function(){
             model:window.models.usuario,
             el:$('#mini_user_movil'),
         });
-        window.views.tienda = new Loviz.Views.Tienda();
         window.views.navegador = new Loviz.Views.Navegador();
         window.views.pagar = new Loviz.Views.Pagar({
             model:new Loviz.Models.Pagar()

@@ -23,6 +23,7 @@ class Direccion(models.Model):
 	ubigeo = models.ForeignKey(Ubigeo,max_length=100,blank=True,null=True,related_name='direccion')
 	referencia = models.CharField(max_length=200,blank=True,null=True)
 	codigo_postal = models.CharField(max_length=20,blank=True,null=True)
+	telefono = models.CharField(max_length=11,blank=True,null=True)
 
 class Comentario(models.Model):
 	producto = models.ForeignKey(Producto)

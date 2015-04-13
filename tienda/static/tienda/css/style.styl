@@ -18,7 +18,7 @@ body
 			color #111
 	.contenedor
 		margin 0 auto		
-		max-width 420px
+		max-width 100%
 	.enlinea
 		display inline-block
 	.invisible
@@ -41,7 +41,6 @@ body
 	border-radius 0
 	transition all 0.2s ease-out
 	outline none
-	padding 10px 10px
 	font-family f_imprenta
 	&.contraste1
 		text-transform uppercase		
@@ -73,6 +72,10 @@ body
 	border-top 3px solid #111
 	box-shadow 0px 2px 4px rgba(0,0,0,0.5)
 	display none
+.color-plomo
+	color #ddd
+.color-aguamarina
+	color aguamarina
 #catalogo
 	margin-bottom 20px
 	.refinamiento-nav
@@ -105,9 +108,22 @@ body
 	.carro_action
 		.btn
 			margin 10px 0
-			width 100%
 	.row
 		margin 0
+.checkbox+.checkbox, .radio+.radio
+	margin-top 10px
+.direciones_gravadas
+	overflow hidden
+	.radio
+		label
+			padding 10px 19px 0px 32px
+			border 1px solid #fff
+			border-radius 10px			
+			&:hover
+				border 1px solid #ddd
+			&.seleccionado
+				border 1px solid #111
+				
 footer
 	background #111
 	color #fff
@@ -150,8 +166,6 @@ footer
 		.text-warning
 			display block
 .head_top
-	.head_top_left,.head_top_right
-		display none
 	.head_movil
 		border-bottom 2px solid #111
 		overflow hidden
@@ -308,6 +322,10 @@ h1,h2,h3,h4,h5,h6
 				width 40px
 				padding 5px 
 				border-left 3px solid #333
+.no-movil
+	display none
+.nueva_direccion_form
+	padding 20px 0
 #navegador
 	position relative
 	transition-property top, box-shadow
@@ -518,7 +536,7 @@ p
 			background-color #fff
 			opacity 0.7
 			border-color #ddd
-#resumen_orden
+#resumen_orden_pagar
 	margin-top 50px
 	h3
 		margin 0
@@ -567,3 +585,68 @@ p
 			a
 				letter-spacing 1px
 				font-size 1.04em
+
+@media (min-width: 768px)
+	body
+		.contenedor
+			max-width 100%
+		.titulo
+			text-align left
+	.btn
+		padding 10px 40px
+		&.justi
+			width auto
+		&.contraste1
+			.icon-angle-right				
+				display none
+			&:hover
+				.icon-angle-right
+					display block
+					right 10px
+	.carro_action
+		overflow hidden
+		.btn
+			float right
+	.head_top
+		border-bottom 1px solid #f4f4f4
+	#lineas_carro
+		padding 10px 0
+		.linea
+			overflow hidden
+			label
+				display none
+			.linea_precio,.linea_cantidad,.linea_subtotal
+				text-align center
+	.lineas_label		
+		font-family f_imprenta
+		text-transform uppercase
+		letter-spacing 1px
+		border-bottom 1px solid #f4f4f4
+		padding-bottom 5px
+	.menu
+		&.enlinea
+			li
+				display inline-block
+	.movil
+		display none
+	#navegador
+		.main_menu
+			display block!important
+			.navegador
+				li
+					border-bottom none
+					width 19%
+					display inline-block
+					margin-top 10px
+					a
+						width auto
+	.no-movil
+		display block
+	#usuario_mini
+		.miniuser
+			display none
+
+@media (min-width: 1200px)
+	body
+		.contenedor
+			max-width 1200px

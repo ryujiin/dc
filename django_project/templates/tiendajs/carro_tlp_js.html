@@ -15,16 +15,33 @@
 			<div class="row">
 				<h2 class="titulo">Su Carrito de Compras</h2>
 				<div class="carro_action">
-					<a class="btn contraste1 btn-default link" href="/pagar/">
+					<a class="btn contraste1 btn-default link justi" href="/pagar/">
 						Pagar
 						<span class="icono icon-angle-right"></span>
 					</a>
+				</div>
+				<div class="lineas_label row no-movil">
+					<div class="linea_imagen col-sm-3 text-center">
+						Imagen
+					</div>
+					<div class="linea_detalles col-sm-3 text-center">
+						Detalles
+					</div>
+					<div class="linea_precio col-sm-2 text-center">
+						Precio
+					</div>
+					<div class="linea_cantidad col-sm-2 text-center">
+						Cantidad
+					</div>
+					<div class="linea_subtotal col-sm-2 text-center">
+						Total
+					</div>
 				</div>
 				<div id="lineas_carro">					
 				</div>
 				<div id="carro_total"></div>
 				<div class="carro_action">
-					<a class="btn contraste1 btn-default link" href="/pagar/">
+					<a class="btn contraste1 btn-default link justi" href="/pagar/">
 						<span class="icono icon-angle-right"></span>
 						Pagar
 					</a>
@@ -80,19 +97,19 @@
 </script>
 
 <script id="lineas_carro_template" type="text/template">
-	<div class="linea_imagen">
+	<div class="linea_imagen col-sm-3">
 		<img src="{{thum}}" alt="{{full_name}}">
 	</div>
-	<div class="linea_detalles">
+	<div class="linea_detalles col-sm-3">
 		<div class="nombre">{{full_name}}</div>
 		<div class="color">Color: {{color}}</div>
 		<div class="talla">Talla: {{talla}}</div>
 	</div>
-	<div class="linea_precio">
+	<div class="linea_precio col-sm-2">
 		<label for="">Precio:</label>
 		S/.{{precio}}
 	</div>
-	<div class="linea_cantidad">
+	<div class="linea_cantidad col-sm-2">
 		<label for="">Cantidad:</label>
 		<span class="mas_produ cant">
 			<span class="icon-arrow-up2 icono"></span>
@@ -102,7 +119,7 @@
 			<span class="icon-arrow-down2 icono"></span>			
 		</span>
 	</div>
-	<div class="linea_subtotal">
+	<div class="linea_subtotal col-sm-2">
 		<label for="">Total:</label>
 		S/.{{subtotal}}
 	</div>

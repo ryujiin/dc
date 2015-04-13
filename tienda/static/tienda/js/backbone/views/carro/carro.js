@@ -35,9 +35,6 @@ Loviz.Views.Carro = Backbone.View.extend({
 	addLineas:function (pagar) {
 		var lineas = this.model.toJSON().lineas;
 		var self = this;
-		if (pagar==='pagar') {
-			this.pagar=true;
-		};
 		if (lineas > 0) {
 			this.lineas_colecion = new Loviz.Collections.Lineas();
 			this.lineas_colecion.fetch({

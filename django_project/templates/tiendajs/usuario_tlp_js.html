@@ -240,6 +240,11 @@
 
 	<script id="nueva_direccion_template" type="text/template">
 		<div class="form-group">
+			<label>*Nombre</label>
+			<input type="text" class="form-control" id="nombre_envio" placeholder="Ejem: mi Casa">
+			<p class="text-danger">Este Campo es necesario</p>
+		</div>
+		<div class="form-group">
 			<label for="exampleInputEmail1">*Departamento</label>
 			<select name="departamento" id="departamento_envio" class="form-control">
 				<option value="">Por favor Seleccione</option>
@@ -271,5 +276,19 @@
 			<p class="text-danger">Este Campo es necesario</p>
 		</div>
 		<button type="submit" class="btn btn-default">Guardar Direccion</button>
+	</script>
+
+	<script id="direccion_template" type="text/template">
+		<label>
+			<input type="radio" name="direccion_elegida" class="direccion_elegida" value="{{id}}">
+			<address>
+				<strong>
+					{{nombre}}
+				</strong><br>
+				{{direccion}}<br>
+				{{departamento}}, {{provincia}},{{distrito}}<br>
+				<abbr title="Phone">Tlf:</abbr>(051) {{telefono}}
+			</address>
+		</label>
 	</script>
 {% endverbatim %}

@@ -5,14 +5,19 @@ Loviz.Views.Linea_carro = Backbone.View.extend({
         'click .menos_produ': 'menos_productos',
     },
     template: swig.compile($("#lineas_carro_template").html()),
+    template_pagar: swig.compile($("#linea_resumen_template").html()),
     
     initialize: function () {
-        this.quick =false;
         this.listenTo(this.model, "change", this.render, this);        
+        this.render();
     },    
     render: function () {
         var album = this.model.toJSON()
-        var html = this.template(album);
+        if (window.app.slug==='carro') {
+            var html = this.template(album);
+        }else{
+            var html = this.template_pagar(album);
+        }
         this.$el.html(html);
         return this;
     },

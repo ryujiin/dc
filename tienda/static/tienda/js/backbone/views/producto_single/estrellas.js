@@ -15,9 +15,9 @@ Loviz.Views.Estrellas = Backbone.View.extend({
         valor = parseFloat(valor.toFixed(1));
         this.$('span').each(function(i,v){
             if (valor<=i) {
-                $(v).addClass('glyphicon-star-empty');
+                $(v).addClass('icon-star4 color-plomo');
             }else{
-                $(v).addClass('glyphicon-star');
+                $(v).addClass('icon-star4 color-aguamarina');
             }
         });
     },
