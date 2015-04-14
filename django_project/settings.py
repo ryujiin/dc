@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'catalogo',
     'oficina',
     'pedido',
+    'pago',
     'tienda',
     'ubigeo',
 )

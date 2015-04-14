@@ -4,3 +4,4 @@ from models import *
 
 admin.site.register(Pedido)
 admin.site.register(EstadoPedido)
+admin.site.register(MetodoEnvio)

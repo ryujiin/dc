@@ -18,16 +18,19 @@ $(document).ready(function(){
     window.collections.producto_single = new Loviz.Collections.Productos_Single();
     window.collections.favoritos = new Loviz.Collections.Favoritos();
     window.collections.direcciones = new Loviz.Collections.Direcciones();
+    window.collections.metodos = new Loviz.Collections.Envios();
 
     //Views
     $('#caja_ajax').show();
     window.collections.sliderHome.fetch().done(function () {
         window.collections.categorias.fetch().done(function () {
-            iniciar_vistas();
-            $('#caja_ajax').hide();
-            Backbone.history.start({
-                pushState:true,
-            });
+            window.collections.metodos.fetch().done(function () {
+                iniciar_vistas();
+                $('#caja_ajax').hide();
+                Backbone.history.start({
+                    pushState:true,
+                });
+            })
         })
     });
 

@@ -8,7 +8,7 @@ from tienda import views as TiendaViews
 from cesta.views import LineasViewsets
 from ubigeo.views import RegionViewset
 from cliente import views as ClienteViewsets
-from pedido.views import PedidoViewSet
+from pedido.views import PedidoViewSet,MetodoEnvioViewSet
 
 from rest_framework.routers import DefaultRouter
 #Creando rutas
@@ -22,6 +22,7 @@ router.register(r'color', views.ColorViewsets,'Color')
 router.register(r'tienda/sliderhome', TiendaViews.SliderHomeViewsets,'sliderhome')
 router.register(r'cliente/direcciones', ClienteViewsets.DireccionViewsets,'Direcciones')
 router.register(r'pedidos', PedidoViewSet,'Pedido')
+router.register(r'envio', MetodoEnvioViewSet,'metodo_envio')
 router.register(r'ubigeo', RegionViewset,'ubigeo')
 
 admin.autodiscover()

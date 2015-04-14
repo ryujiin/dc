@@ -7,6 +7,9 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from catalogo.models import *
 from django.contrib.auth.models import User as User
+from pedido.models import Pedido
+
+from decimal import Decimal
 
 # Create your models here.
 class Carro(models.Model):
@@ -22,6 +25,7 @@ class Carro(models.Model):
 	propietario = models.ForeignKey(User,related_name='Carrito', null=True,blank=True)
 	sesion_carro = models.CharField(max_length=120,blank=True,null=True)
 	estado = models.CharField(max_length=128,default=ABIERTO,choices=ESTADO_ELECCION)
+	pedido = models.ForeignKey(Pedido,blank=True,null=True)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_submitted = models.DateTimeField(blank=True,null=True)
 	
@@ -49,23 +53,13 @@ class Carro(models.Model):
 	def total_carro(self):
 		subtotal = self.subtotal_carro()
 		envio = self.envio_carro()
-		if envio == 'Envio Gratis!':
-			envio=0
-		total = subtotal + envio
+		total = subtotal + float(Decimal(envio))
 		return total
 
 	def envio_carro(self):
 		envio = 0
-		#if self.propietario:
-			#direcciones = Direccion.objects.filter(usuario=self.propietario)[:1]
-			#for direccion in direcciones:
-				##este precio es para lima
-				#if direccion.provincia.id==28692:
-					#envio = 6
-				#else:
-					#envio = 13
-		#if self.subtotal_carro()>60:
-			#envio = 'Envio Gratis!'
+		if self.pedido:
+			envio = self.pedido.gasto_envio
 		return envio
 
 	def save(self, *args, **kwargs):

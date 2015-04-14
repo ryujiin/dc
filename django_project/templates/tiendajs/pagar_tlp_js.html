@@ -103,21 +103,6 @@
 			</legend>
 			<div class="metodo_envio form-group">
 				<p class="text-danger">Porfavor selecciona una un metodo de envio</p>
-				<div class="radio">
-					<label>
-						<input type="radio" name="metodo_envio"> 3 - 4 dias Utiles - <span>Gratis!</span>
-					</label>
-				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="metodo_envio"> 2 dias Utiles - <span>S/.8.00</span>
-					</label>
-				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="metodo_envio"> 1 dia Util - <span>S/.12.00</span>
-					</label>
-				</div>
 			</div>
 		</fieldset>
 		<div class="caja_next">
@@ -128,6 +113,12 @@
 				<span class="icono icon-angle-right"></span>
 			</button>
 		</div>
+	</script>
+
+	<script id="metodo_envio_template" type="text/template">
+		<label>
+			<input type="radio" name="metodo_envio" value='{{id}}' data-gasto='{{precio}}'>{{nombre}}, {{descripcion|safe}}
+		</label>
 	</script>
 
 	<script id="paso_pagar_template" type="text/template">

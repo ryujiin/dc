@@ -14,6 +14,7 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
 		var html = this.template();
         this.$el.html(html);
         this.listadirecciones();
+        this.metodos_envio();
     },
     aparecer:function () {
     	if (window.views.pagar.model.toJSON().estado ==='envio') {
@@ -38,11 +39,26 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
         this.$('.direciones_gravadas').append(vista.$el);
     },
     siguiente_paso:function () {
+        var self = this;
         var direccion = $('.direccion_elegida:checked').val();
         var metodo = $('input[name=metodo_envio]:checked').val();
         if (direccion!==undefined) {
             if (metodo!==undefined) {
-                
+                if (window.models.pedido===undefined) {
+                    window.models.pedido = new Loviz.Models.Pedido();
+                };
+                window.models.pedido.set({
+                    user:window.models.usuario.id,
+                    metodoenvio:metodo,
+                    direccion_envio:direccion,
+                    estado:8,
+                    gasto_envio:$('input[name=metodo_envio]:checked').data('gasto'),
+                });
+                window.models.pedido.save().done(function (data) {
+                    self.model.set('estado','pagar');
+                    window.models.carro.set('pedido',data.id);
+                    debugger;
+                })
             }else{
                 $('.metodo_envio').addClass('has-error');
             }
@@ -53,5 +69,13 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
     seleccionado:function (e) {
         $('.direciones_gravadas label').removeClass('seleccionado');
         $(e.currentTarget).addClass('seleccionado');
+    },
+    metodos_envio:function () {
+        var self = this;
+        window.collections.metodos.forEach(self.add_metodo,self)
+    },
+    add_metodo:function (metodo) {
+        var vista = new Loviz.Views.Metodo_Envio({model:metodo});
+        this.$('.metodo_envio').append(vista.$el)
     }
 });

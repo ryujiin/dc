@@ -2,15 +2,16 @@ from rest_framework import serializers
 from models import *
 from django.conf import settings
 from catalogo.models import Producto
+from pedido.models import MetodoEnvio,Pedido
 
 class CarroSerializer(serializers.ModelSerializer):
 	lineas = serializers.SerializerMethodField()
 	total = serializers.SerializerMethodField()
 	subtotal = serializers.SerializerMethodField()
-	#envio = serializers.SerializerMethodField()
+	envio = serializers.SerializerMethodField()
 	class Meta:
 		model = Carro
-		fields = ('id','propietario','estado','sesion_carro','lineas','total','subtotal')
+		fields = ('id','propietario','estado','sesion_carro','lineas','total','subtotal','envio','pedido')
 
 	def get_lineas(self,obj):
 		lineas = obj.num_lineas()
@@ -19,6 +20,7 @@ class CarroSerializer(serializers.ModelSerializer):
 
 	def get_total(self,obj):
 		total =obj.total_carro()
+
 		return '%0.2f' %(total)
 
 	def get_subtotal(self,obj):
@@ -26,9 +28,7 @@ class CarroSerializer(serializers.ModelSerializer):
 		return "%0.2f" %(subtotal)
 
 	def get_envio(self,obj):
-		envio = obj.envio_carro()
-		if envio !='Envio Gratis!':
-			envio = "%0.2f" %(envio)
+		envio =0
 		return envio
 
 class LineaSerializer(serializers.ModelSerializer):
