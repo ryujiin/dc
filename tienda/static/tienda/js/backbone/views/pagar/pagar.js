@@ -38,8 +38,12 @@ Loviz.Views.Pagar = Backbone.View.extend({
 			this.model.set('estado' , 'envio');		
 		}
 		if (window.models.pedido!==undefined) {
-			this.model.set('estado','pagar')
-		};
+			if (window.models.pedido.id!==undefined) {
+				if (window.models.carro.toJSON().pedido===window.models.pedido.id) {
+					this.model.set('estado','pagar');
+				};
+			};	
+		};		
 	},
 	poner_pasos:function () {
 		var paso_login = new Loviz.Views.Paso_login({

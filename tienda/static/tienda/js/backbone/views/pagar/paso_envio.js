@@ -44,9 +44,6 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
         var metodo = $('input[name=metodo_envio]:checked').val();
         if (direccion!==undefined) {
             if (metodo!==undefined) {
-                if (window.models.pedido===undefined) {
-                    window.models.pedido = new Loviz.Models.Pedido();
-                };
                 window.models.pedido.set({
                     user:window.models.usuario.id,
                     metodoenvio:metodo,
@@ -57,7 +54,6 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
                 window.models.pedido.save().done(function (data) {
                     self.model.set('estado','pagar');
                     window.models.carro.set('pedido',data.id);
-                    debugger;
                 })
             }else{
                 $('.metodo_envio').addClass('has-error');

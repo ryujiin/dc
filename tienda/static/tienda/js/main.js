@@ -10,7 +10,8 @@ $(document).ready(function(){
 
     //Modelos
     window.models.usuario = new Loviz.Models.Usuario();    
-    window.models.carro = new Loviz.Models.Carro();    
+    window.models.carro = new Loviz.Models.Carro();
+    window.models.pedido = new Loviz.Models.Pedido();
 
     //Colleciones
     window.collections.sliderHome = new Loviz.Collections.SliderHomes();
@@ -19,6 +20,7 @@ $(document).ready(function(){
     window.collections.favoritos = new Loviz.Collections.Favoritos();
     window.collections.direcciones = new Loviz.Collections.Direcciones();
     window.collections.metodos = new Loviz.Collections.Envios();
+    window.collections.pedidos = new Loviz.Collections.Pedidos();
 
     //Views
     $('#caja_ajax').show();

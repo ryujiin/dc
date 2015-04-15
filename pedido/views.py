@@ -15,7 +15,6 @@ from models import *
 class PedidoViewSet(viewsets.ViewSet):
 	def list(self,request):
 		if request.user.is_authenticated:
-			print request.user.pk
 			queryset = Pedido.objects.filter(user=request.user.pk)
 		serializer = PedidoSerializer(queryset, many=True)
 		return Response(serializer.data)
