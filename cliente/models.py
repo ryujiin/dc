@@ -26,6 +26,7 @@ class Direccion(models.Model):
 	telefono = models.CharField(max_length=11,blank=True,null=True)
 
 class Comentario(models.Model):
+	TIPO = (('si','si'),('no','no'))	
 	producto = models.ForeignKey(Producto)
 	variacion = models.ForeignKey(ProductoVariacion,blank=True,null=True)
 	usuario = models.ForeignKey(User, null=True,blank=True)
@@ -35,6 +36,7 @@ class Comentario(models.Model):
 	comentario = models.TextField()
 	creado = models.DateTimeField(auto_now_add=True)
 	email_invitado = models.CharField(max_length=100,blank=True,null=True)
+	recomendacion = models.CharField(max_length=10,blank=True,null=True,choices=TIPO)
 
 	def get_usuario_id(self):
 		if self.usuario:

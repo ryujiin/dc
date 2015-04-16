@@ -18,6 +18,7 @@ Loviz.Views.Producto_single = Backbone.View.extend({
         this.$el.html(html);
         this.generar_galeria();
         this.add_estrellas();
+        this.add_comentarios();
     },
     aparecer:function (e) {
         if (e!=='producto_single') {
@@ -80,4 +81,22 @@ Loviz.Views.Producto_single = Backbone.View.extend({
         this.$('.talla_form .texto_ayuda').fadeIn('slow').delay(2000).fadeOut('slow');
         this.$('.talla_form').addClass('has-error');
     },
+    add_comentarios:function () {
+        var self = this;
+        this.comentarios = new Loviz.Collections.Comentarios();
+        this.comentarios.fetch({
+            data:$.param({producto:this.model.id})
+        }).done(function () {
+            if (self.comentarios.length>0) {
+                self.comentarios.forEach(self.add_coment,self)
+                self.$('.sin_comentarios').empty()                
+            }else{
+                self.$('#comentarios .add_coment').hide()
+            }
+        })
+    },
+    add_coment:function (modelo) {
+        var vista = new Loviz.Views.Comentario({model:modelo});
+        this.$('#comentarios').append(vista.$el);
+    }
 });

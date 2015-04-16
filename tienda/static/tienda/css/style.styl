@@ -37,6 +37,9 @@ body
 #breadcrumb
 	background-color #fff
 	text-transform uppercase
+	font-size 0.8em
+	padding 20px
+	margin-bottom 0px
 .btn
 	border-radius 0
 	transition all 0.2s ease-out
@@ -112,6 +115,33 @@ body
 		margin 0
 .checkbox+.checkbox, .radio+.radio
 	margin-top 10px
+.comentario_producto
+	.usuario_coment
+		.autor_foto
+			width 50px
+			height 50px
+			float left
+		.autor_datos
+			padding-left 70px
+			.nombre_coment
+				.name
+					text-transform uppercase
+					font-family f_imprenta
+				em
+					margin 0 10px
+					font-size 0.9em
+			.titulo_coment
+				margin 5px 0 10px
+	.cuerpo_coment
+		padding-left 70px
+		.recomendado
+			dt,dd
+				display inline-block
+			dt
+				.icono
+					background-color #111
+					color #fff
+					border-radius 10px
 .direciones_gravadas
 	overflow hidden
 	.radio
@@ -443,6 +473,14 @@ p
 		a
 			display inline-block
 			width 100px
+	#comentarios
+		position relative
+		padding 20px 0
+		.btn
+			&.add_coment
+				position absolute
+				right 0
+				top -42px
 	.estilo
 		padding 0 15px
 	.formulario_producto
@@ -520,7 +558,13 @@ p
 	.seccion_producto
 		border-top 1px solid #f4f4f4
 		padding 5px 0
-	
+	.sin_comentarios
+		padding 10px 0
+		.texto-solo
+			font-family f_imprenta
+			text-decoration underline
+			text-transform uppercase
+			cursor pointer
 	.seccion_2_producto
 		padding-top 2em
 		padding-bottom 2em
@@ -648,8 +692,22 @@ p
 	#usuario_mini
 		.miniuser
 			display none
+@media (min-width: 970px)
+	#catalogo
+		.refinamiento-nav
+			display none		
+	#producto_galeria_destok
+		display block
+	#producto_galeria_movil
+		display none!important
+	.refinamiento
+		display block
 
 @media (min-width: 1200px)
 	body
 		.contenedor
 			max-width 1200px
+	#producto_single,#carro,#catalogo
+		max-width 1200px
+		margin-left auto
+		margin-right auto

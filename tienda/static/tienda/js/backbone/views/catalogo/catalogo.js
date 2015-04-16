@@ -34,14 +34,14 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 		var categoria = new Loviz.Views.Categorias({model:modelo});
 	},
 	mostrar_productos:function (cate) {
-		this.$('caja_cargando').slideDown('slow');
+		this.$('caja_cargando').show('slow');
 		var self = this;
 		var productos = new Loviz.Collections.Productos();
 		productos.fetch({
 			data:$.param({categoria:cate})
 		}).done(function () {
 			productos.forEach(self.add_producto,self);
-			self.$('caja_cargando').slideUp('slow');
+			self.$('caja_cargando').hide('slow');
 		})
 	},
 	add_producto:function (modelo) {

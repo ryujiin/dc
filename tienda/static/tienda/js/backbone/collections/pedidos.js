@@ -3,7 +3,7 @@ Loviz.Collections.Pedidos = Backbone.Collection.extend({
 	url : '/api/pedidos/',
 	name : 'Pedidos',
 	initialize:function () {
-        this.listenTo(window.models.usuario, "change", this.buscar, this);
+        this.listenTo(window.models.carro, "change", this.buscar, this);
 	},
 	buscar:function () {
 		var self = this;

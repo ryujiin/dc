@@ -101,8 +101,13 @@
               </div>
               <div class="comentarios">
                 <h3 class="subtitulo">Comentarios de usuarios</h3>
-                <div id="comentarios">
-                  
+                <div id="comentarios"> 
+                  <button class="btn btn-default contraste1 add_coment">Escribe un Comentario</button>              
+                </div>
+                <div class="sin_comentarios">
+                  <div class="estrellas">
+                  </div>
+                  <span class="add_coment texto-solo">Se el primero en escribir un comentario de este producto</span>
                 </div>
               </div>              
             </div>
@@ -195,5 +200,30 @@
             </div>
           </div>
       </script>
-        
+
+      <script id="comentarios_template" type="text/template">
+        <div class="usuario_coment">
+          <figure class="autor_foto">
+            <img src="/media/tienda/avatar.jpg" alt="">
+          </figure>
+          <div class="autor_datos">
+            <div class="estrellas_comentario"></div>
+            <span class="nombre_coment">
+              <span class="name">{{nombre}}</span>                          
+              <em>{{creado}}</em>
+            </span>
+            <h3 class="titulo_coment">{{titulo_comentario}}</h3>
+          </div>
+        </div>
+        <div class="cuerpo_coment">
+          <p>{{comentario}}</p>
+          <dl class="recomendado">
+            <dt>
+              <span class="icono icon-checkmark"></span>
+              <strong>Si,</strong>
+            </dt>
+            <dd>Yo recomiendo este producto</dd>
+          </dl>
+        </div>                    
+      </script>
 {% endverbatim %}
