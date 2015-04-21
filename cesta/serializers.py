@@ -34,11 +34,9 @@ class CarroSerializer(serializers.ModelSerializer):
 
 	def get_metodo_envio(self,obj):
 		if obj.pedido!=None:
-			print obj.pedido
-			print 'k'
 			metodo = obj.pedido.metodoenvio.nombre
 		else:
-			metodo = ''
+			metodo = None
 		return metodo
 
 class LineaSerializer(serializers.ModelSerializer):
