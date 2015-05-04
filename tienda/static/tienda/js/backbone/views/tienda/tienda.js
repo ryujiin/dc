@@ -4,7 +4,7 @@ Loviz.Views.Tienda = Backbone.View.extend({
 		'click .link': 'link_intero',
 		'click header .menu_movil': 'desplegar_menu',
 		'click header .desplegado': 'ocultar_menu',
-
+		'click .footer_menu_bottom .block_footer':'mostrar_menu_footer',
 	},
 	initialize : function () {
 	},
@@ -47,4 +47,7 @@ Loviz.Views.Tienda = Backbone.View.extend({
 		};
 		return galleta
 	},
+	mostrar_menu_footer:function(e){
+		debugger;
+	}
 });

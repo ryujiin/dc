@@ -21,6 +21,7 @@ Loviz.Views.Paso_pagar = Backbone.View.extend({
     },
     selecionado:function (e) {
         console.log(e)
+        
         debugger;
     }
 });
