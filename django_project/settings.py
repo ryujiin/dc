@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'rest_framework',
     'sorl.thumbnail',
     'social.apps.django_app.default',
+    'django_seo_js',
     #mis apps
     'cesta',
     'cliente',
@@ -55,6 +56,8 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django_seo_js.middleware.EscapedFragmentMiddleware',
+    'django_seo_js.middleware.UserAgentMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -142,3 +145,5 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = config.SOCIAL_SCOPE
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/cliente/cuenta/'
 SOCIAL_AUTH_LOGIN_ERROR_URL = '/cliente/cuenta/'
+
+SEO_JS_PRERENDER_TOKEN = config.SEO_JS_PRERENDER_TOKEN

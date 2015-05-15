@@ -688,7 +688,7 @@ p
 			.navegador
 				li
 					border-bottom none
-					width 19%
+					width 15%
 					display inline-block
 					margin-top 10px
 					a
@@ -708,12 +708,23 @@ p
 		display none!important
 	.refinamiento
 		display block
-
+		ul.links
+			padding 0
+			margin 0
+			li
+				list-style none
 @media (min-width: 1200px)
 	body
 		.contenedor
 			max-width 1200px
+	footer
+		.block_footer 
+			h3.menu_titulo
+				font-size 1.15em
+			.menu
+				display block
 	#producto_single,#carro,#catalogo
 		max-width 1200px
 		margin-left auto
 		margin-right auto
+	
