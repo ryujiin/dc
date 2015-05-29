@@ -13,11 +13,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
   	},
 	root : function () {
 		window.app.slug='home';
-		if (window.views.slider_home===undefined) {
-			window.views.slider_home = new Loviz.Views.Sliders_Home({
-				collection : window.collections.sliderHome
-			});
-		}
+		window.views.home.render();
 	},
 	catalogo:function(categoria){
 		window.app.slug='catalogo';

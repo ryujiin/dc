@@ -9,7 +9,6 @@ Loviz.Views.Breadcrumb = Backbone.View.extend({
 	},
 	llenar_bread:function (categoria) {
 		var cate = window.collections.categorias.findWhere({slug:categoria});
-		debugger;
 		var link = '<li class="active">'+cate.toJSON().nombre+'</li>';
 		this.$el.prepend(link);
 		this.verificar_padre(cate)

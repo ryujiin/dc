@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'pedido',
     'pago',
     'tienda',
+    'stock',
     'ubigeo',
 )
 

@@ -19,6 +19,7 @@ Loviz.Views.Catalogo = Backbone.View.extend({
         this.crear_bread(categoria);
         this.crear_bloque_categoria(categoria);
         this.mostrar_productos(categoria);
+        this.mostrar_filtros();
         this.$el.slideDown('slow');
 	},
 	desaparecer:function (e) {
@@ -48,4 +49,7 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 		var producto = new Loviz.Views.Producto({ model: modelo });
 		this.$('.productos').append(producto.render().el);
 	},
+	mostrar_filtros:function () {
+		
+	}
 });

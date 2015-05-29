@@ -1,15 +1,10 @@
 Loviz.Views.Sliders_Home = Backbone.View.extend({
 	className : 'slider_home',
-	el:$('#slider_home'),
-    //template: swig.compile($("#catalogo_template").html()),
 	events: {
 	},
 	initialize : function () {
 		var self = this;
 		this.render();
-		window.routers.base.on('route',function(e){
-            self.aparecer(e);
-        });
 	},
 	render:function () {
 		this.collection.forEach(this.addslide,this);
@@ -26,11 +21,4 @@ Loviz.Views.Sliders_Home = Backbone.View.extend({
 		    singleItem:true
 		})
 	},
-	aparecer:function (e) {
-		if (e!=='root') {
-            this.$el.slideUp('slow');
-        }else{
-        	this.$el.slideDown('slow');
-        }
-	}
 });

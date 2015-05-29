@@ -21,22 +21,27 @@ $(document).ready(function(){
     window.collections.direcciones = new Loviz.Collections.Direcciones();
     window.collections.metodos = new Loviz.Collections.Envios();
     window.collections.pedidos = new Loviz.Collections.Pedidos();
+    window.collections.colores = new Loviz.Collections.Colores();
 
     //Views
     $('#caja_ajax').show();
     window.collections.sliderHome.fetch().done(function () {
         window.collections.categorias.fetch().done(function () {
             window.collections.metodos.fetch().done(function () {
-                iniciar_vistas();
-                $('#caja_ajax').hide();
-                Backbone.history.start({
-                    pushState:true,
-                });
+                window.collections.colores.fetch().done(function () {                    
+                    iniciar_vistas();
+                    $('#caja_ajax').hide();
+                    Backbone.history.start({
+                        pushState:true,
+                    });
+                })
             })
         })
     });
 
     function iniciar_vistas () {
+        window.views.home = new Loviz.Views.Home();
+        /*
         window.views.user_mini = new Loviz.Views.Mini_user({
             model:window.models.usuario,
             el:$('#usuario_mini'),
@@ -61,6 +66,7 @@ $(document).ready(function(){
         window.views.usuario = new Loviz.Views.Usuario({
             model: window.models.usuario
         })
+*/
     }
 
 

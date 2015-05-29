@@ -185,7 +185,18 @@ class Marca(models.Model):
 	def __unicode__(self):
 		return self.nombre
 
-
 class Loved(models.Model):
 	usuario = models.ForeignKey(User,null=True,blank=True,unique=True)
 	producto = models.ForeignKey('Producto',blank=True,null=True,related_name='favoritos')
+
+class Firme(models.Model):
+	MODELOS = (
+		('scuff-01','Scuff 01'),
+		('otro','Otro'),
+	)
+	modelo = models.CharField(max_length=100,choices=MODELOS,blank=True,null=True)
+	talla = models.ForeignKey(Talla)
+	color = models.ForeignKey(Color)
+
+	def __unicode__(self):
+		return "%s - %s" %(self.color,self.talla)

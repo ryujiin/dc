@@ -22,8 +22,7 @@ class CatalogoViewsets(viewsets.ReadOnlyModelViewSet):
 			queryset = Producto.objects.filter(activo=True,categorias__slug=categoria).order_by('-pk')
 		return queryset
 
-class ColorViewsets(viewsets.ModelViewSet):
-	permission_classes = (IsAuthenticated,)
+class ColorViewsets(viewsets.ReadOnlyModelViewSet):
 	serializer_class = ColorSerializer
 	queryset = Color.objects.all()
 
