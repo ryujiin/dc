@@ -12,10 +12,38 @@ body .font_imp{font-family:'Pathway Gothic One',sans-serif;letter-spacing:1px}
 body .overflow{overflow:hidden}
 #bloque_top{overflow:hidden;}
 #bloque_top p{margin:5px 0}
+.carrusel{margin:20px 0;}
+.carrusel .titulo_slider{position:relative;padding:20px;}
+.carrusel .titulo_slider h3{margin:0;text-transform:uppercase;text-align:center;font-family:serif;border-bottom:1px solid #ccc;padding:0 0 5px}
+.carrusel .titulo_slider p{color:#999;font-size:.8em;margin:10px 3px}
+.carrusel .titulo_slider .esquina{border:1px solid #111;position:absolute;width:20px;height:20px;}
+.carrusel .titulo_slider .esquina.top{top:0;border-bottom:none}
+.carrusel .titulo_slider .esquina.bottom{bottom:0;border-top:none}
+.carrusel .titulo_slider .esquina.izq{left:0;border-right:none}
+.carrusel .titulo_slider .esquina.der{right:0;border-left:none}
 footer{background-color:#111;color:#fff;padding:30px 0 0 0;}
 footer a:link,footer a{color:#fff !important}
 footer #bloques_footer .footer_menu_bottom .block_footer .menu_titulo{font-family:'Pathway Gothic One',sans-serif}
+.icono_loved{position:relative;font-family:'Pathway Gothic One',sans-serif;top:5px;right:10px;}
+.icono_loved .icono{cursor:pointer;}
+.icono_loved .icono:hover{color:#60ccc4}
+.icono_loved .icono.checkin{color:#60ccc4}
+.icono_loved .favoritos .cartelicono{width:200px;right:5px}
 #envoltura{min-height:400px}
+.favoritos .cartel_flotante{font-size:1.2em;position:absolute;background-color:#ececec;border-top:3px solid #111;box-shadow:0 2px 4px rgba(0,0,0,0.5);display:none}
+.productos{overflow:hidden;}
+.productos .producto{position:relative;text-align:center;border:1px solid #fff;}
+.productos .producto:hover{border:1px solid #f4f4f4;}
+.productos .producto:hover .estrellas{opacity:1}
+.productos .producto:hover .nombre_producto{text-decoration:underline}
+.productos .producto a:hover{text-decoration:none}
+.productos .producto img{width:100%}
+.productos .producto .nombre_producto{font-family:'Pathway Gothic One',sans-serif;}
+.productos .producto .nombre_producto .estilo{text-transform:uppercase}
+.productos .producto .precios{font-family:'Pathway Gothic One',sans-serif;}
+.productos .producto .precios .en_oferta{color:#f7727a}
+.productos .producto .precios .old_precio{font-size:.8em;margin:0 10px}
+.productos .producto .estrellas{opacity:0;margin:10px 0}
 #navegador_main{overflow:hidden;border-bottom:1px solid #f4f4f4;}
 #navegador_main .logo{font-family:'Great Vibes',cursive;margin-right:30px;}
 #navegador_main .logo .img_logo{width:48px;overflow:hidden;}
