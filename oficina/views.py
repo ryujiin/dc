@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.shortcuts import render_to_response
+from django.contrib.auth.decorators import user_passes_test
 
-# Create your views here.
-class OficinaView(TemplateView):
-	template_name = "oficina.html"
+@user_passes_test(lambda u:u.is_staff, login_url='/admin/')
+def my_oficina(request):
+	return render_to_response('oficina.html')

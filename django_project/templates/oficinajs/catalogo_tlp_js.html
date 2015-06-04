@@ -1,57 +1,63 @@
 {% verbatim %}	
 	<script id="catalogo_template" type="text/template">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-      	<div class="row">
-      		<div class="col-md-10">
-      			<h2>Productos</h2>      			
-      		</div>
-      		<div class="col-md-2">
-      			<div class="acciones pull-rigth">
-		      		<button type="button" class="btn btn-primary add_producto"><span class="glyphicon glyphicon-plus"></span>Nuevo</button>
-		      	</div>
-      		</div>
-      	</div>
-      </div>
-      <div id="productos" class="panel-body">
-        <table class="table table-hover">
-        	<thead>
-        		<tr>
-        			<th></th>
-        			<th>ID</th>
-        			<th>Imagen</th>
-        			<th>Nombre</th>
-        			<th>Precio</th>
-        			<th>Estado</th>
-        			<th>Acciones</th>
-        		</tr>
-        	</thead> 
-        	<tbody id="lista_productos">
-        	</tbody>       	
-        </table>
-      </div>
+    <h1 class="page-header">Catalogo</h1>
+    <h2 class="sub-header">Lista de productos</h2>
+    <div class="productos-listas table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox">
+            </th>
+            <th>ID</th>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Full Nombre</th>
+            <th>Color</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="lista_productos">
+        </tbody>
+      </table>
     </div>
   </script>
 
   <script id="producto_lista_template" type="text/template">
-  	<td><input type="checkbox"></td>
-  	<th>{{id}}</th>
-  	<td><img src="{{thum}}" alt="" width="100"></td>
-  	<td>{{full_name}}</td>
-  	<td>{{precio}}</td>
-  	<td>
-  		{%if activo === true %}
-  			<span class="label label-success">
-  				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-  			</span>
-  		{%else%}
-  			<span class="label label-danger">
-  				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-  			</span>
-  		{%endif%}
-  	</td>
-  	<td>
-  		<button type="button" class="btn btn-default">Modificar <span class="glyphicon glyphicon-pencil"></span></button>
-  	</td>
+      <td>
+        <input type="checkbox">
+      </td>
+      <td>
+        <strong>{{id}}</strong>        
+      </td>
+      <td>
+        <div class="img">
+          <img src="{{thum}}" width="100" alt="">          
+        </div>
+      </td>
+      <td>
+        <p>{{nombre}}</p>
+      </td>
+      <td>
+        <p>{{full_name}}</p>        
+      </td>
+      <td>
+        {{color}}
+      </td>
+      <td>
+        <p>
+        {%if activo %}
+          <span class="glyphicon glyphicon-ok"></span>
+        {%else%}
+          <span class="glyphicon glyphicon-remove"></span>        
+        {%endif%}
+        </p>        
+      </td>
+      <td>
+        <a class="btn btn-default" href="#" role="button">Ver</a>
+        <a class="btn btn-default" href="#" role="button">Editar</a>
+        <a class="btn btn-default" href="#" role="button">Eliminar</a>
+      </td>
   </script>
 {% endverbatim %}

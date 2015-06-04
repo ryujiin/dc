@@ -1,5 +1,6 @@
 Loviz.Views.Producto_single = Backbone.View.extend({
-    el:$('#producto_single'),
+    el:$('#main'),
+    className:'producto_single',
 	events: {
         'change .talla' : 'talla_seleccionada',
         'click .addcart':'addcart',
@@ -8,14 +9,12 @@ Loviz.Views.Producto_single = Backbone.View.extend({
     initialize: function () {
         var self = this;
 	    this.listenTo(this.model, "change", this.render, this);
-        window.routers.base.on('route',function(e){
-            self.aparecer(e);
-        });
     },    
     render: function () {
         var album = this.model.toJSON()
         var html = this.template(album);
         this.$el.html(html);
+        this.$el.addClass('producto_single');
         this.generar_galeria();
         this.add_estrellas();
         this.add_comentarios();

@@ -1,11 +1,11 @@
 $(document).ready(function(){
 	console.log('funciona');
 
-    window.routers.base = new Oficina.Routers.Base();
+    window.routers.base = new Oficina.Routers.Rutas();
 
-    window.collections.productos_lista = new Oficina.Collections.Productos();
-
-    window.views.pagina = new Oficina.Views.Pagina( $('body') );
+    window.views.pagina = new Oficina.Views.Pagina($('body'));
+    window.views.resumen = new Oficina.Views.Resumen();
+    window.views.catalogo = new Oficina.Views.Catalogo();
 
 	Backbone.history.start({
         pushState:true,

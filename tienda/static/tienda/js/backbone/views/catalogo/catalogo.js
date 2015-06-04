@@ -1,6 +1,6 @@
 Loviz.Views.Catalogo = Backbone.View.extend({
 	className: 'cotenedor',
-	el:$('#catalogo'),
+	el:$('#main'),
 	
     template: swig.compile($("#catalogo_template").html()),
 
@@ -8,9 +8,6 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 	},
 	initialize : function () {
 		var self = this;
-		window.routers.base.on('route',function(e){
-			self.desaparecer(e);
-        });
 	},
 	render:function (categoria) {
 		var html = this.template();
@@ -21,11 +18,6 @@ Loviz.Views.Catalogo = Backbone.View.extend({
         this.mostrar_productos(categoria);
         this.mostrar_filtros();
         this.$el.slideDown('slow');
-	},
-	desaparecer:function (e) {
-		if (e!=='catalogo') {
-            this.$el.slideUp('slow');
-        };
 	},
 	crear_bread:function (categoria) {
 		var bread = new Loviz.Views.Breadcrumb(categoria);
