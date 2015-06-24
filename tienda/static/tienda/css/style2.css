@@ -12,6 +12,7 @@ body .font_imp{font-family:'Pathway Gothic One',sans-serif;letter-spacing:1px}
 body .overflow{overflow:hidden}
 #bloque_top{overflow:hidden;}
 #bloque_top p{margin:5px 0}
+.breadcrumb{background-color:#f9f9f9}
 .carrusel{margin:20px 0;}
 .carrusel .titulo_slider{position:relative;padding:20px;}
 .carrusel .titulo_slider h3{margin:0;text-transform:uppercase;text-align:center;font-family:serif;border-bottom:1px solid #ccc;padding:0 0 5px}
@@ -35,7 +36,6 @@ footer #bloques_footer .footer_menu_bottom .block_footer .menu_titulo{font-famil
 #producto_galeria_movil .item img{width:100%}
 .productos{overflow:hidden;}
 .productos .producto{position:relative;text-align:center;border:1px solid #fff;}
-.productos .producto:hover{border:1px solid #f4f4f4;}
 .productos .producto:hover .estrellas{opacity:1}
 .productos .producto:hover .nombre_producto{text-decoration:underline}
 .productos .producto a:hover{text-decoration:none}

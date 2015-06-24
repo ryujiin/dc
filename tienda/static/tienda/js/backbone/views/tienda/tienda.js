@@ -12,21 +12,7 @@ Loviz.Views.Tienda = Backbone.View.extend({
 	link_intero:function (e) {
 		e.preventDefault();
 		var link = e.currentTarget.pathname;
-		this.ocultar_menu();
 		window.routers.base.navigate(link, {trigger:true});
-	},
-	desplegar_menu:function () {
-		$('.main_menu').slideDown('slow');
-		$('.menu_movil').addClass('desplegado');
-		$('.menu_movil .icono').removeClass('icon-menu').addClass('icon-cross');
-	},
-	ocultar_menu:function () {
-		var ancho = $(window).width();
-		if (ancho<768) {
-			$('.main_menu').slideUp('slow');
-			$('.menu_movil').removeClass('desplegado');
-			$('.menu_movil .icono').removeClass('icon-cross').addClass('icon-menu');	
-		};		
 	},
 	obt_galleta : function(){
 		var galleta = $.cookie('carrito');
@@ -51,7 +37,4 @@ Loviz.Views.Tienda = Backbone.View.extend({
 	go_home:function () {
 		window.routers.base.navigate('/', {trigger:true});
 	},
-	mostrar_menu_footer:function(e){
-		debugger;
-	}
 });

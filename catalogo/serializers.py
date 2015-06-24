@@ -189,3 +189,10 @@ class ProductoSingleSereializer(serializers.ModelSerializer):
 
 	def get_num_comentarios(self,obj):
 		return Comentario.objects.filter(producto=obj.id).count()
+
+class FirmeSerializer(serializers.ModelSerializer):
+	color= serializers.CharField(read_only=True)
+	talla= serializers.CharField(read_only=True)
+	class Meta:
+		model = Firme
+		fields = ('id','modelo','talla','color')

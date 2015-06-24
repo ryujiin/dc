@@ -11,7 +11,6 @@ Oficina.Views.Opcion = Backbone.View.extend({
         var opcion = this.model.toJSON()
         var html = this.template(opcion);
         this.$el.html(html);
-        debugger;
         return this;
     },
 });

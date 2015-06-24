@@ -14,55 +14,60 @@
 
 {% block layout %}
 <header>
-	<div id="bloque_top" class="contraste_suave">
-		<p class="text-center font_imp">Envios gratis para compras mayores de S/. 60.00 </p>
+	<div class="bloque_top contraste1">
+		<p class="text-center imprenta">Envios gratis para compras mayores de S/. 60.00</p>
 	</div>
-	<nav id="navegador_top">
-		<ul class="menu-ayuda menu menu-enlinea left">
-			<li><a href="">556-3314</a></li>
-			<li><a href="">Soporte en vivo</a></li>
-			<li><a href="">Ayuda</a></li>
+	<nav class="bloque_menu_top">
+		<ul class="menu menu-linea">
+			<li><span class="glyphicon glyphicon-earphone"></span> 556-3367</li>
+			<li><span class="glyphicon glyphicon-comment"></span> Soporte en Vivo</li>
+			<li><span class="glyphicon glyphicon-exclamation-sign"></span> Ayuda</li>
 		</ul>
-		<ul class="menu-usuario menu menu-enlinea right">
-			<li><a href="">Buscar</a></li>
-			<li><a href="">Ingresar</a></li>
+		<ul class='menu menu-linea'>
+			<li><span class="glyphicon glyphicon-search"></span>Buscar</li>
+			<li><span class="glyphicon glyphicon-user"></span>Ingresar</li>
 		</ul>
 	</nav>
-	<nav id="navegador_main">
-		<div class="contenedor">
-			<div class="logo left">
-				<div class="img_logo left">
-					<img src="https://s3-us-west-2.amazonaws.com/lovizfront/img/logomin_0.png" alt="">
-				</div>
-				<h1 class="left">Loviz DelCarpio</h1>
-			</div>
-			<ul class="menu-main menu menu-enlinea left">
-				<li><a class="link" href="/catalogo/mujer/">Mujer</a></li>
-				<li><a class="link" href="/catalogo/hombre/">Hombre</a></li>
-				<li><a class="link" href="/catalogo/ninos/">Niños</a></li>
-				<li><a class="link" href="/catalogo/ninas/">Niñas</a></li>
-				<li><a class="link" href="/">Ofertas</a></li>
-				<li><a class="link" href="/">Novedades</a></li>
-			</ul>
-			<div id="mini_carro"></div>	
-		</div>		
+	<nav class="main_menu">
+		<div class="logo">
+			<figure class="img_log">
+				<img src="https://s3-us-west-2.amazonaws.com/lovizfront/img/logomin_0.png" alt="">
+			</figure>
+			<h1>Loviz DelCarpio</h1>
+		</div>
+		<div class="icono-mobil boton-menu">
+			<button type="button" class="btn btn-default" aria-label="Left Align">
+			  <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>Menu
+			</button>
+		</div>
+		<ul class="menu menu-principal">
+			<li><a class="link" href="/catalogo/mujer/">Mujer</a></li>
+			<li><a class="link" href="/catalogo/hombre/">Hombre</a></li>
+			<li><a class="link" href="/catalogo/ninos/">Niños</a></li>
+			<li><a class="link" href="/catalogo/ninas/">Niñas</a></li>
+			<li><a class="link" href="/">Ofertas</a></li>
+			<li><a class="link" href="/">Novedades</a></li>
+		</ul>
+		<div class="mini-cart">
+			<span class="glyphicon glyphicon-shopping-cart"></span>
+			<span class="imprenta">Carro</span>
+			<span class="items">0</span>
+		</div>
 	</nav>
 </header>
-<div id="envoltura">
-	<div id="main">
-	</div>
-	<div id="main-bottom"></div>
+<div id="main">
+	
 </div>
 <footer>
 	<div class="contenedor">
-		<div id="bloques_footer">
+		<div id="bloques_footer" class="container-fluid">
 			<div class="footer_menu_bottom row">
 				<div class="block_footer col-lg-3">
-					<h3 class="menu_titulo">
+					<h4 class="menu_titulo">
 						Necesita Ayuda?
 						<span class="icono icono-menu icon-arrow-down"></span>
-					</h3>
-					<ul class="menu">
+					</h4>
+					<ul class="menu hidden">
 						<li><a class="link" href="/">Quienes somos</a></li>
 						<li><a class="link" href="/">Como Comprar</a></li>
 						<li><a class="link" href="/">Preguntas Frecuentes</a></li>
@@ -75,11 +80,11 @@
 					</ul>
 				</div>
 				<div class="block_footer col-lg-3">
-					<h3 class="menu_titulo">
+					<h4 class="menu_titulo">
 						Comprar en
 						<span class="icono icono-menu icon-arrow-down"></span>
-					</h3>
-					<ul class="menu">
+					</h4>
+					<ul class="menu hidden">
 						<li><a class="link" href="/catalogo/mujer/">Mujer</a></li>
 						<li><a class="link" href="/">Hombre</a></li>
 						<li><a class="link" href="/">Kids</a></li>
@@ -89,11 +94,11 @@
 					</ul>
 				</div>
 				<div class="block_footer col-lg-3">
-					<h3 class="menu_titulo">
+					<h4 class="menu_titulo">
 						Informacion Producto
 						<span class="icono icono-menu icon-arrow-down"></span>
-					</h3>
-					<ul class="menu">
+					</h4>
+					<ul class="menu hidden">
 						<li><a class="link" href="/">Convercion de medidas</a></li>
 						<li><a class="link" href="/">Modelos</a></li>
 						<li><a class="link" href="/">Materiales Usados</a></li>
@@ -101,11 +106,11 @@
 					</ul>
 				</div>
 				<div class="block_footer col-lg-3">
-					<h3 class="menu_titulo">
+					<h4 class="menu_titulo">
 						Informacion del Sitio
 						<span class="icono icono-menu icon-arrow-down"></span>
-					</h3>
-					<ul class="menu ">
+					</h4>
+					<ul class="menu hidden">
 						<li><a class="link" href="/">Politicas de Privacidad</a></li>
 						<li><a class="link" href="/">Site Map</a></li>
 						<li><a class="link" href="/">Terminos de Uso</a></li>
@@ -127,7 +132,7 @@
 			<div class="left">
 	            <span class="letra1">© 2014 LOVIZ DELCARPIO - TODOS LOS DERECHOS RESERVADOS</span>                        
 	        </div>
-	        <div class="right">
+	        <div class="right no-mobil">
 	            <ul class="menu">
 	                <li><a href="#">Contacto</a></li>
 	                <li><a href="#">Ayuda</a></li>
@@ -145,6 +150,7 @@
   {% include 'tiendajs/productosingle_tlp_js.html' %}
   {% include 'tiendajs/pagar_tlp_js.html' %}
   {% include 'tiendajs/usuario_tlp_js.html' %}
+
 {%endblock%}
 
 {% block backbonescript %}
@@ -225,9 +231,9 @@
 	<script src="{% static "tienda/js/backbone/views/tienda/navegador.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/tienda/sliderhome.js" %}"></script>
 	<script src="{% static "tienda/js/backbone/views/tienda/sliderhomes.js" %}"></script>
-	<script src="{% static "tienda/js/backbone/views/tienda/home.js" %}"></script>
-	
+
 	<script src="{% static "tienda/js/backbone/views/tienda/tienda.js" %}"></script>
+	<script src="{% static "tienda/js/backbone/views/tienda/home.js" %}"></script>
 
 	<script src="{% static "tienda/js/backbone/routers/base.js" %}"></script>		
 

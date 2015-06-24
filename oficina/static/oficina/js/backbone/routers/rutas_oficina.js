@@ -2,7 +2,7 @@ Oficina.Routers.Rutas = Backbone.Router.extend({
 	routes : {
 		"oficina/" : "root",
 		"oficina/catalogo/" : "catalogo",
-		"oficina/add_producto/" : "nuevo_producto",
+		"oficina/materiales/" : "materiales",
 		'*notFound': 'notFound',
 	},
 	initialize : function () {
@@ -14,6 +14,9 @@ Oficina.Routers.Rutas = Backbone.Router.extend({
 	catalogo:function () {
 		console.log('catalogo');
 		window.views.catalogo.render();		
+	},
+	materiales:function () {
+		window.views.materiales.render();
 	},
 	notFound:function () {
 		console.log('no hay pagina')

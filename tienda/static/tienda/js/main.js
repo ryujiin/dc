@@ -45,6 +45,8 @@ $(document).ready(function(){
             model:new Loviz.Models.Producto_Single()
         });
         /*
+        
+        
         window.views.user_mini = new Loviz.Views.Mini_user({
             model:window.models.usuario,
             el:$('#usuario_mini'),

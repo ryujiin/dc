@@ -1,0 +1,33 @@
+body{font-family:'Josefin Sans',sans-serif;font-size:16px}
+.bloque_top{background:#333;}
+.bloque_top p{margin:0;padding:3px 0}
+.bloque_menu_top{display:none}
+#bloques_footer .block_footer h4{text-transform:uppercase;letter-spacing:2px;border-bottom:1px solid #333;padding-bottom:.5em;font-size:20px;position:relative;margin-top:11px;margin-bottom:11px;}
+#bloques_footer .block_footer h4 .icono{position:absolute;right:5px}
+.contraste1{background:#333;color:#fff}
+footer{font-family:'Pathway Gothic One',sans-serif;background:#111;color:#fff;padding-top:20px;}
+footer a{color:#fff}
+footer .redes_sociales_footer{display:block;padding:2em 0;text-align:center;}
+footer .redes_sociales_footer a{padding:.2em .4em;min-width:44px;display:inline-block;font-size:1.5em}
+.imprenta{font-family:'Pathway Gothic One',sans-serif}
+img{width:100%}
+.main_menu{position:relative;padding:10px 0;}
+.main_menu .boton-menu{position:absolute;top:20px;left:10px}
+.main_menu .menu-principal{display:none}
+.main_menu .mini-cart{position:absolute;top:20px;right:10px;border:1px solid #f4f4f4;padding:5px;}
+.main_menu .mini-cart .items{background:#333;color:#fff;font-family:'Pathway Gothic One',sans-serif;width:20px;display:inline-block;text-align:center;border-radius:10px}
+.menu{list-style:none;margin:0;padding:0;}
+.menu.menu-linea li{display:inline-block}
+.no-mobil{display:none}
+.logo{overflow:hidden;width:256px;margin:0 auto;}
+.logo h1{font-family:'Great Vibes',cursive;float:left;margin:10px 0}
+.logo .img_log{float:left;width:48px;overflow:hidden;}
+.logo .img_log img{width:120px}
+.productos .producto{text-align:center;}
+.productos .producto:hover .estrellas{opacity:1}
+.productos .producto a{color:#111}
+.productos .producto .nombre_producto{font-family:'Pathway Gothic One',sans-serif;}
+.productos .producto .nombre_producto .estilo{text-transform:uppercase}
+.productos .producto .estrellas{opacity:0}
+.carrusel .titulo_slider{text-align:center;font-family:'Pathway Gothic One',sans-serif;}
+.carrusel .titulo_slider .reglon{width:40px;height:2px;background:#333;display:inline-block;margin:7px}

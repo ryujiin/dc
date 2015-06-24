@@ -25,7 +25,8 @@ Loviz.Views.Home = Backbone.View.extend({
 			self.recorrer_coleccion(productos,'#novedades_home');
 			var ofertas = productos.where({en_oferta:true})
 			self.recorrer_coleccion(ofertas,'#ofertas_home')
-		})
+		});
+
 	},
 	recorrer_coleccion:function (coleccion , contenedor) {
 		var self = this;
@@ -37,6 +38,12 @@ Loviz.Views.Home = Backbone.View.extend({
 				self.$(contenedor +' .cuerpo_slider').append(producto.$el)
 				num++;
 			};			
+		})
+		self.$(contenedor +' .cuerpo_slider').owlCarousel({
+		    slideSpeed : 300,
+		    paginationSpeed : 400,
+		    items:2,
+		    itemsMobile: [479,2]
 		})
 	}
 });

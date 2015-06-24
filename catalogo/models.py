@@ -192,7 +192,7 @@ class Loved(models.Model):
 class Firme(models.Model):
 	MODELOS = (
 		('scuff-01','Scuff 01'),
-		('otro','Otro'),
+		('scuff-H-01','Scuff Hombre 01'),
 	)
 	modelo = models.CharField(max_length=100,choices=MODELOS,blank=True,null=True)
 	talla = models.ForeignKey(Talla)

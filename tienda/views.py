@@ -6,7 +6,7 @@ from serializers import *
 
 # Create your views here.
 class TiendaView(TemplateView):
-	template_name = "tienda2.html"
+	template_name = "index.html"
 
 from rest_framework.views import APIView
 from rest_framework.response import Response

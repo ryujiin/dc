@@ -58,3 +58,8 @@ class LovedViewsets(viewsets.ModelViewSet):
 
 	def get_queryset(self):
 		return Loved.objects.filter(usuario=self.request.user)
+
+class FirmeViewSet(viewsets.ModelViewSet):
+	queryset = Firme.objects.all()
+	serializer_class = FirmeSerializer
+	permission_classes = [IsAdminUser]

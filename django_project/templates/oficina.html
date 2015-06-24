@@ -24,13 +24,12 @@
 			</div>
 		</div>
 	</header>
-
 	<div id="main-oficina" class="container-fluid">
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
 					<li><a href="/oficina/" class="link">Resumen</a></li>
-					<li><a href="/oficina/catalogo/" class="link">Catalogo</a></li>
+					<li><a href="/oficina/catalogo/" class="link">Catalogo</a></li>			
 				</ul>
 				<ul class="nav nav-sidebar"></ul>
 			</div>
@@ -55,9 +54,11 @@
 	<script src="{% static "oficina/js/init.js" %}"></script>
 
 	<!-- Models-->
+	<script src="{% static "oficina/js/backbone/models/firme.js" %}"></script>
 	<script src="{% static "oficina/js/backbone/models/producto.js" %}"></script>
 
 	<!-- Colecciones -->
+	<script src="{% static "oficina/js/backbone/collections/firmes.js" %}"></script>
 	<script src="{% static "oficina/js/backbone/collections/productos.js" %}"></script>
 
 
@@ -66,6 +67,9 @@
 
 	<!-- Vista -->
 	<script src="{% static "oficina/js/backbone/views/catalogo/catalogo.js" %}"></script>	
+	<script src="{% static "oficina/js/backbone/views/catalogo/firmes.js" %}"></script>	
+	<script src="{% static "oficina/js/backbone/views/catalogo/firme_lista.js" %}"></script>	
+	<script src="{% static "oficina/js/backbone/views/catalogo/productos.js" %}"></script>	
 	<script src="{% static "oficina/js/backbone/views/catalogo/producto_lista.js" %}"></script>	
 	<script src="{% static "oficina/js/backbone/views/pagina/resumen.js" %}"></script>	
 	<script src="{% static "oficina/js/backbone/views/pagina.js" %}"></script>	

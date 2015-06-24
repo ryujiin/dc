@@ -15,6 +15,7 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register(r'catalogo', views.CatalogoViewsets,'catalogo')
 router.register(r'categoria', views.CategoriaViewsets,'categorias')
+router.register(r'materiales/firme', views.FirmeViewSet,'firme')
 router.register(r'favoritos', views.LovedViewsets,'favoritos')
 router.register(r'lineas',LineasViewsets,'lineas')
 router.register(r'producto', views.Producto_singleViewsets,'producto')

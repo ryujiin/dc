@@ -10,18 +10,19 @@ Oficina.Views.Catalogo = Backbone.View.extend({
 	render: function () {
 		var html = this.template();
 		this.$el.html(html);
-		this.add_lista_productos();
+		this.add_productos();
+		this.add_firmes();
 	},
-	add_lista_productos:function () {
-		var self = this;
+	add_productos: function () {
 		var productos = new Oficina.Collections.Productos();
-		productos.fetch().done(function () {
-			productos.forEach(self.add_producto,self);
-		})
+		var vista_productos = new Oficina.Views.Productos({
+			el:this.$('.lista_productos'),
+			collection:productos,
+		});
+		productos.fetch();
 	},
-	add_producto:function (modelo) {
-		var producto = new Oficina.Views.Producto_lista({model:modelo});
-		producto.render();
-		this.$('.lista_productos').append(producto.$el);
-	}
+	add_firmes:function () {
+		var firmes = new Oficina.Collections.Firmes();
+		
+	},
 });

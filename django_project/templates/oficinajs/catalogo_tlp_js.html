@@ -1,26 +1,55 @@
 {% verbatim %}	
 	<script id="catalogo_template" type="text/template">
     <h1 class="page-header">Catalogo</h1>
-    <h2 class="sub-header">Lista de productos</h2>
-    <div class="productos-listas table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>
-              <input type="checkbox">
-            </th>
-            <th>ID</th>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Full Nombre</th>
-            <th>Color</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody class="lista_productos">
-        </tbody>
-      </table>
+    <div class="row">
+      <div class="col-md-6 materiales-catalogo">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Materiales</h3>
+          </div>
+          <div class="panel-body">
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 firmes-catalogo">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Firmes</h3>
+          </div>
+          <div class="panel-body">
+            Agregar Firmes
+            Comprar Firmes
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 productos-catalogo">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Productos</h3>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>
+                    <input type="checkbox">
+                  </th>
+                  <th>ID</th>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Full Nombre</th>
+                  <th>Color</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody class="lista_productos">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </script>
 
@@ -59,5 +88,17 @@
         <a class="btn btn-default" href="#" role="button">Editar</a>
         <a class="btn btn-default" href="#" role="button">Eliminar</a>
       </td>
+  </script>
+
+  <script id="materiales_template" type="text/template">
+    <h1 class="page-header">Materiales</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <a href="">Lista de Materiales</a>
+      </div>      
+      <div class="col-md-6">
+        <a href="">Lista Firmes</a>        
+      </div>      
+    </div>
   </script>
 {% endverbatim %}
