@@ -80,12 +80,14 @@ class Producto(models.Model):
 		return num_entrellas
 
 	def obtener_categorias(self):
-		categoria = self.categorias.get(seccion='categoria')
+		categoria = self.categorias.filter(seccion='categoria')
 		categoria = categoria.nombre
 		return categoria
 
 	def get_genero(self):
 		genero = self.categorias.get(seccion='genero')
+		if genero==None:
+			genero = 'no hay'
 		return genero.nombre
 
 	def get_estilo(self):
