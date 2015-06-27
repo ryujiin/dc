@@ -44,8 +44,7 @@ $(document).ready(function(){
         window.views.producto_single = new Loviz.Views.Producto_single({
             model:new Loviz.Models.Producto_Single()
         });
-        /*
-        
+        /*       
         
         window.views.user_mini = new Loviz.Views.Mini_user({
             model:window.models.usuario,
