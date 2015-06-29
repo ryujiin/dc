@@ -86,13 +86,15 @@ class Producto(models.Model):
 		return categoria
 
 	def get_genero(self):
-		genero = self.categorias.get(seccion='genero')
-		if genero==None:
-			genero = 'no hay'
+		generos = self.categorias.filter(seccion='genero')
+		for genero in generos:
+			genero = genero
 		return genero.nombre
 
 	def get_estilo(self):
-		estilo = self.categorias.get(seccion='estilo')
+		estilos = self.categorias.filter(seccion='estilo')
+		for estilo in estilos:
+			estilo = estilo
 		return estilo.nombre
 
 class Color(models.Model):
