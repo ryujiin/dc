@@ -14,7 +14,7 @@ class ProductoAdmin(admin.ModelAdmin):
 	list_display = ('id','full_name','nombre','slug','get_genero','obtener_categorias')
 
 class CategoriaAdmin(admin.ModelAdmin):
-	list_display=('nombre','full_name','slug','nombre')
+	list_display=('nombre','full_name','slug','nombre','seccion')
 
 class FirmeAdmin(admin.ModelAdmin):
 	list_display=('id','modelo','talla','color')
