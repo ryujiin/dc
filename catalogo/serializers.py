@@ -37,6 +37,7 @@ class ProductoListaSerializer(serializers.ModelSerializer):
 	valoracion = serializers.SerializerMethodField()
 	num_comentarios=serializers.SerializerMethodField()
 	categorias = CategoriaProductoSerializer(many=True)
+
 	class Meta:
 		model=Producto
 		fields=('id','nombre','full_name','slug','marca','color','categorias','thum','precio','precio_venta','en_oferta','activo','valoracion','num_comentarios')

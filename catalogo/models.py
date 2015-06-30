@@ -55,7 +55,7 @@ class Producto(models.Model):
 		else:
 			precio = 0
 		if not precio:
-			precio = 0
+			precio =0
 		precio = "%0.2f" %(precio)		
 		return precio
 

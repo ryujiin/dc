@@ -7,8 +7,7 @@ Loviz.Views.Producto = Backbone.View.extend({
     
     initialize: function () {
         this.quick =false;
-    },
-    
+    },    
     render: function () {
         var album = this.model.toJSON()
         var html = this.template(album);

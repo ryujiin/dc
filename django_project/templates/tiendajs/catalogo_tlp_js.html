@@ -1,4 +1,5 @@
 {% verbatim %}	
+
 	<script id="catalogo_template" type="text/template">
 		<figure id="banner-categoria">
 		</figure>
@@ -46,7 +47,20 @@
 					<img src="{{thum}}" alt="{{full_name}} {{marca}}">
 				</figure>
 				<div class="nombre_producto">
-	                <div class="estilo">{{cate}} - {{estilo}}</div>
+
+	                <div class="estilo">
+	                	{%for cate in categorias%}
+							{%if cate.seccion =='categoria'%}
+								{{cate.nombre}}
+							{%endif%}							
+						{%endfor%}
+						-
+						{%for cate in categorias%}         
+							{%if cate.seccion =='estilo'%}
+								{{cate.nombre}}
+							{%endif%}
+						{%endfor%}
+	                </div>
 	                <div class="nombre">{{nombre}} ({{color}})</div>
 	            </div>
 	            <div class="precios">
