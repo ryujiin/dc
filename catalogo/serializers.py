@@ -130,18 +130,16 @@ class ProductoSingleSereializer(serializers.ModelSerializer):
 	precio = serializers.SerializerMethodField('get_precio_lista')
 	precio_venta = serializers.SerializerMethodField('get_precio_descuento')
 
-	estilo = serializers.SerializerMethodField()
-	cate = serializers.SerializerMethodField()
-	genero = serializers.SerializerMethodField()
-
 	valoracion = serializers.SerializerMethodField()
 	num_comentarios=serializers.SerializerMethodField()
+	categorias = CategoriaProductoSerializer(many=True)
+
 
 	class Meta:
 		model = Producto
 		fields = ('id','nombre','full_name','marca','color','slug','activo','descripcion','thum',
 				'en_oferta','precio','precio_venta',
-				'imagenes_producto','variaciones','parientes','video','detalles','cate','estilo','genero','valoracion','num_comentarios')
+				'imagenes_producto','variaciones','parientes','video','detalles','valoracion','num_comentarios','categorias')
 
 	def get_thum_img(self,obj):
 		thum = obj.get_thum().url
@@ -157,18 +155,6 @@ class ProductoSingleSereializer(serializers.ModelSerializer):
 	def get_precio_descuento(self,obj):
 		precio= obj.get_precio_oferta_lista()
 		return precio
-
-	def get_cate(self,obj):
-		cate = obj.obtener_categorias()
-		return cate
-
-	def get_estilo(self,obj):
-		estilo = obj.get_estilo()
-		return estilo
-
-	def get_genero(self,obj):
-		genero = obj.get_genero()
-		return genero
 
 	def get_valoracion(self,obj):
 		valoraciones = Comentario.objects.filter(producto=obj.id)
