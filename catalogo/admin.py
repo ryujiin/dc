@@ -11,10 +11,10 @@ class VariacionInline(admin.TabularInline):
 class ProductoAdmin(admin.ModelAdmin):
 	inlines = [ProductoImagenInline,VariacionInline,]
 	filter_horizontal = ('parientes','categorias')
-	list_display = ('id','full_name','nombre','slug','get_genero','obtener_categorias')
+	list_display = ('id','full_name','nombre','slug')
 
 class CategoriaAdmin(admin.ModelAdmin):
-	list_display=('nombre','full_name','slug','nombre','seccion')
+	list_display=('nombre','full_name','slug','nombre')
 
 class FirmeAdmin(admin.ModelAdmin):
 	list_display=('id','modelo','talla','color')

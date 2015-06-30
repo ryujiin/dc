@@ -79,24 +79,6 @@ class Producto(models.Model):
 		num_entrellas = Comentario.objects.filter(producto=self)
 		return num_entrellas
 
-	def obtener_categorias(self):
-		categorias = self.categorias.filter(seccion='categoria')
-		for cate in categorias:
-			categoria = cate.nombre
-		return categoria
-
-	def get_genero(self):
-		generos = self.categorias.filter(seccion='genero')
-		for genero in generos:
-			genero = genero
-		return genero.nombre
-
-	def get_estilo(self):
-		estilos = self.categorias.filter(seccion='estilo')
-		for estilo in estilos:
-			estilo = estilo
-		return estilo.nombre
-
 class Color(models.Model):
 	nombre = models.CharField(max_length=100)
 	slug = models.SlugField(max_length=120,unique=True,editable=False,blank=True,null=True)
