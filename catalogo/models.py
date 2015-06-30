@@ -54,6 +54,8 @@ class Producto(models.Model):
 			precio = variaciones[0].precio_minorista
 		else:
 			precio = 0
+		if not precio:
+			precio = 0
 		precio = "%0.2f" %(precio)		
 		return precio
 
