@@ -8,6 +8,11 @@ aguamarina = #60CCC4
 body
 	font-family: 'Josefin Sans', sans-serif;
 	font-size 16px
+	.btn-contraste
+		background #111
+		font-family f_imprenta
+		text-transform uppercase
+		color #fff
 .bloque_top
 	background #333
 	p
@@ -56,7 +61,8 @@ img
 	width 100%
 .main_menu
 	position relative
-	padding 10px 0
+	padding 10px 0 0
+	border-bottom 1px solid #f4f4f4
 	.boton-menu
 		position absolute
 		top 20px
@@ -114,6 +120,60 @@ img
 				text-transform uppercase
 		.estrellas
 			opacity 0
+.producto_single
+	.colores
+		a
+			display inline-block
+			width 100px
+			&.interno
+				border-bottom 1px solid #111
+			&:hover
+				border-bottom 1px solid #ccc
+	h1.producto_name
+		padding 15px 15px 0 15px
+		position relative
+		font-family f_imprenta
+		.producto_genero
+			display block
+			font-size .5em
+	#producto_galeria_destok
+		display none
+	#producto_galeria_movil
+		border-top 1px solid #f4f4f4
+	.precios
+		font-family f_imprenta
+		font-size 2em
+		.variacion
+			display none
+			&.visible
+				display block 
+			.old_precio
+				font-size 0.7em
+	.reviews
+		.estrellas
+			div
+				display inline-block
+			.color-plomo
+				color #ccc
+			.color-aguamarina
+				color aguamarina
+	.seccion-producto
+		border-top 1px solid #f4f4f4
+		padding 10px
+		.categoria
+			display inline-block			
+			font-family f_imprenta
+			button
+				text-transform uppercase
+	.seccion-add-cart
+		padding 15px 0		
+		.seleccionado-todo
+			display none
+		.btn
+			width 100%
+			font-size 1.2em
+		
+				
 .carrusel
 	.titulo_slider
 		text-align center

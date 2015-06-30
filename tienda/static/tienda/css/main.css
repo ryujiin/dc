@@ -1,4 +1,5 @@
-body{font-family:'Josefin Sans',sans-serif;font-size:16px}
+body{font-family:'Josefin Sans',sans-serif;font-size:16px;}
+body .btn-contraste{background:#111;font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;color:#fff}
 .bloque_top{background:#333;}
 .bloque_top p{margin:0;padding:3px 0}
 .bloque_menu_top{display:none}
@@ -11,7 +12,7 @@ footer .redes_sociales_footer{display:block;padding:2em 0;text-align:center;}
 footer .redes_sociales_footer a{padding:.2em .4em;min-width:44px;display:inline-block;font-size:1.5em}
 .imprenta{font-family:'Pathway Gothic One',sans-serif}
 img{width:100%}
-.main_menu{position:relative;padding:10px 0;}
+.main_menu{position:relative;padding:10px 0 0;border-bottom:1px solid #f4f4f4;}
 .main_menu .boton-menu{position:absolute;top:20px;left:10px}
 .main_menu .menu-principal{display:none}
 .main_menu .mini-cart{position:absolute;top:20px;right:10px;border:1px solid #f4f4f4;padding:5px;}
@@ -29,5 +30,25 @@ img{width:100%}
 .productos .producto .nombre_producto{font-family:'Pathway Gothic One',sans-serif;}
 .productos .producto .nombre_producto .estilo{text-transform:uppercase}
 .productos .producto .estrellas{opacity:0}
+.producto_single .colores a{display:inline-block;width:100px;}
+.producto_single .colores a.interno{border-bottom:1px solid #111}
+.producto_single .colores a:hover{border-bottom:1px solid #ccc}
+.producto_single h1.producto_name{padding:15px 15px 0 15px;position:relative;font-family:'Pathway Gothic One',sans-serif;}
+.producto_single h1.producto_name .producto_genero{display:block;font-size:.5em}
+.producto_single #producto_galeria_destok{display:none}
+.producto_single #producto_galeria_movil{border-top:1px solid #f4f4f4}
+.producto_single .precios{font-family:'Pathway Gothic One',sans-serif;font-size:2em;}
+.producto_single .precios .variacion{display:none;}
+.producto_single .precios .variacion.visible{display:block}
+.producto_single .precios .variacion .old_precio{font-size:.7em}
+.producto_single .reviews .estrellas div{display:inline-block}
+.producto_single .reviews .estrellas .color-plomo{color:#ccc}
+.producto_single .reviews .estrellas .color-aguamarina{color:#60ccc4}
+.producto_single .seccion-producto{border-top:1px solid #f4f4f4;padding:10px;}
+.producto_single .seccion-producto .categoria{display:inline-block;font-family:'Pathway Gothic One',sans-serif;}
+.producto_single .seccion-producto .categoria button{text-transform:uppercase}
+.producto_single .seccion-add-cart{padding:15px 0;}
+.producto_single .seccion-add-cart .seleccionado-todo{display:none}
+.producto_single .seccion-add-cart .btn{width:100%;font-size:1.2em}
 .carrusel .titulo_slider{text-align:center;font-family:'Pathway Gothic One',sans-serif;}
 .carrusel .titulo_slider .reglon{width:40px;height:2px;background:#333;display:inline-block;margin:7px}
