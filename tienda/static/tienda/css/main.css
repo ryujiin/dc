@@ -20,9 +20,9 @@ img{width:100%}
 .menu{list-style:none;margin:0;padding:0;}
 .menu.menu-linea li{display:inline-block}
 .no-mobil{display:none}
-.logo{overflow:hidden;width:256px;margin:0 auto;}
+.logo{overflow:hidden;width:52%;margin:0 auto;}
 .logo h1{font-family:'Great Vibes',cursive;float:left;margin:10px 0}
-.logo .img_log{float:left;width:48px;overflow:hidden;}
+.logo .img_log{float:left;display:none;width:48px;overflow:hidden;}
 .logo .img_log img{width:120px}
 .productos .producto{text-align:center;}
 .productos .producto:hover .estrellas{opacity:1}
@@ -34,7 +34,7 @@ img{width:100%}
 .producto_single .colores a.interno{border-bottom:1px solid #111}
 .producto_single .colores a:hover{border-bottom:1px solid #ccc}
 .producto_single h1.producto_name{padding:15px 15px 0 15px;position:relative;font-family:'Pathway Gothic One',sans-serif;}
-.producto_single h1.producto_name .producto_genero{display:block;font-size:.5em}
+.producto_single h1.producto_name .producto_genero{display:block;font-size:.5em;text-transform:uppercase}
 .producto_single #producto_galeria_destok{display:none}
 .producto_single #producto_galeria_movil{border-top:1px solid #f4f4f4}
 .producto_single .precios{font-family:'Pathway Gothic One',sans-serif;font-size:2em;}
