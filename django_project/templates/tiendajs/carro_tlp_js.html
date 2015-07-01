@@ -1,51 +1,49 @@
 {% verbatim %}	
 <script id="mini_carro_template" type="text/template">
-	<a class="link" href="/carro/">
-		{%if total > 0 %}
-		<span class="total">S/.{{total}}</span>
-		{%endif%}
-		<span class="icono icon-cart4"></span>
-		<span class="numero">{{lineas}}</span>
+	<a class="link" href="/carro/">	
+		<span class="glyphicon glyphicon-shopping-cart"></span>
+		<span class="imprenta">Carro</span>
+		<span class="items">{{lineas}}</span>
 	</a>
 </script>
 
 <script id="carro_template" type="text/template">
-	<div class="contenedor">
+	<div id="carro_page" class="contenedor">
 		<div class="container-fluid">
 			<div class="row">
-				<h2 class="titulo">Su Carrito de Compras</h2>
-				<div class="carro_action">
-					<a class="btn contraste1 btn-default link justi" href="/pagar/">
-						Pagar
-						<span class="icono icon-angle-right"></span>
-					</a>
-				</div>
-				<div class="lineas_label row no-movil">
-					<div class="linea_imagen col-sm-3 text-center">
-						Imagen
+				<div class="col-md-12">
+					<h2 class="titulo">Su Carrito de Compras</h2>
+					<div class="carro_action">
+						<a class="btn btn-contraste link" href="/pagar/">
+							Pagar							
+						</a>
 					</div>
-					<div class="linea_detalles col-sm-3 text-center">
-						Detalles
+					<div class="lineas_label row no-mobil">
+						<div class="linea_imagen col-sm-3 text-center">
+							Imagen
+						</div>
+						<div class="linea_detalles col-sm-3 text-center">
+							Detalles
+						</div>
+						<div class="linea_precio col-sm-2 text-center">
+							Precio
+						</div>
+						<div class="linea_cantidad col-sm-2 text-center">
+							Cantidad
+						</div>
+						<div class="linea_subtotal col-sm-2 text-center">
+							Total
+						</div>
 					</div>
-					<div class="linea_precio col-sm-2 text-center">
-						Precio
+					<div id="lineas_carro">					
 					</div>
-					<div class="linea_cantidad col-sm-2 text-center">
-						Cantidad
+					<div id="carro_total"></div>
+					<div class="carro_action">
+						<a class="btn btn-contraste link" href="/pagar/">							
+							Pagar
+						</a>
 					</div>
-					<div class="linea_subtotal col-sm-2 text-center">
-						Total
-					</div>
-				</div>
-				<div id="lineas_carro">					
-				</div>
-				<div id="carro_total"></div>
-				<div class="carro_action">
-					<a class="btn contraste1 btn-default link justi" href="/pagar/">
-						<span class="icono icon-angle-right"></span>
-						Pagar
-					</a>
-				</div>
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -97,31 +95,37 @@
 </script>
 
 <script id="lineas_carro_template" type="text/template">
-	<div class="linea_imagen col-sm-3">
+	<div class="linea_imagen col-sm-3 col-xs-4">
 		<img src="{{thum}}" alt="{{full_name}}">
 	</div>
-	<div class="linea_detalles col-sm-3">
-		<div class="nombre">{{full_name}}</div>
-		<div class="color">Color: {{color}}</div>
-		<div class="talla">Talla: {{talla}}</div>
+	<div class="col-xs-8">
+		<div class="linea_detalles col-sm-3">
+			<div class="nombre">{{full_name}}</div>
+			<div class="color">Color: {{color}}</div>
+			<div class="talla">Talla: {{talla}}</div>
+		</div>
+		<div class="linea_precio col-sm-2">
+			<label for="">Precio:</label>
+			S/.{{precio}}
+		</div>
+		<div class="linea_cantidad col-sm-2">
+			<label for="">Cantidad:</label>
+			<span class="mas_produ cant">
+				<span class="icon-arrow-up2 icono"></span>
+			</span>
+			<span class="cantidad">{{cantidad}}</span>
+			<span class="menos_produ cant">
+				<span class="icon-arrow-down2 icono"></span>			
+			</span>
+		</div>
+		<div class="linea_subtotal col-sm-2">
+			<label for="">Total:</label>
+			S/.{{subtotal}}
+		</div>	
 	</div>
-	<div class="linea_precio col-sm-2">
-		<label for="">Precio:</label>
-		S/.{{precio}}
-	</div>
-	<div class="linea_cantidad col-sm-2">
-		<label for="">Cantidad:</label>
-		<span class="mas_produ cant">
-			<span class="icon-arrow-up2 icono"></span>
-		</span>
-		<span class="cantidad">{{cantidad}}</span>
-		<span class="menos_produ cant">
-			<span class="icon-arrow-down2 icono"></span>			
-		</span>
-	</div>
-	<div class="linea_subtotal col-sm-2">
-		<label for="">Total:</label>
-		S/.{{subtotal}}
+	<div class="col-xs-12">
+		<a href="">Agregar a lista de deseos</a>
+		<a href="" class="pull-right">Eliminar de carro</a>
 	</div>
 </script>
 {% endverbatim %}

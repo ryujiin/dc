@@ -1,16 +1,24 @@
 body{font-family:'Josefin Sans',sans-serif;font-size:16px;}
-body .btn-contraste{background:#111;font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;color:#fff}
+body a{color:#111;}
+body a:hover{color:#111}
+body .btn{border-radius:0;width:100%;text-transform:uppercase;font-family:'Pathway Gothic One',sans-serif}
+body .btn-contraste{background:#111;color:#fff;}
+body .btn-contraste:hover{background:#468847;border-color:#3d773e;opacity:1;color:#fff}
 .bloque_top{background:#333;}
 .bloque_top p{margin:0;padding:3px 0}
 .bloque_menu_top{display:none}
 #bloques_footer .block_footer h4{text-transform:uppercase;letter-spacing:2px;border-bottom:1px solid #333;padding-bottom:.5em;font-size:20px;position:relative;margin-top:11px;margin-bottom:11px;}
 #bloques_footer .block_footer h4 .icono{position:absolute;right:5px}
 .contraste1{background:#333;color:#fff}
+#carro_page .titulo{font-size:36px;text-transform:uppercase}
+#carro_page .btn{margin:10px 0}
+#carro_page .carro_action .btn{font-size:1.3em}
 footer{font-family:'Pathway Gothic One',sans-serif;background:#111;color:#fff;padding-top:20px;}
 footer a{color:#fff}
 footer .redes_sociales_footer{display:block;padding:2em 0;text-align:center;}
 footer .redes_sociales_footer a{padding:.2em .4em;min-width:44px;display:inline-block;font-size:1.5em}
 .imprenta{font-family:'Pathway Gothic One',sans-serif}
+h1,h2,h3,h4{font-family:'Pathway Gothic One',sans-serif}
 img{width:100%}
 .main_menu{position:relative;padding:10px 0 0;border-bottom:1px solid #f4f4f4;}
 .main_menu .boton-menu{position:absolute;top:20px;left:10px}
@@ -20,6 +28,10 @@ img{width:100%}
 .menu{list-style:none;margin:0;padding:0;}
 .menu.menu-linea li{display:inline-block}
 .no-mobil{display:none}
+#linea_addcart{font-family:'Pathway Gothic One',sans-serif;}
+#linea_addcart .botones .btn{width:100%}
+#lineas_carro{font-family:'Pathway Gothic One',sans-serif;}
+#lineas_carro .linea{margin:10px 0;overflow:hidden}
 .logo{overflow:hidden;width:52%;margin:0 auto;}
 .logo h1{font-family:'Great Vibes',cursive;float:left;margin:10px 0}
 .logo .img_log{float:left;display:none;width:48px;overflow:hidden;}
@@ -49,6 +61,10 @@ img{width:100%}
 .producto_single .seccion-producto .categoria button{text-transform:uppercase}
 .producto_single .seccion-add-cart{padding:15px 0;}
 .producto_single .seccion-add-cart .seleccionado-todo{display:none}
-.producto_single .seccion-add-cart .btn{width:100%;font-size:1.2em}
+.producto_single .seccion-add-cart .btn{width:100%;font-size:1.2em;margin:15px 0;text-transform:uppercase;font-family:'Pathway Gothic One',sans-serif}
+.producto_single .seccion-add-cart .seleccionado-todo .btn{font-size:1.2em;position:relative;padding-top:10px;padding-bottom:10px}
+.producto_single .seccion-add-cart .seleccionado-todo .add_cart{-webkit-transition:background 100ms ease-in;transition:background 100ms ease-in;}
+.producto_single .seccion-add-cart .seleccionado-todo .add_cart:hover{background:#468847;border-color:#3d773e;color:#fff}
+.producto_single .seccion-add-cart .seleccionado-todo .add_cart::after{transition:all 200ms ease-in;content:" >";position:absolute;right:2em;opacity:1}
 .carrusel .titulo_slider{text-align:center;font-family:'Pathway Gothic One',sans-serif;}
 .carrusel .titulo_slider .reglon{width:40px;height:2px;background:#333;display:inline-block;margin:7px}

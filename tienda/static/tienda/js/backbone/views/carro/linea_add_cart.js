@@ -5,7 +5,7 @@ Loviz.Views.Linea_addcart = Backbone.View.extend({
 		'click .link':'cerrar_modal',
 	},
 	initialize : function () {
-		this.render();
+	    this.listenTo(this.model, "change", this.verificar_datos, this);
 	},
 	render:function () {
 		var carro = this.model.toJSON()
@@ -15,5 +15,10 @@ Loviz.Views.Linea_addcart = Backbone.View.extend({
 	},
 	cerrar_modal:function () {
 		this.$el.modal('hide');
+	},
+	verificar_datos:function () {
+		if (this.model.toJSON().id!==undefined) {
+			this.render();
+		};
 	}
 });

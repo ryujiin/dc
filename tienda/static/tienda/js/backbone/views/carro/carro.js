@@ -1,5 +1,5 @@
 Loviz.Views.Carro = Backbone.View.extend({
-	el:$('#carro'),
+	el:$('#main'),
 	template : swig.compile($("#carro_template").html()),
 	template_vacio : swig.compile($("#carro_vacio_template").html()),
 	events :{

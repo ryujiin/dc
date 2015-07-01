@@ -8,11 +8,24 @@ aguamarina = #60CCC4
 body
 	font-family: 'Josefin Sans', sans-serif;
 	font-size 16px
+	a
+		color #111
+		&:hover
+			color #111
+	.btn
+		border-radius 0px
+		width 100%
+		text-transform uppercase
+		font-family f_imprenta
+	
 	.btn-contraste
 		background #111
-		font-family f_imprenta
-		text-transform uppercase
 		color #fff
+		&:hover
+			background:#468847;
+			border-color:#3d773e;
+			opacity:1
+			color #fff
 .bloque_top
 	background #333
 	p
@@ -37,6 +50,16 @@ body
 .contraste1
 	background #333
 	color #fff
+#carro_page
+	.titulo
+		font-size 36px
+		text-transform uppercase
+	.btn
+		margin 10px 0
+	.carro_action
+		.btn
+			font-size 1.3em
+	
 footer
 	font-family f_imprenta
 	background #111
@@ -56,6 +79,8 @@ footer
 
 /*Fuentes*/
 .imprenta
+	font-family f_imprenta
+h1,h2,h3,h4
 	font-family f_imprenta
 img
 	width 100%
@@ -92,6 +117,16 @@ img
 			display inline-block
 .no-mobil
 	display none
+#linea_addcart
+	font-family f_imprenta
+	.botones
+		.btn
+			width 100%
+#lineas_carro
+	font-family f_imprenta
+	.linea
+		margin 10px 0
+		overflow hidden
 .logo
 	overflow hidden
 	width 52%
@@ -174,8 +209,28 @@ img
 		.btn
 			width 100%
 			font-size 1.2em
-		
-				
+			margin 15px 0
+			text-transform uppercase
+			font-family f_imprenta
+		.seleccionado-todo
+			.btn
+				font-size 1.2em
+				position relative
+				padding-top 10px 
+				padding-bottom 10px 
+			.add_cart
+				-webkit-transition background 100ms ease-in
+				transition background 100ms ease-in
+				&:hover
+					background #468847
+					border-color #3d773e
+					color #fff					
+				&::after				
+					transition all 200ms ease-in
+					content " >"
+					position absolute
+					right 2em
+					opacity 1
 .carrusel
 	.titulo_slider
 		text-align center

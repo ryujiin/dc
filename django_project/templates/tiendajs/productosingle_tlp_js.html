@@ -1,6 +1,6 @@
 {% verbatim %}	
 	    <script id="producto_single_template" type="text/template">
-        <div class="contenedor">
+        <div class="contenedor producto_single">
           <div class="container-fluid">
             <div class="row">
               <!--El titulo-->
@@ -80,8 +80,11 @@
                       <button class="btn btn-contraste" disabled="disabled" type="button">Seleccione una talla y color</button>
                     </div>
                     <div class="seleccionado-todo">
-                      <div class="boton add-cart">Agregar al Carro</div>
-                      <div class="boton add-list">Agregar a lista de deseos</div>                      
+                      <button class="btn btn-contraste add_cart">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        Agregar al Carro
+                      </button>
+                      <button class="btn btn-default add_wishlist">Agregar a lista de deseos</button>
                     </div>                    
                   </div>
                 </div>
@@ -158,10 +161,10 @@
               <div class="container-fluid">
                 <div class="row">
                   <h4 class="text-center text-uppercase">Agregado al carrito</h4>
-                  <div class="col-md-4 col-xs-4 imagen">
+                  <div class="col-md-4 col-xs-6 imagen">
                     <img src="{{thum}}" alt="{{full_name}}">
                   </div>
-                  <div class="col-md-8 col-xs-8">
+                  <div class="col-md-8 col-xs-6">
                       <h4>{{full_name}}</h4>
                       <div class="atributo atributo-color">
                         <label for="">Color:</label>
@@ -178,12 +181,14 @@
                   </div>
                   </div>
                   <div class="botones text-uppercase">
-                    <div class="col-md-6 col-xs-6">
-                      <a class="btn btn-default contraste1 link" href="/carro/" role="button">Ir al Carro</a>
-                    </div>
-                    <div class="col-md-6 col-xs-6">
-                      <a class="btn btn-default blanco-btn link" href="/catalogo/" role="button">Comprar mas</a>
-                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-xs-6">
+                        <a class="btn btn-default contraste1 link" href="/carro/" role="button">Ir al Carro</a>
+                      </div>
+                      <div class="col-md-6 col-xs-6">
+                        <a class="btn btn-default blanco-btn link" href="/catalogo/" role="button">Comprar mas</a>
+                      </div>
+                    </div>                    
                   </div>
                   <div class="col-md-12 otros">
                     <h4 class="text-uppercase text-center">

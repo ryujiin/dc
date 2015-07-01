@@ -11,5 +11,10 @@ Loviz.Models.Linea = Backbone.Model.extend({
 			this.set('carro',carro);
 			this.save();
 		};
+	},
+	grabando:function () {
+		this.save().done(function () {
+			window.models.carro.fetch();
+		})
 	}
 });

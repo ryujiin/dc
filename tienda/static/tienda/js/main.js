@@ -41,8 +41,14 @@ $(document).ready(function(){
 
     function iniciar_vistas () {
         window.views.home = new Loviz.Views.Home();
+        window.views.mini_carro = new Loviz.Views.Mini_carro({
+            model:window.models.carro
+        });
         window.views.producto_single = new Loviz.Views.Producto_single({
             model:new Loviz.Models.Producto_Single()
+        });
+        window.views.carro = new Loviz.Views.Carro({
+            model:window.models.carro
         });
         /*       
         
@@ -58,15 +64,8 @@ $(document).ready(function(){
         window.views.pagar = new Loviz.Views.Pagar({
             model:new Loviz.Models.Pagar()
         });
-        window.views.mini_carro = new Loviz.Views.Mini_carro({
-            model:window.models.carro
-        });
-        window.views.carro = new Loviz.Views.Carro({
-            model:window.models.carro
-        });
-        window.views.producto_single = new Loviz.Views.Producto_single({
-            model:new Loviz.Models.Producto_Single()
-        });
+        
+        
         window.views.usuario = new Loviz.Views.Usuario({
             model: window.models.usuario
         })
