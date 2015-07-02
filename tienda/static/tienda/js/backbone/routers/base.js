@@ -23,6 +23,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		window.views.catalogo.render(categoria);
 	},
 	producto_single:function (producto) {
+		window.app.slug='producto_single';
 		var modelo = new Loviz.Models.Producto_Single();
 		modelo.buscar(producto);
 	},

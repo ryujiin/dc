@@ -10,6 +10,9 @@ body .btn-contraste:hover{background:#468847;border-color:#3d773e;opacity:1;colo
 #bloques_footer .block_footer h4{text-transform:uppercase;letter-spacing:2px;border-bottom:1px solid #333;padding-bottom:.5em;font-size:20px;position:relative;margin-top:11px;margin-bottom:11px;}
 #bloques_footer .block_footer h4 .icono{position:absolute;right:5px}
 .contraste1{background:#333;color:#fff}
+.cargando{background:rgba(255,255,255,0.8);width:100%;height:100%;position:absolute;display:none}
+.carro_vacio{padding:5pc 0}
+#carro_page{min-height:400px;}
 #carro_page .titulo{font-size:36px;text-transform:uppercase}
 #carro_page .btn{margin:10px 0}
 #carro_page .carro_action .btn{font-size:1.3em}
@@ -31,7 +34,9 @@ img{width:100%}
 #linea_addcart{font-family:'Pathway Gothic One',sans-serif;}
 #linea_addcart .botones .btn{width:100%}
 #lineas_carro{font-family:'Pathway Gothic One',sans-serif;}
-#lineas_carro .linea{margin:10px 0;overflow:hidden}
+#lineas_carro .linea{margin:10px 0;overflow:hidden;}
+#lineas_carro .linea .accion:hover{cursor:pointer;text-decoration:underline}
+#lineas_carro .linea .linea_cantidad{position:relative}
 .logo{overflow:hidden;width:52%;margin:0 auto;}
 .logo h1{font-family:'Great Vibes',cursive;float:left;margin:10px 0}
 .logo .img_log{float:left;display:none;width:48px;overflow:hidden;}

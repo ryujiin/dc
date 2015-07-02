@@ -67,7 +67,7 @@
 </script>
 
 <script id="carro_vacio_template" type="text/template">
-	<div class="contenedor text-center">
+	<div class="contenedor text-center carro_vacio">
 		<h2 class="titulo">Su carrito de compras esta Vacio</h2>
 		<p class="text-center">0 Articulos en su carro <span class="icon-cart3"></span></p>	
 	</div>	
@@ -109,6 +109,7 @@
 			S/.{{precio}}
 		</div>
 		<div class="linea_cantidad col-sm-2">
+			<div class="cargando"></div>			
 			<label for="">Cantidad:</label>
 			<span class="mas_produ cant">
 				<span class="icon-arrow-up2 icono"></span>
@@ -124,8 +125,12 @@
 		</div>	
 	</div>
 	<div class="col-xs-12">
-		<a href="">Agregar a lista de deseos</a>
-		<a href="" class="pull-right">Eliminar de carro</a>
+		<div class="col-xs-6">
+			<span class="accion">Agregar a lista de deseos</span>
+		</div>
+		<div class="col-xs-6">
+			<span class="accion eliminar">Eliminar de carro</span>
+		</div>
 	</div>
-</script>
+</script>borrar_linea
 {% endverbatim %}
