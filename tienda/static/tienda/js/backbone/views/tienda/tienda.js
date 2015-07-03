@@ -3,11 +3,16 @@ Loviz.Views.Tienda = Backbone.View.extend({
 	events: {
 		'click .link': 'link_intero',
 		'click .logo' : 'go_home',
-		'click header .menu_movil': 'desplegar_menu',
-		'click header .desplegado': 'ocultar_menu',
+		'click header .icono-mobil.boton-menu.mostrar': 'menu_mobil',
+		'click header .icono-mobil.boton-menu.ocultar': 'menu_mobil_ocultar',
 		'click .footer_menu_bottom .block_footer':'mostrar_menu_footer',
+		'click .header .menu_principal a': 'menu_mobil_ocultar',
 	},
 	initialize : function () {
+		var self = this;
+		window.routers.base.on('route',function(e){
+			self.menu_mobil_ocultar();
+        });
 	},
 	link_intero:function (e) {
 		e.preventDefault();
@@ -37,4 +42,14 @@ Loviz.Views.Tienda = Backbone.View.extend({
 	go_home:function () {
 		window.routers.base.navigate('/', {trigger:true});
 	},
+	menu_mobil:function () {		
+		$("header .icono-mobil.boton-menu").removeClass('mostrar').addClass('ocultar');
+		this.$('header .icono-mobil.boton-menu span').removeClass('glyphicon-menu-hamburger').addClass('glyphicon-menu-left');
+		this.$('.menu-principal').slideDown();
+	},
+	menu_mobil_ocultar:function () {
+		$("header .icono-mobil.boton-menu").removeClass('ocultar').addClass('mostrar');
+		this.$('header .icono-mobil.boton-menu span').removeClass('glyphicon-menu-left').addClass('glyphicon-menu-hamburger');		
+		this.$('.menu-principal').slideUp();		
+	}
 });

@@ -50,8 +50,7 @@ $(document).ready(function(){
         window.views.carro = new Loviz.Views.Carro({
             model:window.models.carro
         });
-        /*       
-        
+        /*
         window.views.user_mini = new Loviz.Views.Mini_user({
             model:window.models.usuario,
             el:$('#usuario_mini'),

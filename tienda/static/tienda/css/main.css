@@ -23,9 +23,12 @@ footer .redes_sociales_footer a{padding:.2em .4em;min-width:44px;display:inline-
 .imprenta{font-family:'Pathway Gothic One',sans-serif}
 h1,h2,h3,h4{font-family:'Pathway Gothic One',sans-serif}
 img{width:100%}
+#main{min-height:400px}
 .main_menu{position:relative;padding:10px 0 0;border-bottom:1px solid #f4f4f4;}
 .main_menu .boton-menu{position:absolute;top:20px;left:10px}
-.main_menu .menu-principal{display:none}
+.main_menu .menu-principal{display:none;font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase;position:absolute;width:100%;z-index:1;border-bottom:2px solid #ccc;}
+.main_menu .menu-principal li{margin:0 10px;border-bottom:1px solid #f4f4f4;background:#fff;}
+.main_menu .menu-principal li a{display:block;text-align:center;width:100%;padding:4px 5px}
 .main_menu .mini-cart{position:absolute;top:20px;right:10px;border:1px solid #f4f4f4;padding:5px;}
 .main_menu .mini-cart .items{background:#333;color:#fff;font-family:'Pathway Gothic One',sans-serif;width:20px;display:inline-block;text-align:center;border-radius:10px}
 .menu{list-style:none;margin:0;padding:0;}
