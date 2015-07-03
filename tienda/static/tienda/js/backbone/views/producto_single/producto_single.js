@@ -44,6 +44,7 @@ Loviz.Views.Producto_single = Backbone.View.extend({
         this.$('.estrellas').append(estrellas.$el);
     },
     addcart:function () {
+        this.$('.seccion-add-cart .cargando').fadeIn();
         var linea_carro = new Loviz.Models.Linea();
         var miniline = new Loviz.Views.Linea_addcart({model:linea_carro});
         var producto_id = this.model.toJSON().id;
@@ -55,11 +56,11 @@ Loviz.Views.Producto_single = Backbone.View.extend({
                 debugger;
                 window.models.carro.save().done(function (data) {
                     linea_carro.set({carro:data.id,producto:producto_id,variacion:variacion_id,cantidad:1});
-                    linea_carro.grabando();
+                    linea_carro.grabando(true);
                 })
             }else{
                 linea_carro.set({carro:window.models.carro.id,producto:producto_id,variacion:variacion_id,cantidad:1});
-                linea_carro.grabando();
+                linea_carro.grabando(true);
             }
         };
     },

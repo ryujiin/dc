@@ -12,9 +12,13 @@ Loviz.Models.Linea = Backbone.Model.extend({
 			this.save();
 		};
 	},
-	grabando:function () {
+	grabando:function (t) {
 		this.save().done(function () {
-			window.models.carro.fetch();
+			window.models.carro.fetch().done(function () {
+				if (t===true) {
+					$('.cargando').fadeOut();
+				};
+			});
 		})
 	}
 });

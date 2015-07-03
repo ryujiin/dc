@@ -10,7 +10,8 @@ body .btn-contraste:hover{background:#468847;border-color:#3d773e;opacity:1;colo
 #bloques_footer .block_footer h4{text-transform:uppercase;letter-spacing:2px;border-bottom:1px solid #333;padding-bottom:.5em;font-size:20px;position:relative;margin-top:11px;margin-bottom:11px;}
 #bloques_footer .block_footer h4 .icono{position:absolute;right:5px}
 .contraste1{background:#333;color:#fff}
-.cargando{background:rgba(255,255,255,0.8);width:100%;height:100%;position:absolute;display:none}
+.cargando{background:rgba(255,255,255,0.8);width:100%;height:100%;position:absolute;display:none;z-index:10;text-align:center;}
+.cargando .icono{z-index:11;position:absolute;top:40%;width:initial}
 .carro_vacio{padding:5pc 0}
 #carro_page{min-height:400px;}
 #carro_page .titulo{font-size:36px;text-transform:uppercase}
@@ -67,7 +68,7 @@ img{width:100%}
 .producto_single .seccion-producto{border-top:1px solid #f4f4f4;padding:10px;}
 .producto_single .seccion-producto .categoria{display:inline-block;font-family:'Pathway Gothic One',sans-serif;}
 .producto_single .seccion-producto .categoria button{text-transform:uppercase}
-.producto_single .seccion-add-cart{padding:15px 0;}
+.producto_single .seccion-add-cart{position:relative;padding:15px 0;}
 .producto_single .seccion-add-cart .seleccionado-todo{display:none}
 .producto_single .seccion-add-cart .btn{width:100%;font-size:1.2em;margin:15px 0;text-transform:uppercase;font-family:'Pathway Gothic One',sans-serif}
 .producto_single .seccion-add-cart .seleccionado-todo .btn{font-size:1.2em;position:relative;padding-top:10px;padding-bottom:10px}
