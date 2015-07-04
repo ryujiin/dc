@@ -42,14 +42,14 @@ Loviz.Views.Tienda = Backbone.View.extend({
 	go_home:function () {
 		window.routers.base.navigate('/', {trigger:true});
 	},
-	menu_mobil:function () {		
+	menu_mobil:function () {
+		this.$el.addClass('push');
 		$("header .icono-mobil.boton-menu").removeClass('mostrar').addClass('ocultar');
 		this.$('header .icono-mobil.boton-menu span').removeClass('glyphicon-menu-hamburger').addClass('glyphicon-menu-left');
-		this.$('.menu-principal').slideDown();
 	},
 	menu_mobil_ocultar:function () {
+		this.$el.removeClass('push');
 		$("header .icono-mobil.boton-menu").removeClass('ocultar').addClass('mostrar');
-		this.$('header .icono-mobil.boton-menu span').removeClass('glyphicon-menu-left').addClass('glyphicon-menu-hamburger');		
-		this.$('.menu-principal').slideUp();		
+		this.$('header .icono-mobil.boton-menu span').removeClass('glyphicon-menu-left').addClass('glyphicon-menu-hamburger');
 	}
 });
