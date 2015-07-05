@@ -34,6 +34,8 @@ body
 		padding 3px 0
 .bloque_menu_top
 	display none
+.breadcrumb
+	display none
 #bloques_footer
 	.block_footer
 		h4
@@ -108,8 +110,8 @@ header
 	width 100%
 img
 	width 100%
-#main
-	min-height 400px
+#warp
+	min-height 900px
 	background #fff
 	padding-top 111px
 	width 100%
@@ -126,11 +128,14 @@ img
 			position fixed
 			transform translate3d(88%, 0, 0)
 			-webkit-transform translate3d(88%, 0, 0)
-		#main
+		#warp
 			position fixed
 			transform translate3d(88%, 0, 0)
 			webkit-transform translate3d(88%, 0, 0)
-	#main
+		.overlay-mobil
+			opacity 1
+			display block
+	#warp
 		padding-top 68px
 		box-shadow 0 0 15px rgba(0,0,0,0.5)
 		left 0 
@@ -389,6 +394,16 @@ img
 					position absolute
 					right 2em
 					opacity 1
+.overlay-mobil
+	width 100%
+	height 100%
+	position absolute
+	top 0
+	left 0
+	background rgba(255,255,255,0.8)
+	z-index 50
+	opacity 0
+	display none
 .carrusel
 	.titulo_slider
 		text-align center
