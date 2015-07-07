@@ -1,5 +1,5 @@
 Loviz.Views.Pagar = Backbone.View.extend({
-	el:$('#main-contenido'),
+	el:$('#main'),
 	
     template: swig.compile($("#pagar_template").html()),
 

@@ -50,6 +50,9 @@ $(document).ready(function(){
         window.views.carro = new Loviz.Views.Carro({
             model:window.models.carro
         });
+        window.views.pagar = new Loviz.Views.Pagar({
+            model:new Loviz.Models.Pagar()
+        });
         /*
         window.views.user_mini = new Loviz.Views.Mini_user({
             model:window.models.usuario,
@@ -59,10 +62,7 @@ $(document).ready(function(){
             model:window.models.usuario,
             el:$('#mini_user_movil'),
         });
-        window.views.navegador = new Loviz.Views.Navegador();
-        window.views.pagar = new Loviz.Views.Pagar({
-            model:new Loviz.Models.Pagar()
-        });
+        window.views.navegador = new Loviz.Views.Navegador();   
         
         
         window.views.usuario = new Loviz.Views.Usuario({

@@ -201,7 +201,7 @@ footer
 	font-family f_imprenta
 	background #111
 	color #fff
-	padding-top 20px
+	padding-top 40px
 	a
 		color #fff
 	.redes_sociales_footer
@@ -229,10 +229,18 @@ header#header
 	width 100%
 img
 	width 100%
+.estrellas
+	div
+		display inline-block
+	.color-plomo
+		color #ccc
+	.color-aguamarina
+		color aguamarina
 #warp
 	min-height 900px
 	background #fff
 	padding-top 111px
+	padding-bottom 40px
 	width 100%
 	position static
 	z-index 50
@@ -433,6 +441,30 @@ img
 		margin 0 auto
 		img
 			width 81px
+#pagar
+	.titulo
+		font-size 35px
+	.linea_progrecion
+		.paso
+			display inline-block
+			color #ccc
+			&.actual
+				color #111
+				.paso_number
+					background #111
+			.paso_number
+				background #ccc
+				border-radius 20px
+				color #fff
+				height 40px
+				display inline-block
+				text-align center
+				line-height 25px
+				border 8px double #fff
+				font-family arial
+				width 40px
+				font-weight 300
+				
 .productos
 	.producto
 		text-align center
@@ -441,6 +473,10 @@ img
 				opacity 1
 		a
 			color #111
+			&:hover
+				text-decoration none
+				.nombre_producto
+					text-decoration underline
 		.nombre_producto
 			font-family f_imprenta
 			.estilo
@@ -449,6 +485,7 @@ img
 			opacity 0
 		.precios
 			font-family f_imprenta
+			font-size 18px
 .producto_single
 	.colores
 		a
@@ -458,6 +495,10 @@ img
 				border-bottom 1px solid #111
 			&:hover
 				border-bottom 1px solid #ccc
+	.detalles_producto_single
+		overflow hidden
+		padding 2em 0
+		margin 2em 0
 	h1.producto_name
 		padding 15px 15px 0 15px
 		position relative
@@ -479,14 +520,6 @@ img
 				display block 
 			.old_precio
 				font-size 0.7em
-	.reviews
-		.estrellas
-			div
-				display inline-block
-			.color-plomo
-				color #ccc
-			.color-aguamarina
-				color aguamarina
 	.seccion-producto
 		border-top 1px solid #f4f4f4
 		padding 10px
@@ -540,7 +573,7 @@ img
 		text-align center
 		font-family f_imprenta
 		.reglon
-			width 40px
+			width 20px
 			height 2px
 			background #333
 			display inline-block

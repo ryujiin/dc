@@ -24,7 +24,7 @@ Loviz.Views.Producto = Backbone.View.extend({
     },
     add_estrellas:function () {
         var estrellas = new Loviz.Views.Estrellas({model:this.model});
-        this.$('.estrellas').append(estrellas.$el);
+        this.$('.estrellas').append(estrellas.$el);        
     },
     estilos:function () {
         if (window.app.slug==='catalogo') {

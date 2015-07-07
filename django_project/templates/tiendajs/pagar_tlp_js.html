@@ -1,42 +1,44 @@
 {% verbatim %}	
 	<script id="pagar_template" type="text/template">
-		<div id="pagar" class="container-fluid">
-			<div class="row">
-				<h2 class="titulo">Pasarela de Pagos</h2>
-				<div class="col-md-8">
-					<div class="linea_progrecion">
-						<div class="paso enlinea identificar" data-estado="identificar">
-							<span class="paso_number">1</span>
-							<span class="paso_text">Identificacion</span>
-						</div>
-						<div class="paso enlinea envio" data-estado="envio">
-							<span class="paso_number">2</span>
-							<span class="paso_text">Envio</span>
-						</div>
-						<div class="paso enlinea pagar" data-estado="pagar">
-							<span class="paso_number">3</span>
-							<span class="paso_text">Pagar</span>
-						</div>
-					</div>
-					<div id="identificar_user_pagar" class="caja_pagar">
-					</div>
-					<div id="envio_pagar" class="caja_pagar">
-					</div>
-					<div id="metodo_pago_pagar" class="caja_pagar">	
-					</div>				
-				</div>
-				<div class="col-md-4">
-					<div id="resumen_orden_pagar">
-						<div class="row">
-							<h3>Resumen de Orden <span>Editar Carrito</span></h3>
-							<div id="linas_resumen">
+		<div id="pagar" class="contenedor">
+			<div class="container-fluid">
+				<div class="row">
+					<h2 class="titulo text-center">Pasarela de Pagos</h2>
+					<div class="col-md-8">
+						<div class="linea_progrecion">
+							<div class="paso enlinea identificar" data-estado="identificar">
+								<span class="paso_number">1</span>
+								<span class="paso_text">Identificacion</span>
 							</div>
-							<div class="linea_resumen">
-								
-							</div>														
+							<div class="paso enlinea envio" data-estado="envio">
+								<span class="paso_number">2</span>
+								<span class="paso_text">Envio</span>
+							</div>
+							<div class="paso enlinea pagar" data-estado="pagar">
+								<span class="paso_number">3</span>
+								<span class="paso_text">Pagar</span>
+							</div>
 						</div>
+						<div id="identificar_user_pagar" class="caja_pagar">
+						</div>
+						<div id="envio_pagar" class="caja_pagar">
+						</div>
+						<div id="metodo_pago_pagar" class="caja_pagar">	
+						</div>				
 					</div>
-				</div>			
+					<div class="col-md-4">
+						<div id="resumen_orden_pagar">
+							<div class="row">
+								<h3>Resumen de Orden <span>Editar Carrito</span></h3>
+								<div id="linas_resumen">
+								</div>
+								<div class="linea_resumen">
+									
+								</div>														
+							</div>
+						</div>
+					</div>			
+				</div>
 			</div>
 		</div>
 		

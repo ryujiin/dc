@@ -1,124 +1,124 @@
 {% verbatim %}	
 	    <script id="producto_single_template" type="text/template">
-        <div class="contenedor producto_single">
-          <div class="container-fluid">
-            <div class="row">
-              <!--El titulo-->
-              <h1 class="producto_name">
-                <span class="producto_genero">
-                  {%for cate in categorias%}
-                    {%if cate.seccion == 'genero'%}
-                     {{cate.nombre}}
-                    {%endif%}
-                  {%endfor%}
-                </span>
-                {{nombre}}
-              </h1>
-              <div class="col-md-6">
-              <!--La galeria-->
-                <div id="producto_galeria_destok"></div>
-                <div id="producto_galeria_movil"></div>
-              </div>
-              <div class="col-md-6">
-                <div class="seccion-producto categorias">
-                  {%for cate in categorias%}
-                    <div class="categoria">
-                      <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="{{cate.seccion}}">
-                        {{cate.nombre}}
-                      </button>
-                    </div>                   
-                  {%endfor%}
-                </div>
-                <div class="seccion-producto precios">
-                  {%for varia in variaciones %}
-                    <div class="variacion {%if loop.first%}visible{%endif%} {{varia.id}}">
-                      {%if varia.oferta > 0 %}
-                        <span class="old_precio"><del>S/.{{varia.precio}}</del></span>
+        <div class="producto_single">
+          <div class="contenedor">
+            <div class="container-fluid">
+              <div class="row">
+                <!--El titulo-->
+                <h1 class="producto_name">
+                  <span class="producto_genero">
+                    {%for cate in categorias%}
+                      {%if cate.seccion == 'genero'%}
+                       {{cate.nombre}}
                       {%endif%}
-                      <span class="precio">S/. {{varia.precio_venta}}</span>
-                    </div>
-                  {%endfor%}                                    
+                    {%endfor%}
+                  </span>
+                  {{nombre}}
+                </h1>
+                <div class="col-md-7">
+                <!--La galeria-->
+                  <div id="producto_galeria_destok"></div>
+                  <div id="producto_galeria_movil"></div>
                 </div>
-                <div class="seccion-producto reviews">
-                  <span class="estrellas"></span>
-                  <span class="puntuacion">{{valoracion}}</span>
-                  <span class="numero">({{num_comentarios}})</span>
-                  <span class="escribe"><a href="#comentarios"></a>Comparte tu Experiencia</span>
-                </div>
-                <div class="seccion-producto descripcion">
-                  <label for="">Descripcion</label>
-                  <p>
-                    {{descripcion|striptags}}                  
-                  </p>
-                </div>
-                <div class="seccion-producto">
-                  <label for="">Color Seleccionado:</label><span class="color">{{color}}</span>
-                  <div class="colores">
-                    <a class="interno" href="#" class="nolink">
-                      {%for img in imagenes_producto%}
-                        {%if loop.first%}
-                          <img src="{{img.imagen_thum}}" alt="">
+                <div class="col-md-5">
+                  <div class="seccion-producto categorias">
+                    {%for cate in categorias%}
+                      <div class="categoria">
+                        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="{{cate.seccion}}">
+                          {{cate.nombre}}
+                        </button>
+                      </div>                   
+                    {%endfor%}
+                  </div>
+                  <div class="seccion-producto precios">
+                    {%for varia in variaciones %}
+                      <div class="variacion {%if loop.first%}visible{%endif%} {{varia.id}}">
+                        {%if varia.oferta > 0 %}
+                          <span class="old_precio"><del>S/.{{varia.precio}}</del></span>
                         {%endif%}
-                      {%endfor%}
-                    </a>
-                    {%for pariente in parientes%}
-                      <a class="link" href="/producto/{{pariente.slug}}/">
-                        <img src="{{pariente.thum}}" alt="">
+                        <span class="precio">S/. {{varia.precio_venta}}</span>
+                      </div>
+                    {%endfor%}                                    
+                  </div>
+                  <div class="seccion-producto reviews">
+                    <span class="estrellas"></span>
+                    <span class="puntuacion">{{valoracion}}</span>
+                    <span class="numero">({{num_comentarios}})</span>
+                    <span class="escribe"><a href="#comentarios"></a>Comparte tu Experiencia</span>
+                  </div>
+                  <div class="seccion-producto descripcion">
+                    <label for="">Descripcion</label>
+                    <p>
+                      {{descripcion|striptags}}                  
+                    </p>
+                  </div>
+                  <div class="seccion-producto">
+                    <label for="">Color Seleccionado:</label><span class="color">{{color}}</span>
+                    <div class="colores">
+                      <a class="interno" href="#" class="nolink">
+                        {%for img in imagenes_producto%}
+                          {%if loop.first%}
+                            <img src="{{img.imagen_thum}}" alt="">
+                          {%endif%}
+                        {%endfor%}
                       </a>
-                    {%endfor%}
+                      {%for pariente in parientes%}
+                        <a class="link" href="/producto/{{pariente.slug}}/">
+                          <img src="{{pariente.thum}}" alt="">
+                        </a>
+                      {%endfor%}
+                      </div>
+                    </div>
+                    <label for="">Talla Seleccionada:</label>
+                    <select name="talla" id="talla" class="form-control">
+                      <option value="">Selecciona una talla</option>
+                      {%for varia in variaciones%}
+                        <option value="{{varia.id}}">{{varia.talla}}</option>
+                      {%endfor%}
+                    </select>
+                    <div class="seccion-add-cart">
+                      <div class="cargando">
+                        <img class="icono" src="/media/tienda/ajax-loader_p.gif" alt="">
+                      </div>
+                      <div class="sin-seleccionar">
+                        <button class="btn btn-contraste" disabled="disabled" type="button">Seleccione una talla y color</button>
+                      </div>
+                      <div class="seleccionado-todo">
+                        <button class="btn btn-contraste add_cart">
+                          <span class="glyphicon glyphicon-shopping-cart"></span>
+                          Agregar al Carro
+                        </button>
+                        <button class="btn btn-default add_wishlist">Agregar a lista de deseos</button>
+                      </div>                    
                     </div>
                   </div>
-                  <label for="">Talla Seleccionada:</label>
-                  <select name="talla" id="talla" class="form-control">
-                    <option value="">Selecciona una talla</option>
-                    {%for varia in variaciones%}
-                      <option value="{{varia.id}}">{{varia.talla}}</option>
-                    {%endfor%}
-                  </select>
-                  <div class="seccion-add-cart">
-                    <div class="cargando">
-                      <img class="icono" src="/media/tienda/ajax-loader_p.gif" alt="">
-                    </div>
-                    <div class="sin-seleccionar">
-                      <button class="btn btn-contraste" disabled="disabled" type="button">Seleccione una talla y color</button>
-                    </div>
-                    <div class="seleccionado-todo">
-                      <button class="btn btn-contraste add_cart">
-                        <span class="glyphicon glyphicon-shopping-cart"></span>
-                        Agregar al Carro
-                      </button>
-                      <button class="btn btn-default add_wishlist">Agregar a lista de deseos</button>
-                    </div>                    
-                  </div>
+                </div>
+              </div>
+            </div>          
+          </div>
+          <div class="producto_single">
+            <div class="col-md-9 ">
+              <div class="detalles">
+                <h3 class="subtitulo">Informacion del Producto</h3>
+                <p>{{detalles}}</p>            
+              </div>
+              <div class="comentarios">
+                <h3 class="subtitulo">Comentarios de usuarios</h3>
+                <div id="comentarios">
+                  <button class="btn btn-default contraste1 add_coment">Escribe un Comentario</button>
+                </div>
+                <div class="sin_comentarios">
+                  <div class="estrellas"></div>
+                  <span class="add_coment texto-solo">Se el primero en escribir un comentario de este producto</span>
                 </div>
               </div>
             </div>
-          </div>          
-        </div>
-              <div class="col-md-9">
-                <div class="detalles">
-                  <h3 class="subtitulo">Informacion del Producto</h3>
-                  {{detalles}}  
-                </div>
-                <div class="comentarios">
-                  <h3 class="subtitulo">Comentarios de usuarios</h3>
-                  <div id="comentarios"> 
-                    <button class="btn btn-default contraste1 add_coment">Escribe un Comentario</button>              
-                  </div>
-                  <div class="sin_comentarios">
-                    <div class="estrellas">
-                    </div>
-                    <span class="add_coment texto-solo">Se el primero en escribir un comentario de este producto</span>
-                  </div>
-                </div>              
-              </div>
-              <div class="relacionados col-md-3">
-                <h4 class="subtitulo">Los clientes que compraron este artículo también compraron</h4>
-                <div class="productos" id="relacionados"></div>
-              </div>
+            <div class="relacionados col-md-3">
+              <h4 class="subtitulo">Los clientes que compraron este artículo también compraron</h4>
+              <div class="productos" id="relacionados"></div>
             </div>
           </div>
-        </div>          
+        </div>
       </script>
       
       <script id="producto_single_galeria_template" type="text/template">
