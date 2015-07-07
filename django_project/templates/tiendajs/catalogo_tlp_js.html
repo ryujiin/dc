@@ -1,34 +1,62 @@
 {% verbatim %}	
 
 	<script id="catalogo_template" type="text/template">
-		<div class="catalgo">
+		<div class="catalogo">
 			<figure id="banner-categoria">
 			</figure>
 			<ol id="breadcrumb" class="breadcrumb">
 			</ol>
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-3">
-						<aside class="refinamiento">
-							<div id="categorias" class="">							
-							</div>
-							<div class="filtro">
-								<h3>Color</h3>
-								<ul class="filtro_color">
-								</ul>
-							</div>
-						</aside>
-					</div>
-					<div class="col-md-9">
-						<div class="refinamiento-nav">
-							<button class="btn btn-default contraste2">
-								Refinar por
-								<span class="icono icon-uniE615"></span>
+			<nav class="refinamiento-nav">
+				<div class="container">
+					<button class="btn btn-default">
+						Refinar por
+						<span class="icono icon-uniE615"></span>
+					</button>
+				</div>
+			</nav>
+			<div id="primario" class="contenido-primario">
+				<div id="secundario" class="refinamientos js-off-canvas">
+					<aside class="js-panel from-right">
+						<div class="header-aside">
+							<h2 class="titulo_refine">Refina tu busqueda por:</h2>
+							<button class="js-panel-close-btn">
+								<span class="glyphicon glyphicon-remove"></span>								
 							</button>
 						</div>
-						<div class="productos">
+						<div class="refinamiento categorias">							
 						</div>
+						<div class="refinamiento precios">
+							<h3 class="toggle">
+								Precio
+							</h3>
+							<ul>
+								<li><a href="">Menos de S/.15.00</a></li>
+								<li><a href="">De S/.15.00 a S./20.00</a></li>
+								<li><a href="">De S/.20.00 a S./25.00</a></li>
+								<li><a href="">De S/.30.00 a S./35.00</a></li>
+								<li><a href="">De S/.35.00 a S./40.00</a></li>
+								<li><a href="">Mayor de S/.40.00</a></li>
+							</ul>
+						</div>
+						<div class="refinamiento colores">
+							<h3>Color</h3>
+							<ul class='lista'></ul>
+						</div>
+					</aside>
+				</div>
+				<div class="busqueda-resultado">
+					<div class="titulo-categoria text-center">
+						<h1 class="titulo">
+							{%if categoria%}
+							{{categoria}} de 
+							{%endif%}
+							{{genero}}
+							{%if estilo%}
+							<small>--{{estilo}}--</small>
+							{%endif%}
+						</h1>
 					</div>
+					<div class="productos"></div>
 				</div>
 			</div>
 		</div>		

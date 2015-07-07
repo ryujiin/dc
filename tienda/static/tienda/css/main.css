@@ -1,7 +1,9 @@
 body{font-family:'Josefin Sans',sans-serif;font-size:16px;}
 body a{color:#111;}
 body a:hover{color:#111}
-body .btn{border-radius:0;width:100%;text-transform:uppercase;font-family:'Pathway Gothic One',sans-serif}
+body img{z-index:1}
+body .btn{border-radius:0;width:100%;text-transform:uppercase;font-family:'Pathway Gothic One',sans-serif;padding:8px 12px;letter-spacing:2px;font-size:16px}
+body .btn-default{border-color:#999}
 body .btn-contraste{background:#111;color:#fff;}
 body .btn-contraste:hover{background:#468847;border-color:#3d773e;opacity:1;color:#fff}
 .bloque_top{display:none;background:#333;}
@@ -18,18 +20,35 @@ body .btn-contraste:hover{background:#468847;border-color:#3d773e;opacity:1;colo
 #carro_page .titulo{font-size:36px;text-transform:uppercase}
 #carro_page .btn{margin:10px 0}
 #carro_page .carro_action .btn{font-size:1.3em}
+.catalogo #primario{position:relative;min-height:1px;padding-left:15px;padding-right:15px;width:100%;float:left}
+.catalogo #secundario{float:left;}
+.catalogo #secundario.js-off-canvas{position:fixed;top:0;left:0;height:100%;width:100%;z-index:99;visibility:hidden;-webkit-transition:visibility 0s .6s;transition:visibility 0s .6s;}
+.catalogo #secundario.js-off-canvas::after{position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;background:transparent;-webkit-transition:background .3s .3s;transition:background .3s .3s;content:""}
+.catalogo #secundario.js-off-canvas.is_visible{visibility:visible;-webkit-transition:visibility 0s 0s;transition:visibility 0s 0s;}
+.catalogo #secundario.js-off-canvas.is_visible::after{background:rgba(0,0,0,0.6);-webkit-transition:background .3s 0s;transition:background .3s 0s}
+.catalogo #secundario.js-off-canvas.is_visible .js-panel{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transition-delay:0s;transition-delay:0s}
+.catalogo #secundario.js-off-canvas .js-panel{position:fixed;width:90%;height:100%;top:55px;right:0;background:#fff;z-index:101;padding:2em 1em 2em 2em;overflow-y:auto;-webkit-transition-property:-webkit-transform;transition-property:transform;-webkit-transition-duration:.3s;transition-duration:.3s;-webkit-transition-delay:.3s;transition-delay:.3s;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);}
+.catalogo #secundario.js-off-canvas .js-panel .header-aside{display:block;margin:-2em -2em 1em;padding:2em;border-bottom:1px solid #f4f4f4;background:#111;color:#fff;position:relative;}
+.catalogo #secundario.js-off-canvas .js-panel .header-aside h2{padding:0;margin:0;display:block;font-size:20px;letter-spacing:2px}
+.catalogo #secundario.js-off-canvas .js-panel .header-aside .js-panel-close-btn{position:absolute;top:0;right:0;height:100%;width:60px;background:#111;display:inline-block;overflow:hidden;white-space:nowrap;border:1px solid transparent;color:#999;}
+.catalogo #secundario.js-off-canvas .js-panel .header-aside .js-panel-close-btn:hover{color:#fff}
+.catalogo #secundario.js-off-canvas .from-right{right:0;-webkit-transform:translate3d(100%,0,0);-ms-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}
+.catalogo #secundario .refinamiento{font-family:'Pathway Gothic One',sans-serif;letter-spacing:1px;}
+.catalogo #secundario .refinamiento ul{list-style:none;padding:0;margin:0;}
+.catalogo #secundario .refinamiento ul li{display:inline-block;width:49%;padding:4px}
+.catalogo .titulo small{display:block}
 footer{font-family:'Pathway Gothic One',sans-serif;background:#111;color:#fff;padding-top:20px;}
 footer a{color:#fff}
 footer .redes_sociales_footer{display:block;padding:2em 0;text-align:center;}
 footer .redes_sociales_footer a{padding:.2em .4em;min-width:44px;display:inline-block;font-size:1.5em}
 .imprenta{font-family:'Pathway Gothic One',sans-serif}
-h1,h2,h3,h4{font-family:'Pathway Gothic One',sans-serif}
-header{transition:all 600ms cubic-bezier(1,0,0,1);background:#fff;z-index:101;top:0;position:fixed;width:100%}
+h1,h2,h3,h4{font-family:'Pathway Gothic One',sans-serif;text-transform:uppercase}
+header#header{transition:all 600ms cubic-bezier(1,0,0,1);background:#fff;z-index:101;top:0;position:fixed;width:100%}
 img{width:100%}
 #warp{min-height:900px;background:#fff;padding-top:111px;width:100%;position:static;z-index:50;-webkit-transition:all 300ms linear;transition:all 300ms linear}
 .mobile-layout{width:100%;}
 .mobile-layout.push{overflow:hidden;}
-.mobile-layout.push header{position:fixed;transform:translate3d(88%,0,0);-webkit-transform:translate3d(88%,0,0)}
+.mobile-layout.push header#header{position:fixed;transform:translate3d(88%,0,0);-webkit-transform:translate3d(88%,0,0)}
 .mobile-layout.push #warp{position:fixed;transform:translate3d(88%,0,0);webkit-transform:translate3d(88%,0,0)}
 .mobile-layout.push .overlay-mobil{opacity:1;display:block}
 .mobile-layout #warp{padding-top:68px;box-shadow:0 0 15px rgba(0,0,0,0.5);left:0;position:relative;-webkit-transition:all 600ms cubic-bezier(1,0,0,1);transition:all 600ms cubic-bezier(1,0,0,1);-webkit-backface-visibility:hidden;backface-visibility:hidden;overflow:hidden}
@@ -40,6 +59,7 @@ img{width:100%}
 .main_menu .menu-principal li a{display:block;text-align:center;width:100%;padding:4px 5px}
 .main_menu .mini-cart{position:absolute;top:20px;right:10px;border:1px solid #f4f4f4;padding:5px;}
 .main_menu .mini-cart .items{background:#333;color:#fff;font-family:'Pathway Gothic One',sans-serif;width:20px;display:inline-block;text-align:center;border-radius:10px}
+#main{overflow:hidden;min-height:20em}
 #mobile-nav.mobile-nav{background:#fff;position:absolute;left:0;top:0;height:100%;z-index:50;-webkit-transition:all 600ms cubic-bezier(1,0,0,1);transition:all 600ms cubic-bezier(1,0,0,1);width:88%;overflow:hidden}
 #mobile-nav .secundary-nav{background:#111;position:absolute;display:block;top:0;left:0;width:58px;height:100%;}
 #mobile-nav .secundary-nav ul{padding:0;margin:0;list-style:none}
@@ -61,7 +81,7 @@ img{width:100%}
 #lineas_carro .linea .accion:hover{cursor:pointer;text-decoration:underline}
 #lineas_carro .linea .linea_cantidad{position:relative}
 .logo{overflow:hidden;width:52%;margin:0 auto;}
-.logo h1{font-family:'Great Vibes',cursive;float:left;margin:10px 0;font-size:30px}
+.logo h1{font-family:'Great Vibes',cursive;float:left;margin:10px 0;font-size:30px;text-transform:none}
 .logo .img_log{float:left;display:none;width:48px;overflow:hidden;}
 .logo .img_log img{width:120px}
 .productos .producto{text-align:center;}
@@ -70,6 +90,7 @@ img{width:100%}
 .productos .producto .nombre_producto{font-family:'Pathway Gothic One',sans-serif;}
 .productos .producto .nombre_producto .estilo{text-transform:uppercase}
 .productos .producto .estrellas{opacity:0}
+.productos .producto .precios{font-family:'Pathway Gothic One',sans-serif}
 .producto_single .colores a{display:inline-block;width:100px;}
 .producto_single .colores a.interno{border-bottom:1px solid #111}
 .producto_single .colores a:hover{border-bottom:1px solid #ccc}
@@ -97,3 +118,4 @@ img{width:100%}
 .overlay-mobil{width:100%;height:100%;position:absolute;top:0;left:0;background:rgba(255,255,255,0.8);z-index:50;opacity:0;display:none}
 .carrusel .titulo_slider{text-align:center;font-family:'Pathway Gothic One',sans-serif;}
 .carrusel .titulo_slider .reglon{width:40px;height:2px;background:#333;display:inline-block;margin:7px}
+.refinamiento-nav{margin:1em 0}

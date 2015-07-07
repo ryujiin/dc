@@ -12,6 +12,7 @@ Loviz.Views.Producto = Backbone.View.extend({
         var album = this.model.toJSON()
         var html = this.template(album);
         this.$el.html(html);
+        this.estilos();
         this.add_estrellas();
         return this;
     },
@@ -24,5 +25,10 @@ Loviz.Views.Producto = Backbone.View.extend({
     add_estrellas:function () {
         var estrellas = new Loviz.Views.Estrellas({model:this.model});
         this.$('.estrellas').append(estrellas.$el);
-    }
+    },
+    estilos:function () {
+        if (window.app.slug==='catalogo') {
+            this.$el.addClass('col-md-4 col-xs-6');
+        };
+    },
 });

@@ -4,9 +4,8 @@ Loviz.Views.Categorias = Backbone.View.extend({
 
 	events: {
 	},
-	initialize : function () {
-		this.$el = $('#categorias');
-		this.render();
+	initialize : function ($el) {
+		this.$el = $el;
 	},
 	render:function () {
 		var datos = this.model.toJSON();
