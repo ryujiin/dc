@@ -24,6 +24,9 @@ body
 		font-size 16px
 	.btn-default
 		border-color #999
+		&:hover,&:active,&:focus
+			background #fff
+			opacity 0.5
 	.btn-contraste
 		background #111
 		color #fff
@@ -132,7 +135,7 @@ body
 				position fixed
 				width 90%
 				height 100%
-				top 55px
+				top 60px
 				right 0
 				background #fff
 				z-index 101
@@ -145,7 +148,8 @@ body
 				-webkit-transition-delay 0.3s
 				transition-delay 0.3s
 				-webkit-transform translate3d(0, 0, 0)
-				transform translate3d(0, 0, 0)			
+				transform translate3d(0, 0, 0)	
+				box-shadow -2px 0px 10px rgba(0,0,0,0.5)		
 				.header-aside
 					display block
 					margin -2em -2em 1em
@@ -158,7 +162,7 @@ body
 						padding 0
 						margin 0
 						display block
-						font-size 20px
+						font-size 16px
 						letter-spacing 2px
 					.js-panel-close-btn
 						position absolute
@@ -262,11 +266,18 @@ img
 		overflow hidden
 .main_menu
 	position relative
-	padding 10px 0 0	
+	z-index 1000
+	width 100%
+	padding 5px
+	border-bottom 1px solid #f4f4f4
+	box-shadow 0px 0px 10px rgba(0,0,0,0.5)		
 	.boton-menu
 		position absolute
-		top 20px
+		top 16px
 		left 10px
+		&.icono-mobil
+			button
+				border 1px solid #f4f4f4
 	.menu-principal
 		display none
 		font-family f_imprenta
@@ -410,19 +421,18 @@ img
 	overflow hidden
 	width 52%
 	margin 0 auto
+	text-align center
 	h1
-		font-family f_cusrsiva
-		float left
-		margin 10px 0
-		font-size 30px
+		font-family f_imprenta
+		margin 0
+		font-size 16px
 		text-transform none
 	.img_log
-		float left
-		display none
-		width 48px
+		width 34px
 		overflow hidden
+		margin 0 auto
 		img
-			width 120px
+			width 81px
 .productos
 	.producto
 		text-align center

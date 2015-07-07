@@ -84,6 +84,5 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 	add_color:function (color) {
 		var link_color = new Loviz.Views.Filtro_colores({model:color});
 		this.$('.colores ul').append(link_color.$el);
-		debugger;
 	}
 });
