@@ -27,15 +27,12 @@
 						</div>				
 					</div>
 					<div class="col-md-4">
-						<div id="resumen_orden_pagar">
-							<div class="row">
-								<h3>Resumen de Orden <span>Editar Carrito</span></h3>
-								<div id="linas_resumen">
-								</div>
-								<div class="linea_resumen">
-									
-								</div>														
+						<div id="resumen_orden_pagar">							
+							<h3>Resumen de Orden <span>Editar Carrito</span></h3>
+							<div id="linas_resumen">
 							</div>
+							<div class="linea_resumen">									
+							</div>																					
 						</div>
 					</div>			
 				</div>
@@ -50,23 +47,12 @@
 				Identificarse
 				<span>"*"<em>requerido</em></span>
 			</legend>
-			<div id="nuevo_cliente">
-				<div class="login-box login-nueva-cuenta">
-					<h3 class="subtitulo">Nuevo Cliente</h3>
-					<div class="login-content">
-						<p>Al crear una cuenta en <a href="/" class="link">LovizDelCarpio.com</a> tu proceso de compra es más rápido porque tus datos ya están registrados en nuestra tienda, además podrás hacer un seguimiento de tus pedidos y estar informado de las últimas novedades.</p>
-						<button class="btn btn-default justi mostrar_registro">Crear Cuenta</button>
-						<div class="formulario_nuevo_user">
-						</div>
-					</div>
-				</div>	
-			</div>
 			<div id="login_social">
 				<div class="login-box login-nueva-cuenta">
 					<h3 class="subtitulo">Ingresa con Medios Sociales</h3>
 					<div class="login-content">
 						<p>Si desea puede ingresar a Lovizdelcarpio.com con sus cuentas de:</p>
-						<a href="/login/facebook/">Ingresa con Facebook</a>
+						<a class="login_face social-login" href="/login/facebook/">Login Facebook <span class="icon-facebook2"></span></a>
 					</div>
 				</div>	
 			</div>
@@ -79,12 +65,22 @@
 					</div>									
 				</div>								
 			</div>
-			
+			<div id="nuevo_cliente">
+				<div class="login-box login-nueva-cuenta">
+					<h3 class="subtitulo">Nuevo Cliente</h3>
+					<div class="login-content">
+						<p>Al crear una cuenta en <a href="/" class="link">LovizDelCarpio.com</a> tu proceso de compra es más rápido porque tus datos ya están registrados en nuestra tienda, además podrás hacer un seguimiento de tus pedidos y estar informado de las últimas novedades.</p>
+						<button class="btn btn-default justi mostrar_registro">Crear Cuenta</button>
+						<div class="formulario_nuevo_user">
+						</div>
+					</div>
+				</div>	
+			</div>						
 		</fieldset>	
 	</script>
 
 	<script id="paso_envio_template" type="text/template">
-		<fieldset>
+		<fieldset id="direccion_envio_field">
 			<legend>Direccion de Envio
 				<span>"*"<em>requerido</em></span>
 			</legend>
@@ -99,7 +95,7 @@
 				</div>
 			</div>
 		</fieldset>
-		<fieldset>
+		<fieldset id="metodo_envio_field">
 			<legend>Metodo de Envio
 				<span>"*"<em>requerido</em></span>
 			</legend>

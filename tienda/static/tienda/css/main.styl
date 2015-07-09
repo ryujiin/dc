@@ -186,6 +186,10 @@ body
 		.refinamiento
 			font-family f_imprenta
 			letter-spacing 1px
+			&.precios
+				li
+					display block
+					width 100%
 			ul
 				list-style none					
 				padding 0
@@ -197,6 +201,8 @@ body
 	.titulo
 		small
 			display block
+form
+	position relative
 footer
 	font-family f_imprenta
 	background #111
@@ -236,6 +242,18 @@ img
 		color #ccc
 	.color-aguamarina
 		color aguamarina
+.ajax_caja
+	position absolute
+	width 100%
+	height 100%
+	z-index 101
+	background rgba(255,255,255,0.8)
+	display none
+	top 0
+	figure
+		padding-top 50%
+		img
+			width initial
 #warp
 	min-height 900px
 	background #fff
@@ -464,7 +482,54 @@ img
 				font-family arial
 				width 40px
 				font-weight 300
-				
+	.caja_pagar
+		margin-top 15px
+.login-box
+	border 1px solid #f4f4f4
+	background #fff
+	margin 0 0 2em
+	.subtitulo
+		background transparent
+		border-bottom 1px solid #f4f4f4
+		font-size 1.1em
+		letter-spacing 1px
+		padding 1em
+		line-height 1.1
+		margin 0		
+	.login-content
+		padding 1em
+		.social-login
+			display block
+			width 90%
+			margin 0 auto
+			border 1px solid #f4f4f4
+			color #333
+			text-align center
+			font-size 1.1em
+			padding 0.6em
+			&:hover
+				color #3b5998
+				text-decoration none
+				.icon-facebook2
+					color #fff
+					background #3b5998							
+			.icon-facebook2							
+				display inline-block
+				width 30px
+				line-height 30px
+				color #fff
+				border-radius 20px
+				background #ccc
+		label
+			font-weight initial
+
+.text-danger,.text-warning	
+	display none
+.has-error
+	.text-danger,.text-warning
+		display block
+			
+							
 .productos
 	.producto
 		text-align center
@@ -486,6 +551,8 @@ img
 		.precios
 			font-family f_imprenta
 			font-size 18px
+			.old_precio
+				font-size 0.85em
 .producto_single
 	.colores
 		a
@@ -580,3 +647,7 @@ img
 			margin 7px
 .refinamiento-nav
 	margin 1em 0
+
+#usuario_login
+	ul
+		list-style none

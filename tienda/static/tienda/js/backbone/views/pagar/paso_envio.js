@@ -57,9 +57,15 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
                 })
             }else{
                 $('.metodo_envio').addClass('has-error');
+                $('html, body').animate({
+                    scrollTop: $("#metodo_envio_field").offset().top
+                }, 1000);
             }
         }else{
             $('.direciones_gravadas').addClass('has-error');
+            $('html, body').animate({
+                    scrollTop: $("#direccion_envio_field").offset().top
+                }, 1000);
         }
     },
     seleccionado:function (e) {

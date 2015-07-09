@@ -12,8 +12,12 @@ class LovedSerializer(serializers.ModelSerializer):
 		model = Loved
 
 class ColorSerializer(serializers.ModelSerializer):
+	tipo = serializers.SerializerMethodField()	
 	class Meta:
 		model = Color
+		fields = ('id','nombre','slug','tipo')
+	def get_tipo(self,obj):
+		return 'color'
 
 class CategoriaSerializer(serializers.ModelSerializer):
 	padre = serializers.CharField(read_only=True)

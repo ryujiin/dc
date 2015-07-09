@@ -82,7 +82,6 @@ def ingresar(request):
 		if formulario.is_valid:			
 			username = request.POST['username']
 			clave = request.POST['password']
-			print username
 			acceso = authenticate(username=username,password=clave)
 			if acceso is not None:
 				if acceso.is_active:
@@ -90,6 +89,7 @@ def ingresar(request):
 					return HttpResponse(json.dumps({'id':request.user.id,'nombre':request.user.username,'email':request.user.email}),
 							content_type='application/json;charset=utf8')
 				else:
+
 					return  HttpResponse(json.dumps({'id':0,'nombre':request.user.username,'email':request.user.email,'error_message':'El usurio esta inactivo'}),
 							content_type='application/json;charset=utf8')
 			else:
@@ -105,8 +105,13 @@ def salir(request):
 
 def nuevo_usuario(request):
 	if request.method=='POST':
-		user = User.objects.create_user(username=request.POST['username'],email=request.POST['username'],password=request.POST['password'])
-		if user:			
+		user = User.objects.create_user(username=request.POST['username'],
+										email=request.POST['username'],
+										password=request.POST['password'],
+										first_name=request.POST['nombre'],
+										last_name=request.POST['apellido'])
+		if user:
+			enviar_correo()
 			return HttpResponse(json.dumps({'creado':True}),
 					content_type='application/json;charset=utf8')			
 		else:
@@ -114,3 +119,22 @@ def nuevo_usuario(request):
 					content_type='application/json;charset=utf8')
 	else:
 		raise Http404
+
+import sendgrid
+from sendgrid import SendGridError, SendGridClientError, SendGridServerError
+
+def enviar_correo():
+	sg = sendgrid.SendGridClient("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")
+	message = sendgrid.Mail()
+	message.add_to('Enrique Lopez <ryujiin22@gmail.com>')
+	message.set_subject('Este es un ejemplo de enviar correo')
+	message.set_html('Esto sigue siendo un ejemplo para ver si funciona o no')
+	message.set_text('Esto sigue siendo un ejemplo para ver si funciona o no22')
+	message.set_from('Doe John <doe@email.com>')
+	status, msg = sg.send(message)
+	try:
+		sg.send(message)
+	except SendGridClientError:
+		print 'fallo el cliente'
+	except SendGridServerError:
+		print 'fallo el server'

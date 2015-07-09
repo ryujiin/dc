@@ -3,7 +3,7 @@ Loviz.Views.Categoria_link = Backbone.View.extend({
     className: 'categoria_link',
     events: {
     },
-    template: swig.compile($("#link_refinamiento_template").html()),
+    template: swig.compile($("#link_categoria_template").html()),
     
     initialize: function () {
     },

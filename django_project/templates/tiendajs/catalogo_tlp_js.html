@@ -67,8 +67,12 @@
 		<ul class="links"></ul>
 	</script>
 
+	<script id="link_categoria_template" type="text/template">
+		<a class="link" href="/catalogo/{{slug}}/">{{nombre}}</a>
+	</script>
+
 	<script id="link_refinamiento_template" type="text/template">
-		<a href="/catalogo/{{slug}}/">{{nombre}}</a>
+		<a class="refinamiento" href="" data-tipo="{{tipo}}" data-valor="{{slug}}">{{nombre}}</a>
 	</script>
 
 	<script id="producto_lista_template" type="text/template">

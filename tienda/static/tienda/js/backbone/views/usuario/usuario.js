@@ -1,16 +1,11 @@
 Loviz.Views.Usuario = Backbone.View.extend({
-	el:$('#usuario'),
+	el:$('#main'),
 	events: {
 		'click .mostrar_registro':'mostrar_registro',
 	},
 	initialize : function () {
-		var self = this;
-        
+		var self = this;        
         this.listenTo(this.model, "change", this.render, this);
-
-		window.routers.base.on('route',function(e){
-			self.desaparecer(e);
-        });
 	},
 	render:function () {
 		this.saber_template();
@@ -18,13 +13,6 @@ Loviz.Views.Usuario = Backbone.View.extend({
 		var html = this.template(datos);
         this.$el.html(html);
         this.no_login();
-	},
-	desaparecer:function (e) {
-		if (e!=='cliente_cuente') {
-            this.$el.slideUp('slow');
-        }else{
-        	this.$el.slideDown('slow');
-        }
 	},
 	no_login:function () {
 		if (this.model.id===undefined) {

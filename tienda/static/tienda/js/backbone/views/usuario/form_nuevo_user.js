@@ -16,10 +16,10 @@ Loviz.Views.Form_nuevo_user = Backbone.View.extend({
         var self = this;
         var verificar = this.verificar();
         if (verificar === true) {
-            $.post('/ajax/crear/',{username:this.email,password:this.pass})
+            $.post('/ajax/crear/',{username:this.email,password:this.pass,nombre:this.nombre,apellido:this.apellido})
             .done(function (data) {
                 if (data.creado===true) {
-                    window.models.usuario.ingresar(self.email,self.pass);
+                    window.models.usuario.ingresar(self.email,self.pass,self);
                 };
             }).fail(function (data) {
                 self.error_crear()
@@ -27,8 +27,9 @@ Loviz.Views.Form_nuevo_user = Backbone.View.extend({
         }
     },
     verificar:function () {
+        this.nombre = $('#nuevo_nombre').val();
+        this.apellido = $('#nuevo_apellido').val();
         this.email = $('#nuevo_user_email').val();
-        this.email2 = $('#nuevo_user_email2').val();
         this.pass = $('#pass_nuevo').val();
         this.pass2 = $('#pass_nuevo2').val();
         //Verificar si es vacio
@@ -40,13 +41,6 @@ Loviz.Views.Form_nuevo_user = Backbone.View.extend({
                 $(this.parentNode).addClass('has-success').removeClass('has-error');
             }
         })
-        //igual email
-        if (this.email2!==this.email) {
-            this.email_warning();
-            return false
-        }else{
-            this.emailok();
-        }
         //igual pass
         if (this.pass2!==this.pass) {
             this.pass_warning();
@@ -54,7 +48,7 @@ Loviz.Views.Form_nuevo_user = Backbone.View.extend({
         }else{
             this.passok();
         }
-        if (this.email2 !=='' && this.email !=='' && this.pass2 !=='' && this.pass !=='') {
+        if (this.email !=='' && this.pass2 !=='' && this.pass !=='' && this.nombre !=='' && this.apellido !=='') {
             return true
         }else{
             return false

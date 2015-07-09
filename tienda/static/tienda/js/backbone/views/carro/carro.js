@@ -16,7 +16,7 @@ Loviz.Views.Carro = Backbone.View.extend({
         });
 	},
 	render:function () {	
-		if (window.app.slug==='carro') {
+		if (window.app.slug==='carro') {			
 			this.viendose = true;
 			var modelo = this.model.toJSON();
 			var html = this.template(modelo);
@@ -26,10 +26,12 @@ Loviz.Views.Carro = Backbone.View.extend({
 		};		
 	},
 	render_vacio:function () {
-		this.viendose = false;
-		var modelo = this.model.toJSON();
-		var html = this.template_vacio(modelo);
-	    this.$el.html(html);
+		if (window.app.slug==='carro') {
+			this.viendose = false;
+			var modelo = this.model.toJSON();
+			var html = this.template_vacio(modelo);
+		    this.$el.html(html);
+		}
 	},
 	addLineas:function (pagar) {
 		var lineas = this.model.toJSON().lineas;

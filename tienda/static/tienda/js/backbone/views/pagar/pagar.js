@@ -9,27 +9,14 @@ Loviz.Views.Pagar = Backbone.View.extend({
 		var self = this;
         this.listenTo(this.model, "change", this.cambiar_estado, this);
         this.listenTo(window.models.usuario, "change", this.ver_status, this);
-
-		window.routers.base.on('route',function(e){
-			self.desaparecer(e);
-        });
 	},
 	render:function () {
 		var html = this.template();
         this.$el.html(html);
-        this.$el.hide();
-        this.desaparecer();
 	    this.poner_pasos();
 	    this.add_lineas_resumen();
 	    this.add_total_resumen();
 	    this.ver_status();	    
-	},
-	desaparecer:function (e) {
-		if (e!=='pagar') {
-            this.$el.slideUp('slow');
-        }else{
-        	this.$el.slideDown('slow');
-        }
 	},
 	ver_status:function () {
 		this.model.set('estado' , 'ninguno');		
