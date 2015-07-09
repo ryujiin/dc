@@ -7,9 +7,14 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 	events: {
 		'click .refinamiento-nav button':'mostrar_refinamiento',
 		'click .js-panel-close-btn':'cerrar_refinamiento',
+		'click .link_refinamiento':'filtrando_catalogo',
+		'click .clear_refinamiento':'limpiar_filtro',
 	},
 	initialize : function () {
 		var self = this;
+		this.filtro = false;
+		this.filtros = new Loviz.Collections.Filtros();
+		this.vista_producto = [];
 	},
 	render:function (categoria) {
 		var datos = this.get_titulo(categoria);
@@ -34,17 +39,18 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 	mostrar_productos:function (cate) {
 		this.$('caja_cargando').show('slow');
 		var self = this;
-		var productos = new Loviz.Collections.Productos();
-		productos.fetch({
+		this.productos = new Loviz.Collections.Productos();
+		this.productos.fetch({
 			data:$.param({categoria:cate})
 		}).done(function () {
-			productos.forEach(self.add_producto,self);
+			self.productos.forEach(self.add_producto,self);
 			self.$('caja_cargando').hide('slow');
 		})
 	},
 	add_producto:function (modelo) {
 		var producto = new Loviz.Views.Producto({ model: modelo });
 		this.$('.productos').append(producto.render().el);
+		this.vista_producto.push(producto);
 	},
 	mostrar_filtros:function () {
 		var colores = window.collections.colores;
@@ -84,5 +90,45 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 	add_color:function (color) {
 		var link_color = new Loviz.Views.Filtro_colores({model:color});
 		this.$('.colores ul').append(link_color.$el);
+	},
+	filtrando_catalogo:function (e) {
+		e.preventDefault();
+		if (this.filtro ===false) {
+			this.$('.clear_refinamiento').fadeIn();
+			this.filtro = true;
+		};
+		var tipo = e.target.dataset.tipo;
+		var valor = e.target.dataset.valor;
+		var conincidencia = this.filtros.where({valor:valor});
+		if (conincidencia.length===0) {
+			this.$('.producto').hide();
+			var nuevo_filtro = new Loviz.Models.Filtro();
+			nuevo_filtro.set({tipo:tipo,valor:valor});	
+			this.filtros.add(nuevo_filtro);
+			this.filtros.forEach(this.filtro_producto,this)
+		};		
+		$(e.target).addClass('activo');
+	},
+	limpiar_filtro:function () {
+		this.filtro = false;
+		this.$('.clear_refinamiento').fadeOut();
+		this.$('.link_refinamiento').removeClass('activo');
+		this.filtros.reset();
+		this.$('.producto').fadeIn();
+	},
+	filtro_producto:function (filtro) {
+		var filtro = filtro.toJSON();
+		if (filtro.tipo == 'color') {
+			var modelos = this.productos.where({color:filtro.valor});
+			modelos.forEach(this.aparecer_producto,this);
+		};		
+	},
+	aparecer_producto:function (producto_modelo) {
+		var producto_modelo = producto_modelo;
+		this.vista_producto.forEach(function(p){
+			if (p.model.id===producto_modelo.id) {
+				p.$el.fadeIn();
+			};
+		})
 	}
 });
