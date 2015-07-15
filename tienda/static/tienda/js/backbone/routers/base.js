@@ -10,6 +10,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		'*notFound': 'notFound',
 	},
 	initialize : function () {
+		this.bind('route', this._pageView);
   	},
 	root : function () {
 		window.app.slug='home';
@@ -53,5 +54,9 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	notFound:function () {
 		console.log('Estamos en una pagina vacia')
 	},
+	_pageView: function() {
+	  var path = Backbone.history.getFragment();
+	  ga('send', 'pageview', {page: "/" + path});
+	}
 
 });

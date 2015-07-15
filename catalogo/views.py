@@ -20,7 +20,6 @@ class CatalogoViewsets(viewsets.ReadOnlyModelViewSet):
 		queryset = Producto.objects.filter(activo=True).order_by('-pk')
 		categoria = self.request.QUERY_PARAMS.get('categoria', None)
 		ofertas = self.request.QUERY_PARAMS.get('ofertas', None)
-
 		if categoria:
 			queryset = queryset.filter(categorias__slug=categoria)
 		return queryset
