@@ -134,6 +134,8 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 		this.min = min;
 		if (this.filtros.length===0) {
 			this.productos.forEach(this.aparecer_producto,this);
+			var visibles  = this.productos.where({visible:true});
+			this.num_items_model.set({num:visibles.length});
 		}else{
 			this.filtros.forEach(this.filtro_producto,this);
 		}
@@ -181,5 +183,6 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 		this.$('.link_refinamiento').removeClass('activo');
 		this.filtros.reset();
 		this.$('.producto').fadeIn();
+		this.num_items_model.set({num:this.productos.length});
 	},
 });
