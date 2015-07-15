@@ -51,5 +51,8 @@ Loviz.Views.Tienda = Backbone.View.extend({
 		this.$el.removeClass('push');
 		$("header .icono-mobil.boton-menu").removeClass('ocultar').addClass('mostrar');
 		this.$('header .icono-mobil.boton-menu span').removeClass('glyphicon-menu-left').addClass('glyphicon-menu-hamburger');
+	},
+	cambiando_page:function () {
+		$('html, body').animate({scrollTop: 10}, 700);
 	}
 });
