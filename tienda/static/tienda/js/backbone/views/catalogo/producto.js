@@ -7,6 +7,7 @@ Loviz.Views.Producto = Backbone.View.extend({
     
     initialize: function () {
         this.quick =false;
+        this.listenTo(this.model, "change", this.verificar_visible, this);
     },    
     render: function () {
         var album = this.model.toJSON()
@@ -31,4 +32,11 @@ Loviz.Views.Producto = Backbone.View.extend({
             this.$el.addClass('col-md-4 col-xs-6');
         };
     },
+    verificar_visible:function () {
+        if (this.model.toJSON().visible===true) {
+            this.$el.fadeIn();
+        }else{
+            this.$el.fadeOut();
+        }
+    }
 });

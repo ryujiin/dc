@@ -29,18 +29,19 @@
 							<button class="btn btn-default">
 								Limpiar Todos los Filtros
 							</button>
+							<div class="resultados"></div>
 						</div>
 						<div class="refinamiento precios">
 							<h3 class="toggle">
 								Precio
 							</h3>
-							<ul>
-								<li><a href="">Menos de S/.15.00</a></li>
-								<li><a href="">De S/.15.00 a S./20.00</a></li>
-								<li><a href="">De S/.20.00 a S./25.00</a></li>
-								<li><a href="">De S/.30.00 a S./35.00</a></li>
-								<li><a href="">De S/.35.00 a S./40.00</a></li>
-								<li><a href="">Mayor de S/.40.00</a></li>
+							<ul class="refinamiento_precio">
+								<li><a class="link_refinamiento inactivo" data-tipo="precio" data-min="0"  data-max="15" data-valor="0-15" href="">Menos de S/.15.00</a></li>
+								<li><a class="link_refinamiento inactivo" data-tipo="precio" data-min="15" data-max="20" data-valor="15-20" href="">De S/.15.00 a S./20.00</a></li>
+								<li><a class="link_refinamiento inactivo" data-tipo="precio" data-min="20" data-max="25" data-valor="20-25" href="">De S/.20.00 a S./25.00</a></li>
+								<li><a class="link_refinamiento inactivo" data-tipo="precio" data-min="25" data-max="30" data-valor="25-30" href="">De S/.25.00 a S./30.00</a></li>
+								<li><a class="link_refinamiento inactivo" data-tipo="precio" data-min="30" data-max="35" data-valor="30-35" href="">De S/.30.00 a S./35.00</a></li>
+								<li><a class="link_refinamiento inactivo" data-tipo="precio" data-min="35" data-max="10000"  data-valor="35-10000" href="">Mayor de S/.35.00</a></li>
 							</ul>
 						</div>
 						<div class="refinamiento colores">
@@ -60,6 +61,7 @@
 							<small>--{{estilo}}--</small>
 							{%endif%}
 						</h1>
+						<div class="resultados"></div>
 					</div>
 					<div class="productos"></div>
 				</div>
@@ -77,7 +79,7 @@
 	</script>
 
 	<script id="link_refinamiento_template" type="text/template">
-		<a class="link_refinamiento" href="" data-tipo="{{tipo}}" data-valor="{{nombre}}">{{nombre}}</a>
+		<a class="link_refinamiento inactivo" href="" data-tipo="{{tipo}}" data-color="{{nombre}}">{{nombre}}</a>
 	</script>
 
 	<script id="producto_lista_template" type="text/template">
@@ -120,4 +122,8 @@
 	        <span data-valor="4" class="glyphicon "></span>
 	        <span data-valor="5" class="glyphicon "></span>
       </script>
+
+   <script id="num_items_template" type="text/template">
+   	<p>Se encontraron <em>{{num}}</em> items</p>
+   </script>
 {% endverbatim %}

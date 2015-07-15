@@ -14,6 +14,7 @@ from rest_framework.permissions import IsAuthenticated,IsAdminUser
 
 class CatalogoViewsets(viewsets.ReadOnlyModelViewSet):
 	serializer_class = ProductoListaSerializer
+
 	
 	def get_queryset(self):
 		queryset = Producto.objects.filter(activo=True).order_by('-pk')
@@ -21,7 +22,7 @@ class CatalogoViewsets(viewsets.ReadOnlyModelViewSet):
 		ofertas = self.request.QUERY_PARAMS.get('ofertas', None)
 
 		if categoria:
-			queryset = Producto.objects.filter(activo=True,categorias__slug=categoria).order_by('-pk')
+			queryset = queryset.filter(categorias__slug=categoria)
 		return queryset
 
 class ColorViewsets(viewsets.ReadOnlyModelViewSet):

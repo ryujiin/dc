@@ -56,7 +56,7 @@ class Producto(models.Model):
 			precio = 0
 		if not precio:
 			precio =0
-		precio = "%0.2f" %(precio)		
+		#precio = "%0.2f" %(precio)		
 		return precio
 
 	def get_precio_oferta_lista(self):
@@ -67,7 +67,7 @@ class Producto(models.Model):
 			oferta = variaciones[0].oferta
 			descuento= precio*oferta/100
 			precio = precio - descuento
-			precio = "%0.2f" %(precio)
+			#precio = "%0.2f" %(precio)
 			return precio
 		else:
 			precio = self.get_precio_lista()
