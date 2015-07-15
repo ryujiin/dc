@@ -180,7 +180,7 @@ Loviz.Views.Catalogo = Backbone.View.extend({
 	limpiar_filtro:function () {
 		this.filtro = false;
 		this.$('.clear_refinamiento').fadeOut();
-		this.$('.link_refinamiento').removeClass('activo');
+		this.$('.link_refinamiento').removeClass('activo').addClass('inactivo');
 		this.filtros.reset();
 		this.$('.producto').fadeIn();
 		this.num_items_model.set({num:this.productos.length});

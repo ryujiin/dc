@@ -29,7 +29,7 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
         this.$('.nueva_direccion_form').append(form_direccion.$el);
     },
     listadirecciones:function () {
-        this.$('.direciones_gravadas').empty();
+        this.$('.direciones_gravadas .lista').empty();
         window.collections.direcciones.forEach(this.mi_direccion,this)
     },
     mi_direccion:function (dire) {
@@ -57,14 +57,18 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
                 })
             }else{
                 $('.metodo_envio').addClass('has-error');
+                var mover_a = $("#metodo_envio_field").offset();
+                mover_a.top = mover_a.top-50;
                 $('html, body').animate({
-                    scrollTop: $("#metodo_envio_field").offset().top
+                    scrollTop: mover_a.top
                 }, 1000);
             }
         }else{
             $('.direciones_gravadas').addClass('has-error');
+            var mover_a = $("#direccion_envio_field").offset();
+            mover_a.top = mover_a.top-50;
             $('html, body').animate({
-                    scrollTop: $("#direccion_envio_field").offset().top
+                    scrollTop: mover_a.top
                 }, 1000);
         }
     },

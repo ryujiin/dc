@@ -42,7 +42,7 @@ body .btn-contraste:hover{background:#468847;border-color:#3d773e;opacity:1;colo
 .catalogo #secundario .refinamiento ul{list-style:none;padding:0;margin:0;}
 .catalogo #secundario .refinamiento ul li{display:inline-block;width:49%;padding:4px}
 .catalogo .titulo small{display:block}
-form{position:relative}
+form{position:relative;padding:20px 0}
 footer{font-family:'Pathway Gothic One',sans-serif;background:#111;color:#fff;padding-top:40px;}
 footer a{color:#fff}
 footer .redes_sociales_footer{display:block;padding:2em 0;text-align:center;}
