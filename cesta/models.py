@@ -71,7 +71,7 @@ class Carro(models.Model):
 			if carros:
 				for carro in carros:
 					if self.pk != carro.pk:
-						carro.estado = self.CONGELADA
+						carro.estado = self.FUCIONADA
 						carro.save()
 		
 

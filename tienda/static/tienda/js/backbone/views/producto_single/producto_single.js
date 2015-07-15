@@ -56,6 +56,7 @@ Loviz.Views.Producto_single = Backbone.View.extend({
             if (window.models.carro.id===undefined) {
                 debugger;
                 window.models.carro.save().done(function (data) {
+                    debugger;
                     linea_carro.set({carro:data.id,producto:producto_id,variacion:variacion_id,cantidad:1});
                     linea_carro.grabando(true);
                 })
