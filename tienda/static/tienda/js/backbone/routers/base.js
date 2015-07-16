@@ -58,5 +58,4 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	  var path = Backbone.history.getFragment();
 	  ga('send', 'pageview', {page: "/" + path});
 	}
-
 });

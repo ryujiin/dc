@@ -4,7 +4,7 @@ Loviz.Views.Paso_login = Backbone.View.extend({
         'click .mostrar_registro':'mostrar_registro',
     },
     initialize: function () {
-        this.render();
+        this.verificar_login();
         this.listenTo(window.views.pagar.model, "change", this.aparecer, this);        
     },
     render: function () {

@@ -1,4 +1,4 @@
-Loviz.Views.Pagar = Backbone.View.extend({
+/*Loviz.Views.Pagar = Backbone.View.extend({
 	el:$('#main'),
 	
     template: swig.compile($("#pagar_template").html()),
@@ -71,3 +71,4 @@ Loviz.Views.Pagar = Backbone.View.extend({
 		this.$('.linea_resumen').append(viewTotal.$el);
 	}
 });
+*/
