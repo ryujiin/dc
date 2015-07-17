@@ -4,7 +4,8 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		'catalogo/:categoria/':'catalogo',
 		'producto/:producto/':'producto_single',
 		'carro/':'carro',
-		'pagar/':'pagar',
+		'pagar/':'pagar_redireccion',
+		'pagar/:estado/':'pagar',
 		'cliente/cuenta/':'cliente_cuente',
 		'cliente/salir/':'salir',
 		'*notFound': 'notFound',
@@ -36,10 +37,26 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		window.views.carro.varificar_numero();
 		window.views.tienda.cambiando_page();
 	},
-	pagar:function () {
-		window.app.slug='pagar';
-		window.views.pagar.render();
-		window.views.tienda.cambiando_page();
+	pagar_redireccion:function () {
+		if (window.models.carro.toJSON().lineas>0) {
+			if (window.models.usuario.id!==undefined) {
+				debugger;
+			}else{
+				this.navigate('/pagar/identificar/')
+			}
+		}else{
+			this.navigate('/', {trigger:true});
+		}
+	},
+	pagar:function (estado) {
+		if (window.models.carro.toJSON().lineas>0) {
+			window.app.slug='pagar';
+			debugger;
+			window.views.tienda.cambiando_page();	
+		}else{
+			this.navigate('/', {trigger:true});
+		}
+		
 	},
 	cliente_cuente:function () {
 		window.app.slug='cliente';

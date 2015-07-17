@@ -9,10 +9,9 @@ class CarroSerializer(serializers.ModelSerializer):
 	total = serializers.SerializerMethodField()
 	subtotal = serializers.SerializerMethodField()
 	envio = serializers.SerializerMethodField()
-	metodo_envio = serializers.SerializerMethodField()
 	class Meta:
 		model = Carro
-		fields = ('id','propietario','estado','sesion_carro','lineas','total','subtotal','envio','pedido','metodo_envio')
+		fields = ('id','propietario','estado','sesion_carro','lineas','total','subtotal','envio','pedido')
 
 	def get_lineas(self,obj):
 		lineas = obj.num_lineas()
@@ -31,13 +30,6 @@ class CarroSerializer(serializers.ModelSerializer):
 	def get_envio(self,obj):
 		envio =obj.envio_carro()
 		return envio
-
-	def get_metodo_envio(self,obj):
-		if obj.pedido!=None:
-			metodo = obj.pedido.metodoenvio.nombre
-		else:
-			metodo = None
-		return metodo
 
 class LineaSerializer(serializers.ModelSerializer):
 	thum = serializers.SerializerMethodField()

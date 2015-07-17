@@ -25,9 +25,9 @@ class Carro(models.Model):
 	propietario = models.ForeignKey(User,related_name='Carrito', null=True,blank=True)
 	sesion_carro = models.CharField(max_length=120,blank=True,null=True)
 	estado = models.CharField(max_length=128,default=ABIERTO,choices=ESTADO_ELECCION)
-	pedido = models.ForeignKey(Pedido,blank=True,null=True)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_submitted = models.DateTimeField(blank=True,null=True)
+	pedido = models.ForeignKey(Pedido,blank=True,null=True)
 	
 	def __unicode__(self):
 		return "Carro de %s - %s" %(self.propietario,self.estado)
@@ -58,13 +58,17 @@ class Carro(models.Model):
 
 	def envio_carro(self):
 		envio = 0
-		if self.pedido:
-			envio = self.pedido.gasto_envio
+		#if self.pedido:
+		#	envio = self.pedido.gasto_envio
 		return envio
 
 	def save(self, *args, **kwargs):
 		if self.propietario:
 			self.sesion_carro = 'carro de %s ya no hay cookie%s' %(self.propietario,self.id)
+			if not self.pedido:
+				pedido = Pedido(user=self.propietario,estado_pedido='autenticado',)
+				pedido.save()
+				self.pedido = pedido
 		super(Carro, self).save(*args, **kwargs)		
 		if self.estado!='Fusionada':
 			if self.propietario:

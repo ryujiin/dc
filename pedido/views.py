@@ -12,10 +12,18 @@ from django.shortcuts import get_object_or_404
 
 from models import * 
 
-class PedidoViewSet(viewsets.ViewSet):
+class PedidoViewSet(viewsets.ModelViewSet):
+	queryset = Pedido.objects.all()
+	serializer_class = PedidoSerializer
+
 	def list(self,request):
-		if request.user.is_authenticated:
-			queryset = Pedido.objects.filter(user=request.user.pk)
+		carro = self.request.QUERY_PARAMS.get('carro', None)
+		if carro:
+			queryset = Pedido.objects.all()
+			queryset = get_object_or_404(queryset, carro=carro)
+		else:
+			if request.user.is_authenticated:
+				queryset = Pedido.objects.filter(user=request.user.pk)
 		serializer = PedidoSerializer(queryset, many=True)
 		return Response(serializer.data)
 
@@ -37,3 +45,7 @@ class PedidoViewSet(viewsets.ViewSet):
 class MetodoEnvioViewSet(viewsets.ReadOnlyModelViewSet):
 	queryset = MetodoEnvio.objects.all()
 	serializer_class = MetodoEnvioSerializer
+
+class EstadosPedidosViewSet(viewsets.ReadOnlyModelViewSet):
+	queryset = EstadoPedido.objects.all()
+	serializer_class = EstadoPedidoSerializer

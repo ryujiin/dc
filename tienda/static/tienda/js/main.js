@@ -22,18 +22,21 @@ $(document).ready(function(){
     window.collections.metodos = new Loviz.Collections.Envios();
     window.collections.pedidos = new Loviz.Collections.Pedidos();
     window.collections.colores = new Loviz.Collections.Colores();
+    window.collections.estados_pedidos = new Loviz.Collections.Estados_pedidos();
 
     //Views
     $('#caja_ajax').show();
     window.collections.sliderHome.fetch().done(function () {
         window.collections.categorias.fetch().done(function () {
             window.collections.metodos.fetch().done(function () {
-                window.collections.colores.fetch().done(function () {                    
-                    iniciar_vistas();
-                    $('#caja_ajax').hide();
-                    Backbone.history.start({
-                        pushState:true,
-                    });
+                window.collections.colores.fetch().done(function () {
+                    window.collections.estados_pedidos.fetch().done(function () {
+                        iniciar_vistas();
+                        $('#caja_ajax').hide();
+                        Backbone.history.start({
+                            pushState:true,
+                        });    
+                    })                    
                 })
             })
         })
@@ -51,7 +54,7 @@ $(document).ready(function(){
             model:window.models.carro
         });
         window.views.pagar = new Loviz.Views.Pagar({
-            model:new Loviz.Models.Pagar()
+            model:window.models.pedido
         });
         window.views.usuario = new Loviz.Views.Usuario({
             model: window.models.usuario

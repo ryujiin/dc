@@ -1,0 +1,40 @@
+Esperando Autenticacion
+Autenticado
+Esperando Metodo de Envio
+Seleccionado Metodo de Envio
+Esperando Metodo de Pago
+Esperando Pago
+Pago Aceptado
+Error en el Pago
+Esperando Envio
+Devuelto
+Enviado
+[
+	{
+		"pk": 23,
+		"model":"pedido.EstadoPedido",
+		"fields":{
+			"nombre":"Esperando Autenticacion",
+			"descripcion":"Es cuando se inicia el proceso de pedido",
+			"slug_estado":"esperando_autenticacion",
+		}
+	},
+	{
+		"pk": 24,
+		"model":"pedido.EstadoPedido",
+		"fields":{
+			"nombre":"Autenticado",
+			"descripcion":"El usuario se Autentico correctamente",
+			"slug_estado":"auntenticado",
+		}
+	},
+	{
+		"pk": 25,
+		"model":"pedido.EstadoPedido",
+		"fields":{
+			"nombre":"Esperando Metodo de Envio",
+			"descripcion":"El usuario no a determinado aun el metodo de envio",
+			"slug_estado":"esperando_metodo_envio",
+		}
+	}	
+]

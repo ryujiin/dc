@@ -14,7 +14,6 @@ from rest_framework.permissions import IsAuthenticated,IsAdminUser
 
 class CatalogoViewsets(viewsets.ReadOnlyModelViewSet):
 	serializer_class = ProductoListaSerializer
-
 	
 	def get_queryset(self):
 		queryset = Producto.objects.filter(activo=True).order_by('-pk')
