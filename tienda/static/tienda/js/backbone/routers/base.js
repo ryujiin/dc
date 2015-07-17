@@ -38,11 +38,19 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		window.views.tienda.cambiando_page();
 	},
 	pagar_redireccion:function () {
+		debugger;
 		if (window.models.carro.toJSON().lineas>0) {
 			if (window.models.usuario.id!==undefined) {
-				debugger;
+				var estado = window.models.pedido.toJSON().estado_pedido;
+				if (estado ==='autenticado') {
+					this.navigate('/pagar/metodo_envio/', {trigger:true})
+				}else if(estado === 'metodo_envio'){
+					this.navigate('/pagar/metodo_pago/', {trigger:true})
+				}else{
+					this.navigate('/cuenta/pedidos', {trigger:true});
+				}
 			}else{
-				this.navigate('/pagar/identificar/')
+				this.navigate('/pagar/identificar/', {trigger:true})
 			}
 		}else{
 			this.navigate('/', {trigger:true});
@@ -51,7 +59,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	pagar:function (estado) {
 		if (window.models.carro.toJSON().lineas>0) {
 			window.app.slug='pagar';
-			debugger;
+			window.views.pagar.render(estado);
 			window.views.tienda.cambiando_page();	
 		}else{
 			this.navigate('/', {trigger:true});

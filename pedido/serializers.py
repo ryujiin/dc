@@ -12,6 +12,7 @@ class EstadoPedidoSerializer(serializers.ModelSerializer):
 
 class PedidoSerializer(serializers.ModelSerializer):
 	numero_pedido = serializers.CharField(read_only=True)
+	estado_pedido = serializers.CharField(read_only=True)
 	class Meta:
 		model = Pedido
-		fields = ('id','numero_pedido','user','gasto_envio','direccion_envio','metodoenvio','fecha_compra','estado')
+		fields = ('id','numero_pedido','user','gasto_envio','direccion_envio','metodoenvio','fecha_compra','estado_pedido')

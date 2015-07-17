@@ -1,25 +1,19 @@
 Loviz.Views.Pagar = Backbone.View.extend({
 	el:$('#main'),
+    template: swig.compile($("#pagar_template").html()),	
 	events: {
 	},
 	initialize : function () {
 
 	},
-	render:function () {
-
+	render:function (estado) {
+		var html = this.template();
+        this.$el.html(html);
+        this.rellenar_segun_estado(estado);
 	},
-	verificar_estado:function (estado) {
+	rellenar_segun_estado:function (estado) {
 		debugger;
 	},
-	redireccionar:function () {
-		//Redireccion segun el estado del pedido
-		var estado = this.model.toJSON().estado;
-		estado = window.collections.estados_pedidos.findWhere({id:estado});
-		if (estado.toJSON().slug_estado==='inicio' || estado.toJSON().slug_estado==='autenticar') {
-			window.routers.base.navigate('/pagar/autenticar/', {trigger:true});
-		};
-		debugger;
-	}
 });
 /*Loviz.Views.Pagar = Backbone.View.extend({
 	el:$('#main'),
