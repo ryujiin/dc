@@ -12,6 +12,14 @@ Loviz.Routers.Base = Backbone.Router.extend({
 	},
 	initialize : function () {
 		this.bind('route', this._pageView);
+		this.historia = [];
+		this.listenTo(this, 'route', function (name, args) {
+		  this.historia.push({
+		    name : name,
+		    args : args,
+		    fragment : Backbone.history.fragment
+		  });
+		});
   	},
 	root : function () {
 		window.app.slug='home';
@@ -38,33 +46,44 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		window.views.tienda.cambiando_page();
 	},
 	pagar_redireccion:function () {
-		debugger;
-		if (window.models.carro.toJSON().lineas>0) {
-			if (window.models.usuario.id!==undefined) {
-				var estado = window.models.pedido.toJSON().estado_pedido;
-				if (estado ==='autenticado') {
-					this.navigate('/pagar/metodo_envio/', {trigger:true})
-				}else if(estado === 'metodo_envio'){
-					this.navigate('/pagar/metodo_pago/', {trigger:true})
+		var num_historia = this.historia.length;
+		num_historia--;
+		var url_anterior = this.historia[num_historia]
+		if (url_anterior.name==='pagar_redireccion') {
+			num_historia = num_historia-2;
+			var url = this.historia[num_historia];
+			this.navigate(url.fragment, {trigger:true});
+		}else{
+			if (window.models.carro.toJSON().lineas>0) {
+				if (window.models.usuario.id!==undefined) {
+					var estado = window.models.pedido.toJSON().estado_pedido;
+					if (estado ==='autenticado') {
+						this.navigate('/pagar/metodo_envio/', {trigger:true})
+					}else if(estado === 'metodo_envio'){
+						this.navigate('/pagar/metodo_pago/', {trigger:true})
+					}else{
+						this.navigate('/cuenta/pedidos', {trigger:true});
+					}
 				}else{
-					this.navigate('/cuenta/pedidos', {trigger:true});
+					this.navigate('/pagar/identificar/', {trigger:true})
 				}
 			}else{
-				this.navigate('/pagar/identificar/', {trigger:true})
+				this.navigate('/', {trigger:true});
 			}
-		}else{
-			this.navigate('/', {trigger:true});
-		}
+		}		
 	},
 	pagar:function (estado) {
-		if (window.models.carro.toJSON().lineas>0) {
+		if (estado==='identificar'|| estado==='metodo_envio' || estado==='metodo_pago' ) {
+			if (window.models.carro.toJSON().lineas>0) {
 			window.app.slug='pagar';
 			window.views.pagar.render(estado);
 			window.views.tienda.cambiando_page();	
+			}else{
+				this.navigate('/', {trigger:true});
+			}
 		}else{
-			this.navigate('/', {trigger:true});
+			this.notFound();
 		}
-		
 	},
 	cliente_cuente:function () {
 		window.app.slug='cliente';

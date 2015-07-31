@@ -4,27 +4,8 @@
 			<div class="container-fluid">
 				<div class="row">
 					<h2 class="titulo text-center">Pasarela de Pagos</h2>
-					<div class="col-md-8">
-						<div class="linea_progrecion">
-							<div class="paso enlinea identificar" data-estado="identificar">
-								<span class="paso_number">1</span>
-								<span class="paso_text">Identificacion</span>
-							</div>
-							<div class="paso enlinea envio" data-estado="envio">
-								<span class="paso_number">2</span>
-								<span class="paso_text">Envio</span>
-							</div>
-							<div class="paso enlinea pagar" data-estado="pagar">
-								<span class="paso_number">3</span>
-								<span class="paso_text">Pagar</span>
-							</div>
-						</div>
-						<div id="identificar_user_pagar" class="caja_pagar">
-						</div>
-						<div id="envio_pagar" class="caja_pagar">
-						</div>
-						<div id="metodo_pago_pagar" class="caja_pagar">	
-						</div>				
+					<div class="col-md-8">						
+						<div id="paso_actual" class="caja_pagar"></div>
 					</div>
 					<div class="col-md-4">
 						<div id="resumen_orden_pagar">							
@@ -42,6 +23,20 @@
 	</script>
 
 	<script id="paso_login_template" type="text/template">
+		<div class="linea_progrecion">
+			<div class="paso enlinea identificar actual" data-estado="identificar">
+				<span class="paso_number">1</span>
+				<span class="paso_text">Identificacion</span>
+			</div>
+			<div class="paso enlinea envio" data-estado="envio">
+				<span class="paso_number">2</span>
+				<span class="paso_text">Envio</span>
+			</div>
+			<div class="paso enlinea pagar" data-estado="pagar">
+				<span class="paso_number">3</span>
+				<span class="paso_text">Pagar</span>
+			</div>
+		</div>
 		<fieldset>
 			<legend>
 				Identificarse
@@ -80,6 +75,20 @@
 	</script>
 
 	<script id="paso_envio_template" type="text/template">
+		<div class="linea_progrecion">
+			<div class="paso enlinea identificar" data-estado="identificar">
+				<span class="paso_number">1</span>
+				<span class="paso_text">Identificacion</span>
+			</div>
+			<div class="paso enlinea envio actual" data-estado="envio">
+				<span class="paso_number">2</span>
+				<span class="paso_text">Envio</span>
+			</div>
+			<div class="paso enlinea pagar" data-estado="pagar">
+				<span class="paso_number">3</span>
+				<span class="paso_text">Pagar</span>
+			</div>
+		</div>
 		<fieldset id="direccion_envio_field">
 			<legend>Direccion de Envio
 				<span>"*"<em>requerido</em></span>
@@ -121,45 +130,119 @@
 	</script>
 
 	<script id="paso_pagar_template" type="text/template">
-		<fieldset>
-			<legend>¿Como desea Pagar?</legend>
-			<div id="metodo_pago_select">
-				<div class="radio">
-					<label>
-						<input type="radio" name="metodo_pago"> Tarjeta de Credito <span></span>
-					</label>
-				</div>
-				<div class="caja_pago tarjeta">
-					<div class="btn contraste1 enviar_pago justi">Pagar Ahora</div>
-				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="metodo_pago"> Paypal <span></span>
-					</label>
-				</div>
-				<div class="caja_pago paypal">
-					<div class="btn contraste1 enviar_pago justi">Pagar Ahora</div>					
-				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="metodo_pago"> PagoEfectivo <span></span>
-					</label>
-				</div>
-				<div class="caja_pago pagoefectivo">
-					<div class="btn contraste1 enviar_pago justi">Pagar Ahora</div>					
-				</div>				
+		<div class="linea_progrecion">
+			<div class="paso enlinea identificar" data-estado="identificar">
+				<span class="paso_number">1</span>
+				<span class="paso_text">Identificacion</span>
+			</div>
+			<div class="paso enlinea envio" data-estado="envio">
+				<span class="paso_number">2</span>
+				<span class="paso_text">Envio</span>
+			</div>
+			<div class="paso enlinea pagar actual" data-estado="pagar">
+				<span class="paso_number">3</span>
+				<span class="paso_text">Pagar</span>
+			</div>
+		</div>
+		<div class="metodo_pagar">
+			<fieldset>
+				<legend>¿Como desea Pagar? <span>* <em>Requerido</em></span></legend>
+				<div id="metodo_pago_select">
+					<div class="radio">
+						<label>
+							<input type="radio" name="metodo_pago" data-metodo="tarjeta"> Tarjeta de Credito <span></span>
+						</label>					
+					</div>
+					<div class="caja_pago tarjeta">
+						<div class="row">
+							<form action="" id="pago_tarjeta_credito">
+								<span class="payment-errors"></span>				
+								<div class="form-group col-md-8">
+								    <label for="numero">*Numero de la tarjeta </label>
+								    <input type="text" class="form-control" size="20" data-stripe="number" id="numero_tarjeta">
+								    <p>Ejemplo: 4111111111111111 (sin espacios ni guiones)</p>
+								    <div class="iconos-pago">
+								    	<figure class="icono"><img src="/media/tienda/visa.png" alt=""></figure>
+								    	<figure class="icono"><img src="/media/tienda/mastercard.png" alt=""></figure>
+								    </div>
+								</div>
+								<div class="form-group col-md-4 cvc_tarjeta">
+								    <label for="numero">*CVC <span class="que_es_cvc">¿Qué es esto?</span></label>
+								    <div class="tooltip_loviz">
+								    	<p>Para Visa y Mastercard, el numero se encuentra en la parte posterior de la tarjeta</p>
+								    	<figure><img src="/media/tienda/visa_quees.png" alt=""></figure>						    	
+								    </div>
+								    <input type="text" class="form-control" size="4" data-stripe="cvc" id="cvc">
+								</div>
+								<div class="form-group col-md-6">
+									<label for="">Fecha de Vencimiento</label>
+									<div class="row">
+										<div class="col-xs-6">
+											<select data-stripe="exp-month" id="exp-month" class="form-control">
+												<option value="01">01</option>
+												<option value="02">02</option>
+												<option value="03">03</option>
+												<option value="04">04</option>
+												<option value="05">05</option>
+												<option value="06">06</option>
+												<option value="07">07</option>
+												<option value="08">08</option>
+												<option value="09">09</option>
+												<option value="010">10</option>
+												<option value="011">11</option>
+												<option value="012">12</option>
+											</select>								    	
+										</div>
+										<div class="col-xs-6">
+											<select data-stripe="exp-year" id="exp-year" class="form-control">
+												<option value="2015">2015</option>
+												<option value="2016">2016</option>
+												<option value="2017">2017</option>
+												<option value="2018">2018</option>
+												<option value="2019">2019</option>
+												<option value="2020">2020</option>
+												<option value="2021">2021</option>
+												<option value="2022">2022</option>
+												<option value="2023">2023</option>
+												<option value="2024">2024</option>
+												<option value="2025">2025</option>
+											</select>								    	
+										</div>
+									</div>									
+								</div>
+								<button type="submit" class="btn btn-contraste">Pagar Ahora</button>
+							</form>
+						</div>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="metodo_pago" data-metodo="paypal"> Paypal <span></span>
+						</label>
+					</div>
+					<div class="caja_pago paypal">
+						<div class="btn contraste1 enviar_pago justi">Pagar Ahora</div>					
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="metodo_pago" data-metodo="pagoefectivo"> PagoEfectivo <span></span>
+						</label>
+					</div>
+					<div class="caja_pago pagoefectivo">
+						<div class="btn contraste1 enviar_pago justi">Pagar Ahora</div>					
+					</div>				
 
-				<div class="radio">
-					<label>
-						<input type="radio" name="metodo_pago"> Deposito Bancario <span></span>
-					</label>
-				</div>	
-				<div class="caja_pago deposito">
-					<div class="btn contraste1 enviar_pago justi">Pagar Ahora</div>					
-				</div>
-			</div>						
-		</fieldset>
-		<div class="btn btn-default justi back">Cambiar tu Direccion o Metodo de envio</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="metodo_pago" data-metodo="deposito"> Deposito Bancario <span></span>
+						</label>
+					</div>	
+					<div class="caja_pago deposito">
+						<div class="btn contraste1 enviar_pago justi">Pagar Ahora</div>					
+					</div>
+				</div>						
+			</fieldset>
+			<div class="btn btn-default justi back">Cambiar tu Direccion o Metodo de envio</div>
+		</div>
 	</script>
 
 	<script id="linea_resumen_template" type="text/template">
@@ -175,5 +258,22 @@
 				<div class="precio"><label for="">Precio:</label>S./{{subtotal}}</div>
 			</div>	
 		</div>
+	</script>
+
+	<script id="logueado_pagar_templete" type="text/template">
+		<fieldset>
+			<legend>
+				Identificado <em>"*"</em>				
+			</legend>
+			<h2 class="titulo-login">
+				<span class="sub-titulo">Hola</span>
+				<span class="email_login">{{email}}</span>
+				<span class="cuenta_salir">
+					(<a class="link" href="/cliente/salir/">Salir</a>)
+				</span>
+			</h2>
+			<p>¿Este no es su carrito?</p>
+			<p><a href="/cliente/salir/">¿Usted no es {{first_name}} {{last_name}}?</a></p>
+		</fieldset>	
 	</script>
 {% endverbatim %}

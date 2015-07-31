@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.utils.crypto import get_random_string
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
+from pago.models import MetodoPago
 
 
 # Create your models here.
@@ -25,6 +26,7 @@ class Pedido(models.Model):
 	direccion_envio = models.ForeignKey(Direccion,blank=True,null=True)
 	metodoenvio = models.ForeignKey('MetodoEnvio',blank=True,null=True)
 	fecha_compra = models.DateTimeField(auto_now_add=True, db_index=True)
+	metodo_pago = models.ForeignKey('MetodoPago',blank=True,null=True)
 	estado_pedido = models.CharField(max_length=120,default=AUTENTICADO,choices=ESTADO_ELECCION)
 
 	def __unicode__(self):
@@ -33,6 +35,10 @@ class Pedido(models.Model):
 	def save(self, *args, **kwargs):
 		if not self.numero_pedido:
 			self.numero_pedido = get_random_string(length=10)
+		if self.direccion_envio:
+			if self.metodoenvio:
+				if not self.metodo_pago:
+					self.estado_pedido = self.METODO_ENVIO
 		super(Pedido, self).save(*args, **kwargs)
 		self.add_modificacion()
 

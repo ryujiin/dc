@@ -9,64 +9,18 @@ Loviz.Views.Pagar = Backbone.View.extend({
 	render:function (estado) {
 		var html = this.template();
         this.$el.html(html);
+        this.add_lineas_resumen();
+	    this.add_total_resumen();
         this.rellenar_segun_estado(estado);
 	},
 	rellenar_segun_estado:function (estado) {
-		debugger;
-	},
-});
-/*Loviz.Views.Pagar = Backbone.View.extend({
-	el:$('#main'),
-	
-    template: swig.compile($("#pagar_template").html()),
-
-	events: {
-	},
-	initialize : function () {
-		var self = this;
-        this.listenTo(this.model, "change", this.cambiar_estado, this);
-        this.listenTo(window.models.usuario, "change", this.ver_status, this);
-	},
-	render:function () {
-		var html = this.template();
-        this.$el.html(html);
-	    this.poner_pasos();
-	    this.add_lineas_resumen();
-	    this.add_total_resumen();
-	    this.ver_status();	    
-	},
-	ver_status:function () {
-		this.model.set('estado' , 'ninguno');		
-		this.model.set('estado' , 'identificar');
-		if (window.models.usuario.id !== undefined) {
-			this.model.set('estado' , 'envio');		
+		if (estado === 'identificar') {
+			var paso_login = new Loviz.Views.Paso_login({model:this.model,el:this.$('#paso_actual')});			
+		}else if (estado === 'metodo_envio') {
+			var paso_envio = new Loviz.Views.Paso_envio({model:this.model,el:this.$('#paso_actual')});
+		}else if(estado === 'metodo_pago'){
+			var paso_metodo = new Loviz.Views.Paso_pagar({model:this.model,el:this.$('#paso_actual')});
 		}
-		if (window.models.pedido!==undefined) {
-			if (window.models.pedido.id!==undefined) {
-				if (window.models.carro.toJSON().pedido===window.models.pedido.id) {
-					this.model.set('estado','pagar');
-				};
-			};	
-		};		
-	},
-	poner_pasos:function () {
-		var paso_login = new Loviz.Views.Paso_login({
-			model:this.model
-		});
-		this.$('#identificar_user_pagar').append(paso_login.$el)
-		var paso_envio = new Loviz.Views.Paso_envio({
-			model:this.model
-		});
-		this.$('#envio_pagar').append(paso_envio.$el)
-		var paso_metodo = new Loviz.Views.Paso_pagar({
-			model:this.model
-		});
-		this.$('#metodo_pago_pagar').append(paso_metodo.$el);
-	},
-	cambiar_estado:function () {
-		var estado = this.model.toJSON().estado;
-		this.$('.linea_progrecion .paso').removeClass('actual');
-		this.$('.linea_progrecion .'+estado).addClass('actual');
 	},
 	add_lineas_resumen:function  () {
 		var self = this;
@@ -85,7 +39,6 @@ Loviz.Views.Pagar = Backbone.View.extend({
 		var viewTotal = new Loviz.Views.Carro_tatal({
 			model:window.models.carro
 		});
-		this.$('.linea_resumen').append(viewTotal.$el);
+		this.$('.linea_resumen').empty().append(viewTotal.$el);
 	}
 });
-*/

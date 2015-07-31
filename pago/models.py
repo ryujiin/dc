@@ -4,3 +4,6 @@ from django.db import models
 class MetodoPago(models.Model):
 	nombre = models.CharField(max_length=100,blank=True,null=True)
 	descripcion =models.TextField(blank=True,null=True)
+
+	def __unicode__(self):
+		return self.nombre

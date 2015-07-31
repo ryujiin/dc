@@ -35,6 +35,10 @@ body
 			border-color:#3d773e;
 			opacity:1
 			color #fff
+	.form-control
+		border-radius 0px
+	label
+		font-weight normal
 .bloque_top
 	display none
 	background #333
@@ -470,6 +474,7 @@ img
 	.titulo
 		font-size 35px
 	.linea_progrecion
+		margin 20px 0
 		.paso
 			display inline-block
 			color #ccc
@@ -491,6 +496,38 @@ img
 				font-weight 300
 	.caja_pagar
 		margin-top 15px
+		legend
+			position relative
+			font-size 1.5em
+			span
+				position absolute
+				right 0
+				font-size 0.5em
+				bottom 0
+				text-transform uppercase
+	.metodo_pagar
+		padding 1em
+		background #f4f4f4
+	.iconos-pago
+		.icono
+			width 50px
+			display inline-block
+	.cvc_tarjeta
+		position relative		
+		input
+			width 100px
+		span
+			text-decoration underline
+			cursor pointer
+		.tooltip_loviz
+			position absolute
+			background #fff
+			border 1px solid #ccc
+			z-index 1
+			width 70%
+			padding 2em 1em
+			right -10px
+			display none
 .login-box
 	border 1px solid #f4f4f4
 	background #fff

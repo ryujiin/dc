@@ -1,24 +1,32 @@
 Loviz.Views.Paso_login = Backbone.View.extend({
     template:swig.compile($("#paso_login_template").html()),    
+    template_logueado:swig.compile($("#logueado_pagar_templete").html()),
 	events: {
         'click .mostrar_registro':'mostrar_registro',
     },
     initialize: function () {
-        this.verificar_login();
-        this.listenTo(window.views.pagar.model, "change", this.aparecer, this);        
-    },
-    render: function () {
         this.model = window.models.usuario;
-		var html = this.template(this.model.toJSON());
-        this.$el.html(html);
-        this.addlogin();
-        this.addregistro();
+        this.ver_que_mostrar();
+        //this.verificar_login();
+        //this.listenTo(window.views.pagar.model, "change", this.aparecer, this);        
     },
-    aparecer:function () {
-        if (window.views.pagar.model.toJSON().estado ==='identificar') {
-            this.$el.show();
+    render: function () {        
+		var html = this.template(this.model.toJSON());
+        this.$el.html(html);  
+    },
+    render_logueado:function () {
+        var html = this.template_logueado(this.model.toJSON());
+        this.$el.html(html);
+    },
+    ver_que_mostrar:function () {
+        if (this.model.id===undefined) {
+            this.render();
+            this.addlogin();
+            this.addregistro();
+            debugger;
         }else{
-            this.$el.hide();
+            this.render_logueado();
+            debugger;
         }
     },
     addlogin:function () {
@@ -30,8 +38,4 @@ Loviz.Views.Paso_login = Backbone.View.extend({
         this.$('.formulario_nuevo_user').append(this.form_registro.$el);
         this.form_registro.$el.hide();
     },
-    mostrar_registro:function () {
-        this.$('.mostrar_registro').hide();
-        this.form_registro.$el.show();
-    }
 });

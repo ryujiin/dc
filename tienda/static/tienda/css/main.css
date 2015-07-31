@@ -7,6 +7,8 @@ body .btn-default{border-color:#999;}
 body .btn-default:hover,body .btn-default:active,body .btn-default:focus{background:#fff;opacity:.5}
 body .btn-contraste{background:#111;color:#fff;}
 body .btn-contraste:hover{background:#468847;border-color:#3d773e;opacity:1;color:#fff}
+body .form-control{border-radius:0}
+body label{font-weight:normal}
 .bloque_top{display:none;background:#333;}
 .bloque_top p{margin:0;padding:3px 0}
 .bloque_menu_top{display:none}
@@ -98,11 +100,20 @@ img{width:100%}
 .logo .img_log{width:34px;overflow:hidden;margin:0 auto;}
 .logo .img_log img{width:81px}
 #pagar .titulo{font-size:35px}
+#pagar .linea_progrecion{margin:20px 0;}
 #pagar .linea_progrecion .paso{display:inline-block;color:#ccc;}
 #pagar .linea_progrecion .paso.actual{color:#111;}
 #pagar .linea_progrecion .paso.actual .paso_number{background:#111}
 #pagar .linea_progrecion .paso .paso_number{background:#ccc;border-radius:20px;color:#fff;height:40px;display:inline-block;text-align:center;line-height:25px;border:8px double #fff;font-family:arial;width:40px;font-weight:300}
-#pagar .caja_pagar{margin-top:15px}
+#pagar .caja_pagar{margin-top:15px;}
+#pagar .caja_pagar legend{position:relative;font-size:1.5em;}
+#pagar .caja_pagar legend span{position:absolute;right:0;font-size:.5em;bottom:0;text-transform:uppercase}
+#pagar .metodo_pagar{padding:1em;background:#f4f4f4}
+#pagar .iconos-pago .icono{width:50px;display:inline-block}
+#pagar .cvc_tarjeta{position:relative;}
+#pagar .cvc_tarjeta input{width:100px}
+#pagar .cvc_tarjeta span{text-decoration:underline;cursor:pointer}
+#pagar .cvc_tarjeta .tooltip_loviz{position:absolute;background:#fff;border:1px solid #ccc;z-index:1;width:70%;padding:2em 1em;right:-10px;display:none}
 .login-box{border:1px solid #f4f4f4;background:#fff;margin:0 0 2em;}
 .login-box .subtitulo{background:transparent;border-bottom:1px solid #f4f4f4;font-size:1.1em;letter-spacing:1px;padding:1em;line-height:1.1;margin:0}
 .login-box .login-content{padding:1em;}

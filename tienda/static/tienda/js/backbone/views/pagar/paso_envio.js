@@ -6,8 +6,7 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
         'click .direciones_gravadas label':'seleccionado',
     },
     initialize: function () {
-    	this.render();
-        this.listenTo(window.views.pagar.model, "change", this.aparecer, this);        
+        this.ver_mostrar();
         this.listenTo(window.collections.direcciones, "add", this.mi_direccion, this);
     },
     render: function () {
@@ -16,12 +15,11 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
         this.listadirecciones();
         this.metodos_envio();
     },
-    aparecer:function () {
-    	if (window.views.pagar.model.toJSON().estado ==='envio') {
-    		this.$el.show();
-    	}else{
-    		this.$el.hide();
-    	}
+    ver_mostrar:function(){
+        var estado = this.model.toJSON().estado_pedido;
+        if (estado==="autenticado") {
+            this.render();
+        };
     },
     add_direccion:function () {
         this.$('.nueva_direccion_form').empty();
@@ -44,17 +42,7 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
         var metodo = $('input[name=metodo_envio]:checked').val();
         if (direccion!==undefined) {
             if (metodo!==undefined) {
-                window.models.pedido.set({
-                    user:window.models.usuario.id,
-                    metodoenvio:metodo,
-                    direccion_envio:direccion,
-                    estado:8,
-                    gasto_envio:$('input[name=metodo_envio]:checked').data('gasto'),
-                });
-                window.models.pedido.save().done(function (data) {
-                    self.model.set('estado','pagar');
-                    window.models.carro.set('pedido',data.id);
-                })
+                this.grabar_direccion(direccion,metodo);
             }else{
                 $('.metodo_envio').addClass('has-error');
                 var mover_a = $("#metodo_envio_field").offset();
@@ -83,5 +71,12 @@ Loviz.Views.Paso_envio = Backbone.View.extend({
     add_metodo:function (metodo) {
         var vista = new Loviz.Views.Metodo_Envio({model:metodo});
         this.$('.metodo_envio').append(vista.$el)
+    },
+    grabar_direccion:function (direccion,metodo) {
+        this.model.set({direccion_envio:direccion,metodoenvio:metodo});
+        this.model.save().done(function () {
+            window.routers.base.navigate('/pagar/metodo_pago/', {trigger:true})
+        });
+        debugger;
     }
 });
