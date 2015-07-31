@@ -118,6 +118,7 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'social.apps.django_app.context_processors.backends',
     'social.apps.django_app.context_processors.login_redirect',
+    'pago.context_processors.pago_tienda',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -149,3 +150,6 @@ SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/cliente/cuenta/'
 SOCIAL_AUTH_LOGIN_ERROR_URL = '/cliente/cuenta/'
 
 SEO_JS_PRERENDER_TOKEN = config.SEO_JS_PRERENDER_TOKEN
+
+STRIPE_SECRET_KEY = config.STRIPE_SECRET_KEY
+STRIPE_PUBLIC_KEY = config.STRIPE_PUBLIC_KEY

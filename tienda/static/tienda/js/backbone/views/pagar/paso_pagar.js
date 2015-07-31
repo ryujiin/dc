@@ -2,7 +2,7 @@ Loviz.Views.Paso_pagar = Backbone.View.extend({
     template:swig.compile($("#paso_pagar_template").html()),    
 	events: {
         'click #metodo_pago_select input[name=metodo_pago]':'selecionado',
-        'submit #pago_tarjeta_credito':'pagar_tarjeta',
+        'submit #payment-form':'pagar_stripe',
         'mouseover .que_es_cvc':'mostrar_tooltip',
         'mouseout .que_es_cvc':'borrar_tooltip',
     },
@@ -19,8 +19,40 @@ Loviz.Views.Paso_pagar = Backbone.View.extend({
         var metodo = e.target.dataset.metodo;
         $(".caja_pago."+metodo).slideDown();
     },
-    pagar_tarjeta:function (e) {
+    pagar_stripe:function (e) {
+        debugger;
         e.preventDefault();
+        var public_key = e.target.dataset.stripeKey;
+        //comenzamos con stripe
+        Stripe.setPublishableKey(public_key);
+
+        var stripeResponseHandler = function(status, response) {
+            var $form = $('#payment-form');
+            debugger;
+            if (response.error) {
+                // Show the errors on the form
+                $form.find('.payment-errors').text(response.error.message);
+                $form.find('button').prop('disabled', false);
+            } else {
+                debugger;
+                // token contains id, last4, and card type
+                var token = response.id;
+                // Insert the token into the form so it gets submitted to the server
+                $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+                // and re-submit
+                debugger;
+                $form.get(0).submit();
+            }
+        };
+
+        var datos_card = {
+            number:this.$('.card_number').val(),
+            cvc:this.$('.card_cvc').val(),
+            exp_month:this.$('.card-expiry-month').val(),
+            exp_year:this.$('.card-expiry-year').val(),
+        };
+        //hacer el llamado a Stripe
+        Stripe.card.createToken(datos_card, stripeResponseHandler);
         debugger;
     },
     mostrar_tooltip:function () {

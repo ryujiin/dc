@@ -155,11 +155,13 @@
 					</div>
 					<div class="caja_pago tarjeta">
 						<div class="row">
-							<form action="" id="pago_tarjeta_credito">
+{% endverbatim %}
+							<form action="" id="payment-form" data-stripe-key="{{stripe_key}}">
+{% verbatim %}
 								<span class="payment-errors"></span>				
 								<div class="form-group col-md-8">
 								    <label for="numero">*Numero de la tarjeta </label>
-								    <input type="text" class="form-control" size="20" data-stripe="number" id="numero_tarjeta">
+								    <input type="text" class="form-control card_number" size="20" data-stripe="number">
 								    <p>Ejemplo: 4111111111111111 (sin espacios ni guiones)</p>
 								    <div class="iconos-pago">
 								    	<figure class="icono"><img src="/media/tienda/visa.png" alt=""></figure>
@@ -172,13 +174,13 @@
 								    	<p>Para Visa y Mastercard, el numero se encuentra en la parte posterior de la tarjeta</p>
 								    	<figure><img src="/media/tienda/visa_quees.png" alt=""></figure>						    	
 								    </div>
-								    <input type="text" class="form-control" size="4" data-stripe="cvc" id="cvc">
+								    <input type="text" class="form-control card-cvc" size="4" data-stripe="cvc">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="">Fecha de Vencimiento</label>
 									<div class="row">
 										<div class="col-xs-6">
-											<select data-stripe="exp-month" id="exp-month" class="form-control">
+											<select data-stripe="exp-month" id="exp-month" class="form-control card-expiry-month">
 												<option value="01">01</option>
 												<option value="02">02</option>
 												<option value="03">03</option>
@@ -194,7 +196,7 @@
 											</select>								    	
 										</div>
 										<div class="col-xs-6">
-											<select data-stripe="exp-year" id="exp-year" class="form-control">
+											<select data-stripe="exp-year" id="exp-year" class="form-control card-expiry-year">
 												<option value="2015">2015</option>
 												<option value="2016">2016</option>
 												<option value="2017">2017</option>
