@@ -8,6 +8,7 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		'pagar/:estado/':'pagar',
 		'cliente/cuenta/':'cliente_cuente',
 		'cliente/salir/':'salir',
+		'felicidades/:id_pago/':'completo_compra',
 		'*notFound': 'notFound',
 	},
 	initialize : function () {
@@ -89,6 +90,12 @@ Loviz.Routers.Base = Backbone.Router.extend({
 		window.app.slug='cliente';
 		window.views.usuario.render();
 		window.views.tienda.cambiando_page();
+	},
+	completo_compra:function (id_pago) {
+		pedido = window.collections.pedidos.findWhere({numero_pedido:id_pago})		
+		if (pedido.toJSON().estado_pedido==='pagado') {
+			
+		};
 	},
 	salir:function () {
 		console.log('salir');

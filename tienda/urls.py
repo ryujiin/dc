@@ -8,4 +8,5 @@ urlpatterns = patterns('',
 	url(r'^carro/',TiendaView.as_view() , name='carro'),
 	url(r'^pagar/',TiendaView.as_view() , name='pagar'),
 	url(r'^cliente/',TiendaView.as_view() , name='cliente'),
+	url(r'^felicidades/',TiendaView.as_view() , name='felicidades'),
 )

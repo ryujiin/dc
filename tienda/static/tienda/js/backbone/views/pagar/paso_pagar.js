@@ -20,7 +20,6 @@ Loviz.Views.Paso_pagar = Backbone.View.extend({
         $(".caja_pago."+metodo).slideDown();
     },
     pagar_stripe:function (e) {
-        debugger;
         e.preventDefault();
         var public_key = e.target.dataset.stripeKey;
         //comenzamos con stripe
@@ -28,20 +27,21 @@ Loviz.Views.Paso_pagar = Backbone.View.extend({
 
         var stripeResponseHandler = function(status, response) {
             var $form = $('#payment-form');
-            debugger;
             if (response.error) {
                 // Show the errors on the form
                 $form.find('.payment-errors').text(response.error.message);
                 $form.find('button').prop('disabled', false);
             } else {
-                debugger;
                 // token contains id, last4, and card type
                 var token = response.id;
                 // Insert the token into the form so it gets submitted to the server
                 $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-                // and re-submit
-                debugger;
-                $form.get(0).submit();
+                // and re-submit                
+                $.post( "/pago/stripe/", { stripeToken:token, carro : window.models.carro.id} ).done(function (data) {
+                    if (data.status==='paid') {
+                        window.location="/felicidades/"+data.pedido+"/";
+                    };
+                });
             }
         };
 
@@ -53,7 +53,6 @@ Loviz.Views.Paso_pagar = Backbone.View.extend({
         };
         //hacer el llamado a Stripe
         Stripe.card.createToken(datos_card, stripeResponseHandler);
-        debugger;
     },
     mostrar_tooltip:function () {
         $('.cvc_tarjeta .tooltip_loviz').fadeIn();

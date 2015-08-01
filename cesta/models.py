@@ -81,7 +81,8 @@ class Carro(models.Model):
 					if self.pk != carro.pk:
 						carro.estado = self.FUCIONADA
 						carro.save()
-		
+
+
 
 class LineaCarro(models.Model):
 	carro = models.ForeignKey(Carro,related_name="lineas")

@@ -44,6 +44,7 @@ urlpatterns = patterns('',
     url(r'^ajax/crear/', 'cliente.views.nuevo_usuario', name='nuevo_usuario'),    
     url(r'^ajax/salir/', 'cliente.views.salir', name='salir'),
     url(r'^api/productoSingle/$',views.Producto_singleView.as_view()),
+    url(r'^pago/stripe/', 'pago.views.stripe_paymet', name='pago_stripe'),
      url('', include('social.apps.django_app.urls',namespace="social")),
     url(r'^',include('tienda.urls')),    
 )
